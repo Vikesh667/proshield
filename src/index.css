@@ -1,5 +1,48 @@
 @import "tailwindcss";
 
+
+
+/* Define the keyframes for the slow spin */
+@keyframes slow-spin {
+    0% {
+        transform: rotate(0deg);
+        /* Start at no rotation */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Complete one full rotation */
+    }
+}
+
+/* Apply the animation to an element */
+.my-spinning-element {
+    animation: slow-spin 10s linear infinite;
+    /* Adjust '10s' for desired speed */
+}
+
+@layer utilities {
+    .hexagonal {
+        clip-path: polygon(25% 0%,
+                75% 0%,
+                100% 50%,
+                75% 100%,
+                25% 100%,
+                0% 50%);
+    }
+
+ .hex-left {
+  clip-path: polygon(
+    15% 0%,        /* top-left cut */
+    100% 0%,       /* top-right */
+    100% 100%,     /* bottom-right */
+    15% 100%,      /* bottom-left cut */
+    25% 50%         /* center-left point */
+  );
+}
+
+}
+
 @theme {
-  
+  --color-mint-500: oklch(0.72 0.11 178);
 }
