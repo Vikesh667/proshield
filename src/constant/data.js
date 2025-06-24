@@ -13,6 +13,12 @@ import serviceIcon3 from "../assets/icon-service-3.svg"
 import serviceIcon4 from "../assets/icon-service-4.svg"
 import serviceIcon5 from "../assets/icon-service-5.svg"
 import serviceIcon6 from "../assets/icon-service-6.svg"
+import projectImage1 from "../assets/project-1.jpg"
+import projectImage2 from "../assets/project-2.jpg"
+import projectImage3 from "../assets/project-3.jpg"
+import projectImage4 from "../assets/project-4.jpg"
+
+
 export const navItem = [
   {
     text: "Home",
@@ -141,4 +147,11 @@ export const services=[
     text:"Incident Response and Management",
     para:"Real-time monitoring and proactive and measures to identify and threats."
   }
+]
+
+ export const projects=[
+   projectImage1,
+   projectImage2,
+   projectImage3,
+   projectImage4
 ]

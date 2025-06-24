@@ -4,6 +4,7 @@ import { BsTranslate } from "react-icons/bs";
 import AboutSection from "../component/about/AboutSection";
 import OurServices from "../component/services/OurServices";
 import Feature from "../component/Feature";
+import OurProject from "../component/project/OurProject";
 
 const HomePages=()=>{
       const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -25,6 +26,7 @@ const HomePages=()=>{
             <AboutSection/>
             <OurServices/>
             <Feature/>
+            <OurProject/>
          {/* <div
           style={{ left:`${position.x}px`, top: `${position.y}px`,
            transform:"translate(-100%,-100%)"
