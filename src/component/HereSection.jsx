@@ -2,11 +2,10 @@ import heroImage from "../assets/hero-bg.jpg";
 import ActionButton from "../atom/ActionButton";
 import { GoArrowRight } from "react-icons/go";
 import FolwPlayButton from "../atom/FlowPlayButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import VideoPlay from "../atom/VideoPlay";
 import icon from "../assets/icon-sub-heading.svg";
 import iconCheck from "../assets/icon-check-white.svg";
-import { avatarList } from "../constant/data";
 import ClientCard from "../atom/ClientCard";
 const HeroSection = () => {
   const [open, setOpen] = useState(false);

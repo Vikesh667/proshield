@@ -4,7 +4,7 @@ import { projects } from "../../constant/data";
 const OurProject = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="w-full min-h-screen bg-gray-200 p-20">
+    <div className="w-full min-h-screen bg-gray-200 p-10">
       <div className="flex flex-col items-center">
         <div className="flex gap-3 items-center mb-5">
           <img src={iconHeading} className="text-white" />
@@ -57,7 +57,7 @@ const OurProject = () => {
           </div>
         ))}
       </div>
-      <div className="w-full flex justify-center p-25">
+      <div className="w-full flex justify-center p-15">
         <h1 className="w-1/2 text-center capitalize text-md text-gray-600">
           Cybersecurity Innovations Explore All Our Projects Safeguarding
           Digital Futures Against Evolving Threats.
