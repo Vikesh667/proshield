@@ -43,6 +43,23 @@
 
 }
 
-@theme {
-  --color-mint-500: oklch(0.72 0.11 178);
+@layer utilities {
+  @keyframes shine {
+    0% {
+      width: 0%;
+      height: 0%;
+      opacity: 0.3;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    100% {
+      width: 250%;
+      height: 250%;
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  .shine-once {
+    animation: shine 0.6s linear forwards;
+  }
 }

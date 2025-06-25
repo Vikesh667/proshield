@@ -66,7 +66,7 @@ const HeroSection = () => {
             <ActionButton
               text="Play Video"
               variant="custom"
-              className="bg-transparent text-white text-lg"
+              className="bg-transparent text-white text-lg -ml-10 -z-10"
             />
           </div>
           {open && <VideoPlay setOpen={setOpen} />}

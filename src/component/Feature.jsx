@@ -20,22 +20,30 @@ const Feature = () => {
   return (
     <div className="w-full min-h-screen flex  gap-10 p-20">
       <div className="flex flex-col gap-10  overflow-hidden flex-1">
-      <div className="w-full h-full relative group overflow-hidden rounded-4xl">
-  {/* Image */}
-  <img src={featureImage1} className="w-full h-full rounded-4xl object-cover" />
+        <div className="w-full h-full relative group overflow-hidden rounded-4xl">
+          <img
+            src={featureImage1}
+            className="w-full h-full rounded-4xl object-cover"
+          />
 
-  {/* Overlay Div */}
- <div className="absolute top-1/2 left-1/2 w-0 h-0 bg-white/30
-               opacity-0 rotate-[-45deg] scale-0
-               group-hover:top-0 group-hover:left-0 
-               group-hover:w-full group-hover:h-full
-               group-hover:opacity-100 group-hover:scale-200
-               transition-all duration-700 ease-out z-10 pointer-events-none"
-  />
-</div>
+          <div
+            className="absolute w-[200%] h-0 left-1/2 top-1/2 bg-white/30 rotate-[-45deg] z-10 
+              transform -translate-x-1/2 -translate-y-1/2 
+              group-hover:h-[250%] group-hover:bg-transparent 
+              transition-all duration-[600ms] ease-linear pointer-events-none"
+          />
+        </div>
 
         <div className="flex gap-5">
+          <div className="w h-full relative group overflow-hidden rounded-4xl">
           <img src={featureImage2} className="rounded-4xl" />
+          <div
+            className="absolute w-[200%] h-0 left-1/2 top-1/2 bg-white/30 rotate-[-45deg] z-10 
+              transform -translate-x-1/2 -translate-y-1/2 
+              group-hover:h-[250%] group-hover:bg-transparent 
+              transition-all duration-[600ms] ease-linear pointer-events-none"
+          />
+          </div>
           <div className="w-52 h-66 bg-[linear-gradient(to_right,_#4338ca_5%,_#60a5fa_75%)] shadow-lg rounded-4xl flex flex-col items-center justify-around p-5 overflow-hidden relative group">
             <h1 className="text-5xl font-bold font-sans text-white text-center z-10">
               {counter}+

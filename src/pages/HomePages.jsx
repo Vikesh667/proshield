@@ -6,6 +6,8 @@ import OurServices from "../component/services/OurServices";
 import Feature from "../component/Feature";
 import OurProject from "../component/project/OurProject";
 import WhyChooseUs from "../component/choose/WhyChooseUs";
+import OurSecurity from "../component/security/OurSecurity";
+import PricePlan from "../component/price/PricePlan";
 
 const HomePages=()=>{
       const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -29,6 +31,8 @@ const HomePages=()=>{
             <Feature/>
             <OurProject/>
             <WhyChooseUs/>
+            <OurSecurity/>
+            <PricePlan/>
          {/* <div
           style={{ left:`${position.x}px`, top: `${position.y}px`,
            transform:"translate(-100%,-100%)"

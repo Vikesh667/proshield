@@ -2,8 +2,9 @@ import { aboutAvatar } from "../../constant/data";
 import securitySpinImage from "../../assets/get-free-security-circle.svg";
 import icon from "../../assets/icon-sub-heading.svg";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
-import { GoArrowRight } from "react-icons/go";
+import Button from "../../atom/Button";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
+import SvgGradients from "../../atom/SvgGraduents";
 const AboutSection = () => {
   return (
     <div className="min-w-screen min-h-screen bg-white flex  justify-around gap-10 py-12 px-25">
@@ -82,38 +83,7 @@ const AboutSection = () => {
               </div>
               <h2>+91123456789</h2>
             </div>
-            <button
-              className="
-                relative group flex items-center gap-2 overflow-hidden 
-                px-7 py-3 rounded-full 
-                text-white text-xl 
-                transition-all duration-700 ease-in-out 
-                bg-gradient-to-r from-blue-800 to-blue-400
-                group-hover:px-8 group-hover:py-3
-              "
-            >
-              <span
-                className="
-                  absolute inset-0 z-0 
-                  bg-gradient-to-r from-blue-400 to-blue-800 
-                  rounded-full 
-                  transform translate-x-full group-hover:translate-x-0 
-                  opacity-0 group-hover:opacity-100 
-                  transition-all duration-700 ease-in-out
-                "
-              ></span>
-
-              <span className="relative z-10 flex items-center gap-2">
-                Get Started
-                <GoArrowRight
-                  className="
-                    bg-white text-blue-500 rounded-full p-1 
-                    transition-all duration-500 ease-in-out
-                    group-hover:translate-x-1
-                  "
-                />
-              </span>
-            </button>
+           <Button text="More About"/>
           </div>
         </div>
       </div>
@@ -122,19 +92,3 @@ const AboutSection = () => {
 };
 export default AboutSection;
 
-// src/components/SvgGradients.jsx
-import React from "react";
-
-const SvgGradients = () => (
-  <svg width="0" height="0" className="absolute">
-    <defs>
-      {/* Updated gradient for the stroke: Indigo 800 to Blue 500 */}
-      <linearGradient id="iconGradientStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3730a3" /> {/* Tailwind's Indigo 800 */}
-        <stop offset="100%" stopColor="#3b82f6" /> {/* Tailwind's Blue 500 */}
-      </linearGradient>
-
-      {/* Add other gradients here if needed */}
-    </defs>
-  </svg>
-);

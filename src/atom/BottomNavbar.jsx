@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoArrowRight } from "react-icons/go";
 import { navItem } from "../constant/data";
 import logo from "../assets/logo.svg";
+import Button from "./Button";
 
 const BottomNavbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -44,41 +45,8 @@ const BottomNavbar = () => {
 
       {/* CTA Button */}
     <div className="mr-20">
-  <button
-    className="
-      relative group flex items-center gap-2 overflow-hidden 
-      px-7 py-3 rounded-full 
-      text-white text-xl 
-      transition-all duration-700 ease-in-out 
-      bg-gradient-to-r from-blue-800 to-blue-400
-      group-hover:px-8 group-hover:py-3
-    "
-  >
-    <span
-      className="
-        absolute inset-0 z-0 
-        bg-gradient-to-r from-blue-400 to-blue-800 
-        rounded-full 
-        transform translate-x-full group-hover:translate-x-0 
-        opacity-0 group-hover:opacity-100 
-        transition-all duration-700 ease-in-out
-      "
-    ></span>
-
-    <span className="relative z-10 flex items-center gap-2">
-      Get Started
-      <GoArrowRight
-        className="
-          bg-white text-blue-500 rounded-full p-1 
-          transition-all duration-500 ease-in-out
-          group-hover:translate-x-1
-        "
-      />
-    </span>
-  </button>
+     <Button text="Get Started"/>
 </div>
-
-
     </nav>
   );
 };
