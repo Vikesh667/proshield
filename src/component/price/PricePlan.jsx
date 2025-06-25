@@ -34,11 +34,11 @@ const PricePlan = () => {
         <h1>Get 30 day free trial</h1> 
        </div>
          <div className="flex text-lg font-sans gap-5 text-[#010535]">
-        <img src={pricing1}/>
+        <img src={pricing2}/>
         <h1>No any hidden fees pay</h1> 
        </div>
          <div className="flex text-lg font-sans gap-5 text-[#010535]">
-        <img src={pricing1}/>
+        <img src={pricing3}/>
         <h1>You can cancel anytime</h1> 
        </div>
       </div>

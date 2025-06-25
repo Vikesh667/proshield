@@ -16,8 +16,8 @@ const OurSecurity = () => {
                   alt="icon"
                   className="w-6 h-6 brightness-0 "
                 />
-                <span className="ml-2 text-xl tracking-widest uppercase">
-                  why choose us
+                <span className="ml-2 text-xl tracking-wide uppercase">
+                 Our security
                 </span>
               </div>
             </div>
@@ -29,7 +29,7 @@ const OurSecurity = () => {
             </div>
           </div>
           <div className="flex flex-col gap-5 mr-10">
-            <h1 className="text-xl capitalize text-[#010535] font-bold">
+            <h1 className="text-xl capitalize text-[#010535] font-semibold">
               real-time threat monitoring:
             </h1>
             <p className="text-md text-gray-500/95 tracking-tight">
@@ -39,7 +39,7 @@ const OurSecurity = () => {
             </p>
           </div>
           <div className="flex flex-col gap-5 mt-10 mr-11">
-            <h1 className="text-xl capitalize text-[#010535] font-bold">
+            <h1 className="text-xl capitalize text-[#010535] font-semibold">
               compliance and risk management:
             </h1>
             <p className="text-md tracking-wide text-gray-500/95">
@@ -52,7 +52,7 @@ const OurSecurity = () => {
         <div className="w-1/2 flex-col px-3 ">
           <img className="w-full rounded-4xl" src={securityImage} />
           <div className="flex flex-col gap-5 mt-10">
-            <h1 className="text-xl capitalize text-[#010535] font-bold">
+            <h1 className="text-xl capitalize text-[#010535] font-semibold">
               identity and access management:
             </h1>
             <p className="text-md text-gray-500/95">
@@ -68,21 +68,21 @@ const OurSecurity = () => {
         <div className="flex flex-col">
         <div className="flex items-center gap-3">
         <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl font-semibold">Computer security</h1>
+        <h1 className="text-[#010535] capitalize text-xl ">Computer security</h1>
         </div>
         <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
         </div>
           <div className="flex flex-col">
         <div className="flex items-center gap-3">
         <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl font-semibold">Computer security</h1>
+        <h1 className="text-[#010535] capitalize text-xl">Computer security</h1>
         </div>
         <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
         </div>
           <div className="flex flex-col">
         <div className="flex items-center gap-3">
         <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl font-semibold">Computer security</h1>
+        <h1 className="text-[#010535] capitalize text-xl ">Computer security</h1>
         </div>
         <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
         </div>

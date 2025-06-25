@@ -1,7 +1,7 @@
 import { useState } from "react";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import { projects } from "../../constant/data";
-const OurProject = () => {
+const OurProject = ({ setContent, setHovered }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="w-full min-h-screen bg-gray-200 p-10">
@@ -25,7 +25,21 @@ const OurProject = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            onMouseEnter={() => setActiveIndex(index)}
+           
+              onClick={()=>setOpen(true)}
+              onMouseEnter={() => {
+                setActiveIndex(index)
+                setHovered(true);
+                setContent(
+                  <div className="flex flex-col items-center z-40">
+                    <span className="text-sm">View</span>
+                  </div>
+                );
+              }}
+              onMouseLeave={() => {
+                setHovered(false);
+                setContent(null);
+              }}
             className={`w-full h-auto overflow-hidden relative group 
       ${index === 0 ? "rounded-l-3xl" : ""} 
       ${index === projects.length - 1 ? "rounded-r-3xl" : ""}

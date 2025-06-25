@@ -1,13 +1,13 @@
 import heroImage from "../assets/hero-bg.jpg";
 import ActionButton from "../atom/ActionButton";
 import { GoArrowRight } from "react-icons/go";
-import FolwPlayButton from "../atom/FlowPlayButton";
 import { useState } from "react";
 import VideoPlay from "../atom/VideoPlay";
 import icon from "../assets/icon-sub-heading.svg";
 import iconCheck from "../assets/icon-check-white.svg";
 import ClientCard from "../atom/ClientCard";
-const HeroSection = () => {
+import { FaPlay } from "react-icons/fa";
+const HeroSection = ({ setHovered, setContent }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
@@ -50,24 +50,30 @@ const HeroSection = () => {
               variant="custom"
               className="text-blue-500 group-hover:text-white transition-all duration-300 rounded-full text-ms font-semibold px-3 py-1 z-10 relative"
             />
-
-            {/* Icon */}
             <span className="bg-blue-800 rounded-full p-1 group-hover:ml-1 group-hover:bg-white z-10 transition-all duration-300">
-              {" "}
               <GoArrowRight className="text-white  group-hover:text-blue-800 text-sm z-10 relative transition-all duration-300" />
             </span>
           </div>
-
-          <div
-            className="flex items-center gap-2 "
-            onClick={() => setOpen(true)}
-          >
-            <FolwPlayButton />
-            <ActionButton
-              text="Play Video"
-              variant="custom"
-              className="bg-transparent text-white text-lg -ml-10 -z-10"
-            />
+          <div className="flex items-center gap-3 group">
+            <span
+            onClick={()=>setOpen(true)}
+              onMouseEnter={() => {
+                setHovered(true);
+                setContent(
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm">Play</span>
+                  </div>
+                );
+              }}
+              onMouseLeave={() => {
+                setHovered(false);
+                setContent(null);
+              }}
+              className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-white transition-color duration-300"
+            >
+              <FaPlay className="text-lg group-hover:text-blue-400"/>
+            </span>
+            <h3>Play video</h3>
           </div>
           {open && <VideoPlay setOpen={setOpen} />}
         </div>
@@ -77,14 +83,13 @@ const HeroSection = () => {
               <img src={iconCheck} />
               <span className="text-lg">Access Control Management</span>
             </div>
-
             <hr className="h-px border-0 bg-gray-300 opacity-30 w-60" />
             <div className="flex items-center gap-2">
               <img src={iconCheck} />
               <span className="text-lg">Security Awareness Training</span>
             </div>
           </div>
-           <ClientCard className={"w-16 h-16"}/>
+          <ClientCard className={"w-16 h-16"} />
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import HeroSection from "../component/HereSection"
-import { BsTranslate } from "react-icons/bs";
+import HeroSection from "../component/HereSection";
 import AboutSection from "../component/about/AboutSection";
 import OurServices from "../component/services/OurServices";
 import Feature from "../component/Feature";
@@ -9,37 +8,50 @@ import WhyChooseUs from "../component/choose/WhyChooseUs";
 import OurSecurity from "../component/security/OurSecurity";
 import PricePlan from "../component/price/PricePlan";
 
-const HomePages=()=>{
-      const [position, setPosition] = useState({ x: 0, y: 0 });
-      useEffect(() => {
-        const mouseMoveHandle = (e) => {
-          setPosition({
-            x: e.clientX,
-            y: e.clientY,
-          });
-        };
-        window.addEventListener("mousemove", mouseMoveHandle);
-        return () => {
-          window.removeEventListener("mousemove", mouseMoveHandle);
-        };
-      }, []);
-    return(
-        <div className="relative overflow-hidden">
-            <HeroSection/>
-            <AboutSection/>
-            <OurServices/>
-            <Feature/>
-            <OurProject/>
-            <WhyChooseUs/>
-            <OurSecurity/>
-            <PricePlan/>
-         {/* <div
-          style={{ left:`${position.x}px`, top: `${position.y}px`,
-           transform:"translate(-100%,-100%)"
+const HomePages = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden">
+      {/* Sections */}
+      <HeroSection setContent={setContent} setHovered={setHovered} />
+      <AboutSection />
+      <OurServices />
+      <Feature />
+      <OurProject setContent={setContent} setHovered={setHovered}/>
+      <WhyChooseUs />
+      <OurSecurity />
+      <PricePlan />
+
+      {/* Floating Mouse Element */}
+      <div
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+          transform: "translate(-50%, -50%)",
+          width: hovered ? "90px" : "12px",
+          height: hovered ? "90px" : "12px",
+          background: hovered
+            ? "rgba(0, 0, 0, 0.7)" // black transparent when hovering
+            : "linear-gradient(to right, #1e40af, #60a5fa)", // blue gradient by default
+          transition: "all 0.2s ease",
         }}
-          className="w-3 h-3 rounded-full bg-gradient-to-r bg-blue-700 to-blue-400 absolute z-20 top-0 left-0"
-        ></div> */}
-        </div>
-    )
-}
-export default HomePages
+        className="fixed z-[9999] rounded-full pointer-events-none flex items-center justify-center text-white text-sm"
+      >
+        {hovered && content}
+      </div>
+    </div>
+  );
+};
+
+export default HomePages;
