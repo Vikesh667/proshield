@@ -1,20 +1,28 @@
 const VideoPlay = ({ setOpen }) => {
   return (
-    <div className="flex w-full h-[90%] absolute top-1/2 left-20 transform  -translate-y-1/2 rounded-lg z-20 bg-black items-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+      {/* Close button */}
       <button
         onClick={() => setOpen(false)}
-        className="absolute top-2 right-5 z-50 text-white text-xl"
+        className="absolute top-4 right-6 text-white text-2xl font-bold hover:text-red-400 transition duration-300"
       >
-        X
+        ×
       </button>
 
-      <video width="750" height="500" controls autoPlay className="rounded-lg w-full p-5">
-        <source 
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      {/* Video Container */}
+      <div className="relative bg-black rounded-2xl overflow-hidden shadow-xl max-w-4xl w-full">
+        <video
+          controls
+          autoPlay
+          className="w-full h-auto rounded-2xl"
+        >
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   );
 };

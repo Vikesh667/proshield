@@ -9,7 +9,7 @@ const ActionButton = ({
   icon = null,
 }) => {
   const baseClasses =
-    "relative overflow-hidden px-6 py-2 cursor-pointer font-semibold transition duration-200 ease-in-out inline-flex items-center gap-2";
+    "relative overflow-hidden px-6 py-2 cursor-pointer font-semibold transition duration-200 ease-in-out inline-flex items-center justify-center gap-2 rounded-full";
 
   const variants = {
     primary: "text-white bg-gray-800",
@@ -27,24 +27,20 @@ const ActionButton = ({
       onClick={onClick}
       className={`${baseClasses} ${variants[variant] || ""} ${className}`}
     >
-      {/* Animated background layer */}
-     {hasSlideEffect && (
-  <span
-    className="
-      absolute inset-0
-      bg-gradient-to-r from-blue-800 to-blue-400
-      translate-x-[-100%] hover:translate-x-full
-      transition-transform duration-500 ease-in-out
-      z-0
-      rounded-inherit
-    "
-  ></span>
-)}
+      {/* Animated gradient background */}
+      {hasSlideEffect && (
+        <span
+          className="absolute inset-0 z-0
+          bg-gradient-to-r from-blue-800 to-blue-400
+          translate-x-[-100%]
+          group-hover:translate-x-0
+          transition-transform duration-500 ease-in-out
+          rounded-full slideInRight"
+        ></span>
+      )}
+
       {/* Button content */}
-      <span className="relative z-10 flex items-center gap-2">
-        {text}
-        {icon}
-      </span>
+      <span className="relative z-10">{text} {icon}</span>
     </button>
   );
 };

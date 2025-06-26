@@ -24,6 +24,8 @@ import iconChoose1 from "../assets/icon-why-choose-counter-1.svg"
 import iconChoose2 from "../assets/icon-why-choose-counter-2.svg"
 import iconChoose3 from "../assets/icon-why-choose-counter-3.svg"
 import iconChoose4 from "../assets/icon-why-choose-counter-4.svg"
+import author1 from "../assets/author-1.jpg"
+import author2 from "../assets/author-2.jpg"
 export const navItem = [
   {
     text: "Home",
@@ -221,4 +223,23 @@ export const pricingPlan=[
    text:"Essential protection for digital safety.",
    list:["Anti-virus protection service","Reliable personal data protection","Advertisements blocking","1 device using"]
   }
+]
+
+
+export const testimonials=[
+  {
+    image:author1,
+    name:"Alex J",
+    profession:"IT Manager",
+    para:"This cybersecurity service has been a game-changer for my business.The Basic Plan keeps my data secure, and I no longer worry about online threats. The setup was simple, and the team provided excellent support. Highly recommend!",
+    para1: "I love how easy it is to use this service. It's affordable and gives me the confidence to work online without fear of breaches. A must-have for anyone who values their online safety!"
+  },
+   {
+    image:author2,
+    name:"Sarah Mitchell",
+    profession:"Cloude Manager",
+    para:"This cybersecurity service has been a game-changer for my business.The Basic Plan keeps my data secure, and I no longer worry about online threats. The setup was simple, and the team provided excellent support. Highly recommend!",
+     para1:"I love how easy it is to use this service. It's affordable and gives me the confidence to work online without fear of breaches. A must-have for anyone who values their online safety!"
+  }
+
 ]
