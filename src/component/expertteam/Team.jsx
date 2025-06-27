@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import ctaImage from "../../assets/cta-box-image.jpg";
 import ctaArrowImage from "../../assets/cta-box-arrow.svg";
-import { FaPhone, FaPhoneAlt } from "react-icons/fa";
+import {FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineAttachEmail } from "react-icons/md";
 const Team = ({ setHovered, setContent }) => {
   const [activeIndex, setActiveIndex] = useState(0);

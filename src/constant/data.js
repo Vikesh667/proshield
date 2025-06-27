@@ -29,6 +29,9 @@ import team1 from "../assets/team-1.jpg"
 import team2 from "../assets/team-2.jpg"
 import team3 from "../assets/team-3.jpg"
 import team4 from "../assets/team-4.jpg"
+import postImage1 from "../assets/post-1.jpg"
+import postImage2 from "../assets/post-2.jpg"
+import postImage3 from "../assets/post-3.jpg"
 export const navItem = [
   {
     text: "Home",
@@ -290,5 +293,20 @@ export const faq=[
     {
     heading:"How can i protect my bussiness from cyber threats?",
     para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  }
+]
+
+export const posts=[
+  {
+    image:postImage1,
+    title:"The Linux Threat You need to Know"
+  },
+    {
+    image:postImage2,
+    title:"Closing Security Gaps with Innovation"
+  },
+    {
+    image:postImage3,
+    title:"Bainlian Focuses on Data Export"
   }
 ]

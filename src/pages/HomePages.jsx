@@ -10,6 +10,7 @@ import PricePlan from "../component/price/PricePlan";
 import Testmonial from "../component/testmonial/Testmonial";
 import Team from "../component/expertteam/Team";
 import Faq from "../component/faq/Faq";
+import LatestProjects from "../component/project/LatestProjects";
 
 const HomePages = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -38,6 +39,7 @@ const HomePages = () => {
       <Testmonial setContent={setContent} setHovered={setHovered}/>
       <Team setContent={setContent} setHovered={setHovered}/>
       <Faq/>
+      <LatestProjects setContent={setContent} setHovered={setHovered}/>
       {/* Floating Mouse Element */}
       <div
         style={{
