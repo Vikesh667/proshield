@@ -273,3 +273,22 @@ export const ourteam = [
     expert: "Security Awareness",
   },
 ];
+
+export const faq=[
+  {
+    heading:"What is cybersecurity?",
+    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  },
+    {
+    heading:"Why is cybersecurity important?",
+    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  },
+    {
+    heading:"What are the most common cyber threats?",
+    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  },
+    {
+    heading:"How can i protect my bussiness from cyber threats?",
+    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  }
+]
