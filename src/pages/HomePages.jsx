@@ -46,8 +46,8 @@ const HomePages = () => {
           left: `${position.x}px`,
           top: `${position.y}px`,
           transform: "translate(-50%, -50%)",
-          width: hovered ? "90px" : "12px",
-          height: hovered ? "90px" : "12px",
+          width: hovered ? "90px" : "8px",
+          height: hovered ? "90px" : "8px",
           background: hovered
             ? "rgba(0, 0, 0, 0.7)" // black transparent when hovering
             : "linear-gradient(to right, #1e40af, #60a5fa)", // blue gradient by default

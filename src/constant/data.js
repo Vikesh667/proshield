@@ -25,13 +25,13 @@ import iconChoose3 from "../assets/icon-why-choose-counter-3.svg";
 import iconChoose4 from "../assets/icon-why-choose-counter-4.svg";
 import author1 from "../assets/author-1.jpg";
 import author2 from "../assets/author-2.jpg";
-import team1 from "../assets/team-1.jpg"
-import team2 from "../assets/team-2.jpg"
-import team3 from "../assets/team-3.jpg"
-import team4 from "../assets/team-4.jpg"
-import postImage1 from "../assets/post-1.jpg"
-import postImage2 from "../assets/post-2.jpg"
-import postImage3 from "../assets/post-3.jpg"
+import team1 from "../assets/team-1.jpg";
+import team2 from "../assets/team-2.jpg";
+import team3 from "../assets/team-3.jpg";
+import team4 from "../assets/team-4.jpg";
+import postImage1 from "../assets/post-1.jpg";
+import postImage2 from "../assets/post-2.jpg";
+import postImage3 from "../assets/post-3.jpg";
 export const navItem = [
   {
     text: "Home",
@@ -277,36 +277,64 @@ export const ourteam = [
   },
 ];
 
-export const faq=[
+export const faq = [
   {
-    heading:"What is cybersecurity?",
-    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+    heading: "What is cybersecurity?",
+    para: "Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks.",
   },
-    {
-    heading:"Why is cybersecurity important?",
-    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  {
+    heading: "Why is cybersecurity important?",
+    para: "Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks.",
   },
-    {
-    heading:"What are the most common cyber threats?",
-    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
+  {
+    heading: "What are the most common cyber threats?",
+    para: "Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks.",
   },
-    {
-    heading:"How can i protect my bussiness from cyber threats?",
-    para:"Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks."
-  }
-]
+  {
+    heading: "How can i protect my bussiness from cyber threats?",
+    para: "Cybersecurity is critical for safeguarding sensitive information, ensuring business continuity, and preventing financial and reputational loss due to cyberattacks.",
+  },
+];
 
-export const posts=[
+export const posts = [
   {
-    image:postImage1,
-    title:"The Linux Threat You need to Know"
+    image: postImage1,
+    title: "The Linux Threat You need to Know",
   },
-    {
-    image:postImage2,
-    title:"Closing Security Gaps with Innovation"
+  {
+    image: postImage2,
+    title: "Closing Security Gaps with Innovation",
   },
-    {
-    image:postImage3,
-    title:"Bainlian Focuses on Data Export"
-  }
-]
+  {
+    image: postImage3,
+    title: "Bainlian Focuses on Data Export",
+  },
+];
+
+export const footerItem = [
+  {
+    title: "Quick link",
+    list: ["Home", "About Us", "Services", "Blog"],
+  },
+  {
+    title: "Services",
+    list: [
+      "Threat detection",
+      "Endpoint security",
+      "Network defense",
+      "Data encryption",
+    ],
+  },
+  {
+    title: "Support",
+    list: ["Help", "Term's & condition", "Privacy policy", "Contact us"],
+  },
+  {
+    title: "Quick link",
+    list: [
+      "+123 456 789",
+      "info@domain.com",
+      "123 High Street LN1 1AB United Kingdom",
+    ],
+  },
+];

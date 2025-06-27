@@ -21,11 +21,11 @@ const LatestProjects = ({ setContent, setHovered }) => {
           </h1>
         </div>
       </div>
-      <div className="w-full h-[55vh] flex gap-10 bg-center bg-cover">
+      <div className="w-full h-[55vh] flex gap-10 bg-center bg-cover ">
         {posts.map((post,index) => (
           <div
             key={index}
-            className="group w-full h-full relative flex items-center overflow-hidden"
+            className="group w-full h-full relative flex items-center overflow-hidden rounded-4xl"
             onMouseEnter={() => {
               setHovered(true);
               setContent(
@@ -53,7 +53,7 @@ const LatestProjects = ({ setContent, setHovered }) => {
                 <FaArrowRight />
               </button>
             </div>
-            <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-[2.5] rotate-[-45deg] transition-transform duration-500 ease-out origin-center pointer-events-none" />
+            <div className="absolute rounded-3xl inset-0 bg-white/20 scale-0 group-hover:scale-[2.5] rotate-[-45deg] transition-transform duration-500 ease-out origin-center pointer-events-none" />
           </div>
         ))}
       </div>
