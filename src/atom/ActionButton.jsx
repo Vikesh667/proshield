@@ -1,5 +1,3 @@
-import { GoArrowRight } from "react-icons/go";
-
 const ActionButton = ({
   text,
   onClick,

@@ -1,4 +1,3 @@
-import { LiaPhoneVolumeSolid } from "react-icons/lia";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import securityImage from "../../assets/our-security-image.jpg";
 import SvgGradients from "../../atom/SvgGraduents";

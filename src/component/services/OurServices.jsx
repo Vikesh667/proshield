@@ -23,7 +23,7 @@ const OurServices = () => {
       <div className="flex w-full flex-wrap gap-10 items-center justify-between cursor-">
         {services.map((service) => (
           <div className="w-96 h-84 bg-white rounded-2xl flex flex-col justify-between p-10 group relative overflow-hidden shadow-sm">
-            <img src={service.icon} className=" size-20 z-10" />
+            <img src={service.icon} className=" size-20 z-10"  />
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-5 w-full">
                 <h1 className="text-xl text-indigo-950 font-semibold z-10 group-hover:text-white">

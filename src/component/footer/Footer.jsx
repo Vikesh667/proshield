@@ -1,18 +1,14 @@
 import {
   FaFacebookF,
   FaInstagram,
-  FaLocationArrow,
-  FaPinterest,
   FaPinterestP,
   FaXTwitter,
 } from "react-icons/fa6";
 import footerBgImage from "../../assets/footer-bg.png";
 import footerLogo from "../../assets/footer-logo.svg";
-import { TiSocialPinterest } from "react-icons/ti";
 import { TfiLocationArrow } from "react-icons/tfi";
 import { footerItem } from "../../constant/data";
 const Footer = () => {
-  console.log(footerBgImage);
   return (
     <footer
       className="w-full h-auto bg-cover bg-center bg-no-repeat relative"

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { FaPlay } from 'react-icons/fa';
-import VideoPlay from './VideoPlay';
-
 const FolwPlayButton = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);

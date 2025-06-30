@@ -32,6 +32,9 @@ import team4 from "../assets/team-4.jpg";
 import postImage1 from "../assets/post-1.jpg";
 import postImage2 from "../assets/post-2.jpg";
 import postImage3 from "../assets/post-3.jpg";
+import iconMission from "../assets/icon-our-mission.svg"
+import iconValue from "../assets/icon-our-value.svg"
+import iconVision from "../assets/icon-our-vision.svg"
 export const navItem = [
   {
     text: "Home",
@@ -338,3 +341,21 @@ export const footerItem = [
     ],
   },
 ];
+
+export const ourApproch=[
+  {
+    icon:iconMission,
+    heading:"our mission",
+    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+  },
+    {
+    icon:iconVision,
+    heading:"our Vision",
+    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+  },
+    {
+    icon:iconValue,
+    heading:"Our Value",
+    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+  },
+]

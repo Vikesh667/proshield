@@ -1,12 +1,9 @@
 import { GoArrowRight } from "react-icons/go";
-import heroImage from "../../assets/hero-bg.jpg";
 import icon from "../../assets/icon-sub-heading.svg";
 import ActionButton from "../../atom/ActionButton";
 import { FaPlay } from "react-icons/fa6";
 import VideoPlay from "../../atom/VideoPlay";
 import { useState } from "react";
-import ClientCard from "../../atom/ClientCard";
-import iconCheck from "../../assets/icon-check-white.svg";
 const Video = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (

@@ -1,8 +1,28 @@
-const AboutUsPage=()=>{
-    return(
-        <div className="">
-          <h1>About us</h1>
-        </div>
-    )
-}
-export default AboutUsPage
+import TeamCard from "../atom/TeamCard";
+import TopSection from "../atom/TopSection";
+import AboutSection from "../component/about/AboutSection";
+import OurApproch from "../component/about/OurApproch";
+import WhatWedo from "../component/about/WhatWeDo";
+import WhyChooseUs from "../component/choose/WhyChooseUs";
+import Testmonial from "../component/testmonial/Testmonial";
+
+const AboutUsPage = () => {
+  const content = {
+    heading: "About Us",
+    text: "About Us",
+  };
+  return (
+    <div className="relative overflow-hidden">
+      <TopSection content={content} />
+      <AboutSection />
+      <OurApproch />
+      <WhyChooseUs/>
+      <WhatWedo/>
+     <div className="w-full min-h-screen flex flex-col justify-between items-center">
+      <TeamCard/>
+      </div>
+      <Testmonial/>
+    </div>
+  );
+};
+export default AboutUsPage;

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { GoArrowRight } from "react-icons/go";
 import { navItem } from "../constant/data";
 import logo from "../assets/logo.svg";
 import Button from "./Button";

@@ -6,7 +6,7 @@ const MouseHover = () => {
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-br to-blue-800 to-blue-500" onMouseMove={handleMove}>
+    <div className="w-full h-full bg-gradient-to-br from-blue-800 to-blue-500" onMouseMove={handleMove}>
          
     </div> 
   );
