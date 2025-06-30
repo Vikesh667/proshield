@@ -1,5 +1,7 @@
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import HeroSection from "../component/HereSection";
+import Video from "../component/home/Video";
 import AboutSection from "../component/about/AboutSection";
 import OurServices from "../component/services/OurServices";
 import Feature from "../component/Feature";
@@ -13,6 +15,7 @@ import Faq from "../component/faq/Faq";
 import LatestProjects from "../component/project/LatestProjects";
 
 const HomePages = () => {
+  const location = useLocation();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [content, setContent] = useState(null);
@@ -25,22 +28,28 @@ const HomePages = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // 👇 Check if we are on /video or /home
+  const isVideoPage = location.pathname === "/image";
+
   return (
     <div className="relative overflow-hidden">
-      {/* Sections */}
-      <HeroSection setContent={setContent} setHovered={setHovered} />
+      {isVideoPage ? (
+       <HeroSection setContent={setContent} setHovered={setHovered} />
+      ) : (
+         <Video setContent={setContent} setHovered={setHovered}/>
+      )}
+
       <AboutSection />
       <OurServices />
       <Feature />
-      <OurProject setContent={setContent} setHovered={setHovered}/>
+      <OurProject setContent={setContent} setHovered={setHovered} />
       <WhyChooseUs />
       <OurSecurity />
       <PricePlan />
-      <Testmonial setContent={setContent} setHovered={setHovered}/>
-      <Team setContent={setContent} setHovered={setHovered}/>
-      <Faq/>
-      <LatestProjects setContent={setContent} setHovered={setHovered}/>
-      {/* Floating Mouse Element */}
+      <Testmonial setContent={setContent} setHovered={setHovered} />
+      <Team setContent={setContent} setHovered={setHovered} />
+      <Faq />
+      <LatestProjects setContent={setContent} setHovered={setHovered} />
       <div
         style={{
           left: `${position.x}px`,
@@ -49,8 +58,8 @@ const HomePages = () => {
           width: hovered ? "90px" : "8px",
           height: hovered ? "90px" : "8px",
           background: hovered
-            ? "rgba(0, 0, 0, 0.7)" // black transparent when hovering
-            : "linear-gradient(to right, #1e40af, #60a5fa)", // blue gradient by default
+            ? "rgba(0, 0, 0, 0.7)"
+            : "linear-gradient(to right, #1e40af, #60a5fa)",
           transition: "all 0.2s ease",
         }}
         className="fixed z-[9999] rounded-full pointer-events-none flex items-center justify-center text-white text-sm"

@@ -39,7 +39,7 @@ export const navItem = [
     submenu: [
       { name: "Home-Image", url: "/image" },
       { name: "Home-Video", url: "/video" },
-      { name: "Home-Slider", url: "/slider" },
+      { name: "Home-Slider", url: "/image" },
     ],
   },
   {
@@ -52,7 +52,7 @@ export const navItem = [
   },
   {
     text: "Blogs",
-    link: "/blogs",
+    link: "/blog",
   },
   {
     text: "page",
