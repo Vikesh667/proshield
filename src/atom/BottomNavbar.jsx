@@ -3,6 +3,7 @@ import { GoArrowRight } from "react-icons/go";
 import { navItem } from "../constant/data";
 import logo from "../assets/logo.svg";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const BottomNavbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -29,13 +30,13 @@ const BottomNavbar = () => {
             {item.submenu && (
             <div className="bg-gradient-to-r bg-blue-700  to-blue-300 rounded-2xl opacity-0 w-56 h-auto absolute mt-3 left-0 top-full transform scale-y-0 origin-top group-hover:scale-y-100  group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden ">
                 {item.submenu.map((sub) => (
-                  <a
+                  <Link
                     key={sub.name}
-                    href={sub.url}
+                    to={sub.url}
                     className="block text-white px-4 py-2 rounded text-md font-semibold font-serif  hover:text-black hover:ml-2 transition-all duration-500"
                   >
                     {sub.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}

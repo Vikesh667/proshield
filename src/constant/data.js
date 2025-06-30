@@ -37,9 +37,9 @@ export const navItem = [
     text: "Home",
     link: "/",
     submenu: [
-      { name: "Home-Image", url: "/" },
-      { name: "Home-Video", url: "/" },
-      { name: "Home-Slider", url: "/" },
+      { name: "Home-Image", url: "/image" },
+      { name: "Home-Video", url: "/video" },
+      { name: "Home-Slider", url: "/slider" },
     ],
   },
   {
@@ -60,51 +60,51 @@ export const navItem = [
     submenu: [
       {
         name: "Service Details",
-        url: "/",
+        url: "/servicedetails",
       },
       {
         name: "Blogs Details",
-        url: "/",
+        url: "/blogsdetails",
       },
       {
         name: "Project",
-        url: "/",
+        url: "/project",
       },
       {
         name: "Project Details",
-        url: "/",
+        url: "/projectdetails",
       },
       {
         name: "Our Team",
-        url: "/",
+        url: "/team",
       },
       {
         name: "Team Details",
-        url: "/",
+        url: "/teamdetails",
       },
       {
         name: "Pricing",
-        url: "/",
+        url: "/price",
       },
       {
         name: "Testimonials",
-        url: "/",
+        url: "/testimonials",
       },
       {
         name: "Image Gallery",
-        url: "/",
+        url: "/gallery",
       },
       {
         name: "Video Gallery",
-        url: "/",
+        url: "/videogallery",
       },
       {
         name: "FAQS",
-        url: "/",
+        url: "/fqas",
       },
       {
         name: "404",
-        url: "/",
+        url: "/pagenotfound",
       },
     ],
   },

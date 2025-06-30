@@ -39,16 +39,16 @@ const Footer = () => {
           </div>
         </div>
        <hr className="w-[90%] mx-auto border-t border-white/20 my-6" />
-        <div className="w-full h-72 px-30 py-25 flex justify-around">
+        <div className="w-full h-72 px-30 py-25 flex justify-around -mt-10">
           <div className="flex flex-col gap-4">
           <h1 className="text-2xl text-white">Subscribe our newsletter:</h1>
           <h3 className="text-xl text-white">Protecting networks, systems data from evolving.</h3>
-          <div className="flex gap-4">
+          <div className="flex gap-4 ">
             <input type="email" placeholder="Enter Your Email" className="py-5 px-5 w-72 rounded-full bg-white outline-none"/>
             <button className=" p-4 rounded-full bg-white hover:bg-indigo-950 hover:text-white transform hover:rotate-90 transition duration-500"><TfiLocationArrow className="text-4xl "/></button>
           </div>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 -mt-10">
            {
             footerItem.map((footeritem)=>(
               <div className="w-full h-full">
