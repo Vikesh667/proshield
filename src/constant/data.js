@@ -133,7 +133,7 @@ export const navItem = [
       },
       {
         name: "FAQS",
-        url: "/fqas",
+        url: "/faqs",
       },
       {
         name: "404",
