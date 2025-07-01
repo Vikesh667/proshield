@@ -14,6 +14,7 @@ import Pricing from "./pages/Pricing";
 import Imagegallery from "./component/pagecomponent/ImageGallery";
 import VideoGallery from "./component/pagecomponent/VideoGallery";
 import PageNoteFound from "./pages/PageNotFound";
+import TestimonialPages from "./pages/TestimonialPages";
 
 const App = () => {
 
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/gallery" element={<Imagegallery/>}/>
            <Route path="/videogallery" element={<VideoGallery/>}/>
             <Route path="/pagenotfound" element={<PageNoteFound/>}/>
+             <Route path="/testimonials" element={<TestimonialPages/>}/>
       </Route>
     )
   )

@@ -30,6 +30,12 @@ import iconChoose3 from "../assets/icon-why-choose-counter-3.svg";
 import iconChoose4 from "../assets/icon-why-choose-counter-4.svg";
 import author1 from "../assets/author-1.jpg";
 import author2 from "../assets/author-2.jpg";
+import author3 from "../assets/author-3.jpg";
+import author4 from "../assets/author-4.jpg";
+import author5 from "../assets/author-5.jpg";
+import author6 from "../assets/author-6.jpg";
+import logo from "../assets/company-logo-linear.svg"
+import testimonilaQuote from "../assets/testimonial-quote-linear.svg"
 import team1 from "../assets/team-1.jpg";
 import team2 from "../assets/team-2.jpg";
 import team3 from "../assets/team-3.jpg";
@@ -466,4 +472,54 @@ export const gallery=[
   gallery7,
   gallery8,
   gallery9
+]
+export const testimonialCard=[
+  {
+    image:author1,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Alex J.",
+    profession:"It Manager",
+    quote:testimonilaQuote
+  },
+    {
+    image:author2,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Sarah Mitchell.",
+    profession:"Cloud Manager",
+    quote:testimonilaQuote
+  },
+    {
+    image:author3,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Jacon Jones",
+    profession:"Operations Manager",
+    quote:testimonilaQuote
+  },
+    {
+    image:author4,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Courtney Henry.",
+    profession:"Business Manager",
+    quote:testimonilaQuote
+  },
+    {
+    image:author5,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Theresa Webb.",
+    profession:"Compliance officer",
+    quote:testimonilaQuote
+  },
+    {
+    image:author6,
+    logo:logo,
+    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name:"Jenny Wilsom.",
+    profession:"It Manager",
+    quote:testimonilaQuote
+  },
 ]
