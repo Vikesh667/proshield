@@ -1,6 +1,7 @@
 import TeamCard from "../atom/TeamCard";
 import TopSection from "../atom/TopSection";
 import AboutSection from "../component/about/AboutSection";
+import Benfit from "../component/about/Benfit";
 import OurApproch from "../component/about/OurApproch";
 import WhatWedo from "../component/about/WhatWeDo";
 import Work from "../component/about/Work";
@@ -24,6 +25,7 @@ const AboutUsPage = () => {
       <TeamCard/>
       </div>
       <Testmonial/>
+      <Benfit/>
     </div>
   );
 };
