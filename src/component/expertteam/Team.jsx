@@ -2,7 +2,6 @@ import ourteambg from "../../assets/our-team-bg.png";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import { ourteam } from "../../constant/data";
 import { useState } from "react";
-import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import ctaImage from "../../assets/cta-box-image.jpg";
 import ctaArrowImage from "../../assets/cta-box-arrow.svg";
 import {FaPhoneAlt } from "react-icons/fa";

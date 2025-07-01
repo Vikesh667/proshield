@@ -2,7 +2,7 @@ import { HiOutlineBadgeCheck } from "react-icons/hi";
 import Button from "../atom/Button";
 const PriceCard = ({ price,index }) => {
   return (
-    <div className={`w-96 h-auto flex flex-col gap-[0.715px]  rounded-4xl bg-white`}>
+    <div className={`w-96 h-auto flex flex-col gap-[0.715px]  rounded-4xl bg-white border-[1px] border-gray-200`}>
       <div className="w-full h-44 bg-gradient-to-r bg-indigo-500 via-80% to-blue-400 rounded-t-4xl p-5 flex flex-col gap-5">
         <h1 className="text-white text-xl">{price.plan}</h1>
         <h2 className="text-white text-5xl font-semibold">

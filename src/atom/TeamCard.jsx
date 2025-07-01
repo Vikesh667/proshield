@@ -3,6 +3,7 @@ import { ourteam } from "../constant/data";
 import iconHeading from "../assets/icon-sub-heading.svg"
 import ourteambg from "../assets/our-team-bg.png";
 const TeamCard = ({ setHovered, setContent}) => {
+  const teams=ourteam.slice(0,4)
   return (
      <div className="w-full h-[70vh] bg-[#010535] bg-cover  relative">
             <img className="z-20" src={ourteambg} alt="" />
@@ -20,7 +21,7 @@ const TeamCard = ({ setHovered, setContent}) => {
               </div>
             </div>
             <div className="w-full h-96 flex gap-7 px-25  absolute -bottom-40">
-              {ourteam.map((team) => (
+              {teams.map((team) => (
                 <div
                   className="w-full h-full rounded-3xl overflow-hidden relative group"
                   onMouseEnter={() => {

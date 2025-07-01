@@ -16,11 +16,11 @@ import projectImage1 from "../assets/project-1.jpg";
 import projectImage2 from "../assets/project-2.jpg";
 import projectImage3 from "../assets/project-3.jpg";
 import projectImage4 from "../assets/project-4.jpg";
-import projectImage5 from "../assets/project-4.jpg";
-import projectImage6 from "../assets/project-4.jpg";
-import projectImage7 from "../assets/project-4.jpg";
-import projectImage8 from "../assets/project-4.jpg";
-import projectImage9 from "../assets/project-4.jpg";
+import projectImage5 from "../assets/project-5.jpg";
+import projectImage6 from "../assets/project-6.jpg";
+import projectImage7 from "../assets/project-7.jpg";
+import projectImage8 from "../assets/project-8.jpg";
+import projectImage9 from "../assets/project-9.jpg";
 import iconWhy1 from "../assets/icon-why-choose-1.svg";
 import iconWhy2 from "../assets/icon-why-choose-2.svg";
 import iconWhy3 from "../assets/icon-why-choose-3.svg";
@@ -34,6 +34,10 @@ import team1 from "../assets/team-1.jpg";
 import team2 from "../assets/team-2.jpg";
 import team3 from "../assets/team-3.jpg";
 import team4 from "../assets/team-4.jpg";
+import team5 from "../assets/team-5.jpg";
+import team6 from "../assets/team-6.jpg";
+import team7 from "../assets/team-7.jpg";
+import team8 from "../assets/team-8.jpg";
 import postImage1 from "../assets/post-1.jpg";
 import postImage2 from "../assets/post-2.jpg";
 import postImage3 from "../assets/post-3.jpg";
@@ -291,6 +295,26 @@ export const ourteam = [
   },
   {
     image: team4,
+    name: "Isabella Moore",
+    expert: "Security Awareness",
+  },
+  {
+    image: team5,
+    name: "Michale Johnson",
+    expert: "Security Officer",
+  },
+  {
+    image: team6,
+    name: "Sophia Carter",
+    expert: "Cybersecurity Analyst",
+  },
+  {
+    image: team7,
+    name: "Michale Brown",
+    expert: "Incident Response",
+  },
+  {
+    image: team8,
     name: "Isabella Moore",
     expert: "Security Awareness",
   },

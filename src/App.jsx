@@ -7,7 +7,10 @@ import Services from "./pages/Services";
 import Pages from "./pages/Pages";
 import Contactus from "./pages/Contactus";
 import BlogsPage from "./pages/BlogsPage";
-import Video from "./component/home/Video";
+import Projects from "./component/pagecomponent/Projects";
+import Teams from "./component/pagecomponent/Teams";
+import Prices from "./component/pagecomponent/Prices";
+import Pricing from "./pages/Pricing";
 
 const App = () => {
 
@@ -23,6 +26,9 @@ const App = () => {
         <Route path="blog" element={<BlogsPage/>}/>
         <Route path="/page" element={<Pages/>}/>
         <Route path="/contact" element={<Contactus/>}/>
+         <Route path="/project" element={<Projects/>}/>
+         <Route path="/team" element={<Teams/>}/>
+         <Route path="/price" element={<Pricing/>}/>
       </Route>
     )
   )
