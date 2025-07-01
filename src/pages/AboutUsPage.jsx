@@ -3,6 +3,7 @@ import TopSection from "../atom/TopSection";
 import AboutSection from "../component/about/AboutSection";
 import OurApproch from "../component/about/OurApproch";
 import WhatWedo from "../component/about/WhatWeDo";
+import Work from "../component/about/Work";
 import WhyChooseUs from "../component/choose/WhyChooseUs";
 import Testmonial from "../component/testmonial/Testmonial";
 
@@ -16,8 +17,9 @@ const AboutUsPage = () => {
       <TopSection content={content} />
       <AboutSection />
       <OurApproch />
+       <WhatWedo/>
       <WhyChooseUs/>
-      <WhatWedo/>
+       <Work/>
      <div className="w-full min-h-screen flex flex-col justify-between items-center">
       <TeamCard/>
       </div>
