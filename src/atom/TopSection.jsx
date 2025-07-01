@@ -15,7 +15,7 @@ const TopSection = ({content}) => {
         }}
       />
          <div className="absolute inset-0  top-0 left-0 transform translate-x-24 translate-y-40 z-10">
-        <h1 className="text-4xl text-white font-semibold">{content.heading}</h1>
+        <h1 className="text-7xl text-white font-bold">{content.heading}</h1>
         <h3 className="text-lg text-white mt-1">Home https://Html.Awaikenthemes.Com/ {content.text}</h3>
         </div>  
     </div>

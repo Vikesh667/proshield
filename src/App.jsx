@@ -12,6 +12,8 @@ import Teams from "./component/pagecomponent/Teams";
 import Prices from "./component/pagecomponent/Prices";
 import Pricing from "./pages/Pricing";
 import Imagegallery from "./component/pagecomponent/ImageGallery";
+import VideoGallery from "./component/pagecomponent/VideoGallery";
+import PageNoteFound from "./pages/PageNotFound";
 
 const App = () => {
 
@@ -31,6 +33,8 @@ const App = () => {
          <Route path="/team" element={<Teams/>}/>
          <Route path="/price" element={<Pricing/>}/>
           <Route path="/gallery" element={<Imagegallery/>}/>
+           <Route path="/videogallery" element={<VideoGallery/>}/>
+            <Route path="/pagenotfound" element={<PageNoteFound/>}/>
       </Route>
     )
   )
