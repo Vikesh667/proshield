@@ -7,7 +7,7 @@ import WhatWedo from "../component/about/WhatWeDo";
 import Work from "../component/about/Work";
 import WhyChooseUs from "../component/choose/WhyChooseUs";
 import Testmonial from "../component/testmonial/Testmonial";
-
+import Faq from "../component/faq/Faq"
 const AboutUsPage = () => {
   const content = {
     heading: "About Us",
@@ -26,6 +26,7 @@ const AboutUsPage = () => {
       </div>
       <Testmonial/>
       <Benfit/>
+      <Faq/>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import { projects } from "../../constant/data";
 const OurProject = ({ setContent, setHovered }) => {
+  const projectdetails=projects.slice(0,4)
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="w-full min-h-screen bg-gray-200 p-10">
@@ -22,7 +23,7 @@ const OurProject = ({ setContent, setHovered }) => {
         </div>
       </div>
       <div className="flex gap-[1px] w-full h-full ">
-        {projects.map((project, index) => (
+        {projectdetails.map((project, index) => (
           <div
             key={index}
            
@@ -42,7 +43,7 @@ const OurProject = ({ setContent, setHovered }) => {
               }}
             className={`w-full h-auto overflow-hidden relative group 
       ${index === 0 ? "rounded-l-3xl" : ""} 
-      ${index === projects.length - 1 ? "rounded-r-3xl" : ""}
+      ${index === projectdetails.length - 1 ? "rounded-r-3xl" : ""}
     `}
           >
             <img

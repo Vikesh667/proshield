@@ -16,6 +16,11 @@ import projectImage1 from "../assets/project-1.jpg";
 import projectImage2 from "../assets/project-2.jpg";
 import projectImage3 from "../assets/project-3.jpg";
 import projectImage4 from "../assets/project-4.jpg";
+import projectImage5 from "../assets/project-4.jpg";
+import projectImage6 from "../assets/project-4.jpg";
+import projectImage7 from "../assets/project-4.jpg";
+import projectImage8 from "../assets/project-4.jpg";
+import projectImage9 from "../assets/project-4.jpg";
 import iconWhy1 from "../assets/icon-why-choose-1.svg";
 import iconWhy2 from "../assets/icon-why-choose-2.svg";
 import iconWhy3 from "../assets/icon-why-choose-3.svg";
@@ -32,9 +37,15 @@ import team4 from "../assets/team-4.jpg";
 import postImage1 from "../assets/post-1.jpg";
 import postImage2 from "../assets/post-2.jpg";
 import postImage3 from "../assets/post-3.jpg";
+import postImage4 from "../assets/post-4.jpg";
+import postImage5 from "../assets/post-5.jpg";
+import postImage6 from "../assets/post-6.jpg";
 import iconMission from "../assets/icon-our-mission.svg"
 import iconValue from "../assets/icon-our-value.svg"
 import iconVision from "../assets/icon-our-vision.svg"
+import mailIcon from "../assets/icon-mail-accent.svg"
+import phoneIcon from "../assets/icon-phone-accent.svg"
+import locationIcon from "../assets/icon-location.svg"
 export const navItem = [
   {
     text: "Home",
@@ -159,6 +170,11 @@ export const projects = [
   projectImage2,
   projectImage3,
   projectImage4,
+   projectImage5,
+  projectImage6,
+  projectImage7,
+  projectImage8,
+  projectImage9
 ];
 
 export const chooseUs = [
@@ -358,4 +374,51 @@ export const ourApproch=[
     heading:"Our Value",
     para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
   },
+]
+export const allPosts=[
+  {
+    image: postImage1,
+    title: "The Linux Threat You need to Know",
+  },
+  {
+    image: postImage2,
+    title: "Closing Security Gaps with Innovation",
+  },
+  {
+    image: postImage3,
+    title: "Bainlian Focuses on Data Export",
+  },
+   {
+    image: postImage4,
+    title: "The Linux Threat You need to Know",
+  },
+  {
+    image: postImage5,
+    title: "Closing Security Gaps with Innovation",
+  },
+  {
+    image: postImage6,
+    title: "Bainlian Focuses on Data Export",
+  },
+]
+
+export const contacts=[
+  {
+   icon:phoneIcon,
+   heading:"Contact Us",
+   para1:"+91-123 456 789",
+   para2:"+91-123 456 789"
+  },
+   {
+   icon:mailIcon,
+   heading:"e-mail us",
+   para1:"infodomainname@gmail.com",
+   para2:"domainname@gmail.com"
+  },
+   {
+   icon:locationIcon,
+   heading:"Contact Us",
+   para1:"12345 Unity Avenue Suite 100",
+   para2:"Springfield, USA 54321"
+  }
 ]

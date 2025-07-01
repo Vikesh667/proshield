@@ -1,6 +1,8 @@
+import Contact from "../component/contactus/Contact"
+
 const Contactus=()=>{
     return(
-        <h1>Contact Us</h1>
+        <Contact/>
     )
 }
 export default Contactus
