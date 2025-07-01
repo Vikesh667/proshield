@@ -11,6 +11,7 @@ import Projects from "./component/pagecomponent/Projects";
 import Teams from "./component/pagecomponent/Teams";
 import Prices from "./component/pagecomponent/Prices";
 import Pricing from "./pages/Pricing";
+import Imagegallery from "./component/pagecomponent/ImageGallery";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
          <Route path="/project" element={<Projects/>}/>
          <Route path="/team" element={<Teams/>}/>
          <Route path="/price" element={<Pricing/>}/>
+          <Route path="/gallery" element={<Imagegallery/>}/>
       </Route>
     )
   )
