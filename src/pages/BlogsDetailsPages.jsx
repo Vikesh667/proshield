@@ -1,4 +1,5 @@
 import TopSection from "../atom/TopSection"
+import BlogsComponent from "../component/blogs/BlogsComponent"
 
 const BlogsDetailsPages=()=>{
   const content={
@@ -6,8 +7,9 @@ const BlogsDetailsPages=()=>{
     text:"Blogs https://Html.Awaikenthemes.Com/ The linux threat you need ..."
   }
   return(
-   <div className="w-full h-full">
+   <div className="w-full h-full overflow-hidden">
    <TopSection content={content}/>
+   <BlogsComponent/>
    </div>
   )
 }

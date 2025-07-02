@@ -34,8 +34,8 @@ import author3 from "../assets/author-3.jpg";
 import author4 from "../assets/author-4.jpg";
 import author5 from "../assets/author-5.jpg";
 import author6 from "../assets/author-6.jpg";
-import logo from "../assets/company-logo-linear.svg"
-import testimonilaQuote from "../assets/testimonial-quote-linear.svg"
+import logo from "../assets/company-logo-linear.svg";
+import testimonilaQuote from "../assets/testimonial-quote-linear.svg";
 import team1 from "../assets/team-1.jpg";
 import team2 from "../assets/team-2.jpg";
 import team3 from "../assets/team-3.jpg";
@@ -50,24 +50,24 @@ import postImage3 from "../assets/post-3.jpg";
 import postImage4 from "../assets/post-4.jpg";
 import postImage5 from "../assets/post-5.jpg";
 import postImage6 from "../assets/post-6.jpg";
-import iconMission from "../assets/icon-our-mission.svg"
-import iconValue from "../assets/icon-our-value.svg"
-import iconVision from "../assets/icon-our-vision.svg"
-import mailIcon from "../assets/icon-mail-accent.svg"
-import phoneIcon from "../assets/icon-phone-accent.svg"
-import locationIcon from "../assets/icon-location.svg"
-import gallery1 from "../assets/gallery-1.jpg"
-import gallery2 from "../assets/gallery-2.jpg"
-import gallery3 from "../assets/gallery-3.jpg"
-import gallery4 from "../assets/gallery-4.jpg"
-import gallery5 from "../assets/gallery-5.jpg"
-import gallery6 from "../assets/gallery-6.jpg"
-import gallery7 from "../assets/gallery-7.jpg"
-import gallery8 from "../assets/gallery-8.jpg"
-import gallery9 from "../assets/gallery-9.jpg"
-import serviceImage1 from "../assets/service-1.jpg"
-import serviceImage2 from "../assets/service-2.jpg"
-import serviceImage3 from "../assets/service-3.jpg"
+import iconMission from "../assets/icon-our-mission.svg";
+import iconValue from "../assets/icon-our-value.svg";
+import iconVision from "../assets/icon-our-vision.svg";
+import mailIcon from "../assets/icon-mail-accent.svg";
+import phoneIcon from "../assets/icon-phone-accent.svg";
+import locationIcon from "../assets/icon-location.svg";
+import gallery1 from "../assets/gallery-1.jpg";
+import gallery2 from "../assets/gallery-2.jpg";
+import gallery3 from "../assets/gallery-3.jpg";
+import gallery4 from "../assets/gallery-4.jpg";
+import gallery5 from "../assets/gallery-5.jpg";
+import gallery6 from "../assets/gallery-6.jpg";
+import gallery7 from "../assets/gallery-7.jpg";
+import gallery8 from "../assets/gallery-8.jpg";
+import gallery9 from "../assets/gallery-9.jpg";
+import serviceImage1 from "../assets/service-1.jpg";
+import serviceImage2 from "../assets/service-2.jpg";
+import serviceImage3 from "../assets/service-3.jpg";
 export const navItem = [
   {
     text: "Home",
@@ -191,11 +191,11 @@ export const projects = [
   projectImage2,
   projectImage3,
   projectImage4,
-   projectImage5,
+  projectImage5,
   projectImage6,
   projectImage7,
   projectImage8,
-  projectImage9
+  projectImage9,
 ];
 
 export const chooseUs = [
@@ -399,24 +399,24 @@ export const footerItem = [
   },
 ];
 
-export const ourApproch=[
+export const ourApproch = [
   {
-    icon:iconMission,
-    heading:"our mission",
-    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+    icon: iconMission,
+    heading: "our mission",
+    para: "To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against.",
   },
-    {
-    icon:iconVision,
-    heading:"our Vision",
-    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+  {
+    icon: iconVision,
+    heading: "our Vision",
+    para: "To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against.",
   },
-    {
-    icon:iconValue,
-    heading:"Our Value",
-    para:"To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against."
+  {
+    icon: iconValue,
+    heading: "Our Value",
+    para: "To empower businesses with robust cybersecurity solutions, ensuring data integrity, privacy & resilience against.",
   },
-]
-export const allPosts=[
+];
+export const allPosts = [
   {
     image: postImage1,
     title: "The Linux Threat You need to Know",
@@ -429,7 +429,7 @@ export const allPosts=[
     image: postImage3,
     title: "Bainlian Focuses on Data Export",
   },
-   {
+  {
     image: postImage4,
     title: "The Linux Threat You need to Know",
   },
@@ -441,30 +441,30 @@ export const allPosts=[
     image: postImage6,
     title: "Bainlian Focuses on Data Export",
   },
-]
+];
 
-export const contacts=[
+export const contacts = [
   {
-   icon:phoneIcon,
-   heading:"Contact Us",
-   para1:"+91-123 456 789",
-   para2:"+91-123 456 789"
+    icon: phoneIcon,
+    heading: "Contact Us",
+    para1: "+91-123 456 789",
+    para2: "+91-123 456 789",
   },
-   {
-   icon:mailIcon,
-   heading:"e-mail us",
-   para1:"infodomainname@gmail.com",
-   para2:"domainname@gmail.com"
+  {
+    icon: mailIcon,
+    heading: "e-mail us",
+    para1: "infodomainname@gmail.com",
+    para2: "domainname@gmail.com",
   },
-   {
-   icon:locationIcon,
-   heading:"Contact Us",
-   para1:"12345 Unity Avenue Suite 100",
-   para2:"Springfield, USA 54321"
-  }
-]
+  {
+    icon: locationIcon,
+    heading: "Contact Us",
+    para1: "12345 Unity Avenue Suite 100",
+    para2: "Springfield, USA 54321",
+  },
+];
 
-export const gallery=[
+export const gallery = [
   gallery1,
   gallery2,
   gallery3,
@@ -473,91 +473,111 @@ export const gallery=[
   gallery6,
   gallery7,
   gallery8,
-  gallery9
-]
-export const testimonialCard=[
+  gallery9,
+];
+export const testimonialCard = [
   {
-    image:author1,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Alex J.",
-    profession:"It Manager",
-    quote:testimonilaQuote
+    image: author1,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Alex J.",
+    profession: "It Manager",
+    quote: testimonilaQuote,
   },
-    {
-    image:author2,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Sarah Mitchell.",
-    profession:"Cloud Manager",
-    quote:testimonilaQuote
+  {
+    image: author2,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Sarah Mitchell.",
+    profession: "Cloud Manager",
+    quote: testimonilaQuote,
   },
-    {
-    image:author3,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Jacon Jones",
-    profession:"Operations Manager",
-    quote:testimonilaQuote
+  {
+    image: author3,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Jacon Jones",
+    profession: "Operations Manager",
+    quote: testimonilaQuote,
   },
-    {
-    image:author4,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Courtney Henry.",
-    profession:"Business Manager",
-    quote:testimonilaQuote
+  {
+    image: author4,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Courtney Henry.",
+    profession: "Business Manager",
+    quote: testimonilaQuote,
   },
-    {
-    image:author5,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Theresa Webb.",
-    profession:"Compliance officer",
-    quote:testimonilaQuote
+  {
+    image: author5,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Theresa Webb.",
+    profession: "Compliance officer",
+    quote: testimonilaQuote,
   },
-    {
-    image:author6,
-    logo:logo,
-    para:'"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
-    name:"Jenny Wilsom.",
-    profession:"It Manager",
-    quote:testimonilaQuote
+  {
+    image: author6,
+    logo: logo,
+    para: '"Exceptional service! proactive approach to threat detection and prevention gave us peace of mind and ensured our systems remain secure."',
+    name: "Jenny Wilsom.",
+    profession: "It Manager",
+    quote: testimonilaQuote,
   },
-]
+];
 
-export const serviceCategory=[
+export const serviceCategory = [
   "Couples Counseling",
   "Adolescent Counseling",
   "Depression Counseling",
   "Stress Counseling",
-  "Meditation Counseling"
-]
+  "Meditation Counseling",
+];
 
-export const serviceImage=[
- serviceImage1,
- serviceImage2,
- serviceImage3,
-]
-export const serviceAccourdion=[
+export const serviceImage = [serviceImage1, serviceImage2, serviceImage3];
+export const serviceAccourdion = [
   {
-    heading:"What is a Life & Business Coach?",
-    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+    heading: "What is a Life & Business Coach?",
+    para: "Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions.",
   },
-    {
-    heading:"How does coaching differ from therepy?",
-    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  {
+    heading: "How does coaching differ from therepy?",
+    para: "Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions.",
   },
-    {
-    heading:"Who can benfit and from life and business coaching?",
-    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  {
+    heading: "Who can benfit and from life and business coaching?",
+    para: "Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions.",
   },
-    {
-    heading:"How long coaching process take?",
-    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  {
+    heading: "How long coaching process take?",
+    para: "Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions.",
   },
-    {
-    heading:"Can coaching help my business grow?",
-    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  {
+    heading: "Can coaching help my business grow?",
+    para: "Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions.",
   },
-]
+];
+
+export const blogsdetails = [
+  {
+    image:postImage1,
+    para1:
+      "In today's rapidly evolving digital landscape, traditional security measures often fall short in protecting businesses from emerging threats. To stay ahead, organizations must adopt innovative approaches that continuously adapt to new risks. Our approach to closing security gaps involves leveraging cutting-edge technologies such as artificial intelligence, machine learning, and advanced analytics to identify, respond to, and neutralize threats in real time.",
+    para2:
+      "By integrating innovative security solutions into your existing systems, we enhance your defense capabilities, ensure compliance, and protect your critical assets. With a proactive mindset and a commitment to staying ahead of the curve, we empower businesses.",
+    quote:
+      "By harnessing the latest advancements in technology, we proactively close security gaps, ensuring your business remains secure against evolving threats. Our innovative solutions use artificial intelligence, machine learning, and advanced analytics.",
+    heading: "Innovative solutions for security",
+    description:
+      "We leverage the latest technologies like artificial intelligence, machine learning, and advanced analytics to develop cutting-edge security solutions that proactively defend against evolving threats. Our innovative approach ensures comprehensive protection for your business.",
+    lists: [
+      "Implementing Advanced Analytics to Enhance Cybersecurity Posture",
+      "Proactive Threat Hunting with Cutting-Edge Security Solutions",
+      "Using Predictive Analytics to Prevent Future Cyber Incidents",
+      "Seamless Integration of Cloud and Endpoint Security Innovations",
+      "Empowering Organizations with Cybersecurity Awareness Training",
+    ],
+    description2:
+      "We develop cutting-edge cybersecurity solutions using the latest technologies like artificial intelligence, machine learning, and advanced analytics to proactively identify, prevent, and respond to emerging threats. Our innovative approach ensures comprehensive protection for your digital assets, helping your business maintain a secure and resilient environment.",
+  },
+];
