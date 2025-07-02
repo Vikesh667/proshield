@@ -1,61 +1,81 @@
-import React from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import {
   createBrowserRouter,
-  createRoutesFromChildren,
-  Route,
   RouterProvider,
-  Routes,
+  Route,
+  createRoutesFromElements,
 } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Layout and loader
 import Layout from "./component/layout/Layout";
-import HomePages from "./pages/HomePages";
-import AboutUsPage from "./pages/AboutUsPage";
-import Services from "./pages/Services";
-import Pages from "./pages/Pages";
-import Contactus from "./pages/Contactus";
-import BlogsPage from "./pages/BlogsPage";
-import Projects from "./component/pagecomponent/Projects";
-import Teams from "./component/pagecomponent/Teams";
-import Prices from "./component/pagecomponent/Prices";
-import Pricing from "./pages/Pricing";
-import Imagegallery from "./component/pagecomponent/ImageGallery";
-import VideoGallery from "./component/pagecomponent/VideoGallery";
-import PageNoteFound from "./pages/PageNotFound";
-import TestimonialPages from "./pages/TestimonialPages";
-import ServicesDetails from "./pages/ServicesDetails";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import TeamDetailsPage from "./pages/TeamDetailsPage";
-import FaqPages from "./pages/FaqPages";
-import BlogsDetailsPages from "./pages/BlogsDetailsPages";
+import FullPageLoader from "./atom/FullPageLoader";
+
+// Lazy-loaded pages
+const HomePages = React.lazy(() => import("./pages/HomePages"));
+const AboutUsPage = React.lazy(() => import("./pages/AboutUsPage"));
+const Services = React.lazy(() => import("./pages/Services"));
+const BlogsPage = React.lazy(() => import("./pages/BlogsPage"));
+const Contactus = React.lazy(() => import("./pages/Contactus"));
+const Projects = React.lazy(() => import("./component/pagecomponent/Projects"));
+const Teams = React.lazy(() => import("./component/pagecomponent/Teams"));
+const Pricing = React.lazy(() => import("./pages/Pricing"));
+const Imagegallery = React.lazy(() => import("./component/pagecomponent/ImageGallery"));
+const VideoGallery = React.lazy(() => import("./component/pagecomponent/VideoGallery"));
+const ServicesDetails = React.lazy(() => import("./pages/ServicesDetails"));
+const ProjectDetailsPage = React.lazy(() => import("./pages/ProjectDetailsPage"));
+const TeamDetailsPage = React.lazy(() => import("./pages/TeamDetailsPage"));
+const BlogsDetailsPages = React.lazy(() => import("./pages/BlogsDetailsPages"));
+const TestimonialPages = React.lazy(() => import("./pages/TestimonialPages"));
+const FaqPages = React.lazy(() => import("./pages/FaqPages"));
+const PageNotFound = React.lazy(() => import("./pages/PageNotFound")); // ✅ Lazy-loaded now
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+
+    // Show loader briefly on first load
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const router = createBrowserRouter(
-    createRoutesFromChildren(
+    createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePages />} />
-        <Route path="/video" element={<HomePages />} />
-        <Route path="/image" element={<HomePages />} />
-        <Route path="/image" element={<HomePages />} />
-        <Route path="/about" element={<AboutUsPage />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="about" element={<AboutUsPage />} />
+        <Route path="services" element={<Services />} />
         <Route path="blog" element={<BlogsPage />} />
-        <Route path="/page" element={<Pages />} />
-        <Route path="/contact" element={<Contactus />} />
-        <Route path="/project" element={<Projects />} />
-        <Route path="/team" element={<Teams />} />
-        <Route path="/price" element={<Pricing />} />
-        <Route path="/gallery" element={<Imagegallery />} />
-        <Route path="/videogallery" element={<VideoGallery />} />
-        <Route path="/pagenotfound" element={<PageNoteFound />} />
-        <Route path="/servicedetails" element={<ServicesDetails />} />
-        <Route path="/blogsdetails" element={<BlogsDetailsPages />} />
-        <Route path="/projectdetails" element={<ProjectDetailsPage />} />
-        <Route path="/teamdetails" element={<TeamDetailsPage />} />
-        <Route path="/faqs" element={<FaqPages />} />
-        <Route path="/testimonials" element={<TestimonialPages />} />
+        <Route path="contact" element={<Contactus />} />
+        <Route path="project" element={<Projects />} />
+        <Route path="team" element={<Teams />} />
+        <Route path="price" element={<Pricing />} />
+        <Route path="gallery" element={<Imagegallery />} />
+        <Route path="videogallery" element={<VideoGallery />} />
+        <Route path="testimonials" element={<TestimonialPages />} />
+        <Route path="faqs" element={<FaqPages />} />
+
+        <Route path="servicedetails" element={<ServicesDetails />} />
+        <Route path="blogsdetails" element={<BlogsDetailsPages />} />
+        <Route path="projectdetails" element={<ProjectDetailsPage />} />
+        <Route path="teamdetails" element={<TeamDetailsPage />} />
+
+        {/* 404 */}
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );
-  return <RouterProvider router={router}></RouterProvider>;
+
+  if (loading) return <FullPageLoader />;
+
+  return (
+    <Suspense fallback={<FullPageLoader />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 };
 
 export default App;

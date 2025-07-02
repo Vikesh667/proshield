@@ -89,7 +89,6 @@ export const navItem = [
   },
   {
     text: "page",
-    link: "/page",
     submenu: [
       {
         name: "Service Details",
