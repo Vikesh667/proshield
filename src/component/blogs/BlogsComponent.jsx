@@ -50,27 +50,27 @@ const BlogsComponent = () => {
       <div className="w-full h-full py-10 px-30  mt-10 flex items-center justify-between">
         <div className="flex items-center gap-5 ">
           <h1 className="text-black font-semibold text-xl">Tags:</h1>
-          <button className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
+          <button className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
             Security
           </button>
-          <button className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
-            Security
+          <button className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
+            Protection
           </button>
-          <button className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
-            Security
+          <button className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
+            Innovation
           </button>
         </div>
         <div className="flex gap-5 items-center text-xl">
-          <span className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 p-2 rounded-md text-white">
+          <span className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 p-2 rounded-md text-white">
             <FaFacebookF />
           </span>
-          <span className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 p-2 rounded-md text-white">
+          <span className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 p-2 rounded-md text-white">
             <FaLinkedinIn />
           </span>
-          <span className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 p-2 rounded-md text-white">
+          <span className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 p-2 rounded-md text-white">
             <FaInstagram />
           </span>
-          <span className="bg-gradient-to-r from-5% bg-indigo-700 via-95% to-sky-500 p-2 rounded-md text-white">
+          <span className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 p-2 rounded-md text-white">
             <FaXTwitter />
           </span>
         </div>

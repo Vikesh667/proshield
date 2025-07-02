@@ -7,7 +7,7 @@ const ServicesDetails=()=>{
     text:"Services https://Html.Awaikenthemes.Com/ Endpoint security solutions"
   }
   return(
-   <div className="w-full h-full">
+   <div className="w-full h-full ">
    <TopSection content={content}/>
    <ServiceComponent/>
    </div>

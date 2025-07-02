@@ -14,7 +14,7 @@ const Footer = () => {
       className="w-full h-auto bg-cover bg-center bg-no-repeat relative"
       style={{ backgroundImage: `url(${footerBgImage})` }}
     >
-      <div className="w-full h-full bg-gradient-to-bl bg-blue-500 to-indigo-500 relative">
+      <div className="w-full h-full bg-gradient-to-r from-5% bg-indigo-600 via-70% to-sky-300 relative">
         <div className="w-full h-40 flex items-center justify-between px-30">
           <img src={footerLogo} alt="" />
           <div className="flex gap-10">

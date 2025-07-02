@@ -28,7 +28,7 @@ const CommonCard = ({item}) => {
       onMouseLeave={handleMouseLeave}
     >   
       <div
-        className={`absolute inset-0 bg-gradient-to-r from-20% bg-indigo-700 via-25% to-blue-400  z-0 transform transition-transform duration-500 ease-in-out ${translateClass} ${
+        className={`absolute inset-0 bg-gradient-to-r from-20% bg-indigo-500 via-55% to-sky-400  z-0 transform transition-transform duration-500 ease-in-out ${translateClass} ${
           visible ? "opacity-100" : "opacity-0"
         } transition-opacity`}
       />
