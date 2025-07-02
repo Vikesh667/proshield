@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 // Layout and loader
 import Layout from "./component/layout/Layout";
 import FullPageLoader from "./atom/FullPageLoader";
+import Video from "./component/home/Video";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -37,15 +38,18 @@ const App = () => {
   useEffect(() => {
     AOS.init({ duration: 800 });
 
-    // Show loader briefly on first load
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
+  // ✅ All routes defined once
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePages />} />
+        <Route path="image" element={<HomePages />} />
+        <Route path="video" element={<Video />} />
+        <Route path="slider" element={<HomePages />} />
         <Route path="about" element={<AboutUsPage />} />
         <Route path="services" element={<Services />} />
         <Route path="blog" element={<BlogsPage />} />
@@ -57,13 +61,10 @@ const App = () => {
         <Route path="videogallery" element={<VideoGallery />} />
         <Route path="testimonials" element={<TestimonialPages />} />
         <Route path="faqs" element={<FaqPages />} />
-
         <Route path="servicedetails" element={<ServicesDetails />} />
         <Route path="blogsdetails" element={<BlogsDetailsPages />} />
         <Route path="projectdetails" element={<ProjectDetailsPage />} />
         <Route path="teamdetails" element={<TeamDetailsPage />} />
-
-        {/* 404 */}
         <Route path="*" element={<PageNotFound />} />
       </Route>
     )

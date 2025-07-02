@@ -65,6 +65,9 @@ import gallery6 from "../assets/gallery-6.jpg"
 import gallery7 from "../assets/gallery-7.jpg"
 import gallery8 from "../assets/gallery-8.jpg"
 import gallery9 from "../assets/gallery-9.jpg"
+import serviceImage1 from "../assets/service-1.jpg"
+import serviceImage2 from "../assets/service-2.jpg"
+import serviceImage3 from "../assets/service-3.jpg"
 export const navItem = [
   {
     text: "Home",
@@ -72,7 +75,7 @@ export const navItem = [
     submenu: [
       { name: "Home-Image", url: "/image" },
       { name: "Home-Video", url: "/video" },
-      { name: "Home-Slider", url: "/image" },
+      { name: "Home-Slider", url: "/slider" },
     ],
   },
   {
@@ -520,5 +523,41 @@ export const testimonialCard=[
     name:"Jenny Wilsom.",
     profession:"It Manager",
     quote:testimonilaQuote
+  },
+]
+
+export const serviceCategory=[
+  "Couples Counseling",
+  "Adolescent Counseling",
+  "Depression Counseling",
+  "Stress Counseling",
+  "Meditation Counseling"
+]
+
+export const serviceImage=[
+ serviceImage1,
+ serviceImage2,
+ serviceImage3,
+]
+export const serviceAccourdion=[
+  {
+    heading:"What is a Life & Business Coach?",
+    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  },
+    {
+    heading:"How does coaching differ from therepy?",
+    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  },
+    {
+    heading:"Who can benfit and from life and business coaching?",
+    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  },
+    {
+    heading:"How long coaching process take?",
+    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
+  },
+    {
+    heading:"Can coaching help my business grow?",
+    para:"Coaching focuses on future goals, actionable steps, and personal development. While therapy often deals with healing past issues, coaching is more about improving present circumstances and building a path forward. Coaches do not diagnose or treat mental health conditions."
   },
 ]

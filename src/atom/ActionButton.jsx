@@ -25,7 +25,6 @@ const ActionButton = ({
       onClick={onClick}
       className={`${baseClasses} ${variants[variant] || ""} ${className}`}
     >
-      {/* Animated gradient background */}
       {hasSlideEffect && (
         <span
           className="absolute inset-0 z-0
@@ -37,7 +36,6 @@ const ActionButton = ({
         ></span>
       )}
 
-      {/* Button content */}
       <span className="relative z-10">{text} {icon}</span>
     </button>
   );

@@ -1,6 +1,7 @@
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import faqImage from "../../assets/faq-image.jpg";
 import Accordion from "../../atom/Accordion";
+import { faq } from "../../constant/data";
 const Faq = () => {
   return (
     <div className="w-full min-h-screen bg-gray-200 px-25 py-20 flex">
@@ -32,7 +33,17 @@ const Faq = () => {
         </div>
       </div>
       <div className="flex flex-1 w-full h-full">
-        <Accordion/>
+       <div className="p-10 mt-20">
+      <Accordion
+        data={faq}
+        openHeight="28vh"
+        closedHeight="10vh"
+        bgOpen="bg-gradient-to-r from-blue-500 to-teal-700"
+        bgClosed="bg-white"
+        textOpen="text-white"
+        textClosed="text-gray-900"
+      />
+    </div>
       </div>
     </div>
   );

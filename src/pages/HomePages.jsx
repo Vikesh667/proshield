@@ -28,15 +28,15 @@ const HomePages = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // 👇 Check if we are on /video or /home
-  const isVideoPage = location.pathname === "/image";
+  // ✅ Define which paths will show HeroSection
+  const isCustomHome = ["/video", "/image", "/slider"].includes(location.pathname);
 
   return (
     <div className="relative overflow-hidden">
-      {isVideoPage ? (
-       <HeroSection setContent={setContent} setHovered={setHovered} />
+      {isCustomHome ? (
+        <HeroSection setContent={setContent} setHovered={setHovered} />
       ) : (
-         <Video setContent={setContent} setHovered={setHovered}/>
+        <Video setContent={setContent} setHovered={setHovered} />
       )}
 
       <AboutSection />
@@ -50,6 +50,8 @@ const HomePages = () => {
       <Team setContent={setContent} setHovered={setHovered} />
       <Faq />
       <LatestProjects setContent={setContent} setHovered={setHovered} />
+
+      {/* Custom Cursor */}
       <div
         style={{
           left: `${position.x}px`,

@@ -1,4 +1,5 @@
 import TopSection from "../atom/TopSection"
+import ServiceComponent from "../component/services/ServiceComponent"
 
 const ServicesDetails=()=>{
  const content={
@@ -8,6 +9,7 @@ const ServicesDetails=()=>{
   return(
    <div className="w-full h-full">
    <TopSection content={content}/>
+   <ServiceComponent/>
    </div>
   )
 }
