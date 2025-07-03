@@ -41,22 +41,10 @@ const HeroSection = ({ setHovered, setContent }) => {
           solutions designed to safeguard your data, systems, and peace of mind.
         </p>
         <div className="flex items-center gap-10 p-4">
-          <div className="relative max-w-60 flex items-center gap-3 justify-center rounded-3xl py-1 px-4 shadow group overflow-hidden bg-white">
-            <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
-              <div className="w-full h-full bg-gradient-to-r from-blue-800 to-blue-400 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-            </div>
-            <ActionButton
-              text="Learn More"
-              variant="custom"
-              className="text-blue-500 group-hover:text-white transition-all duration-300 rounded-full text-ms font-semibold px-3 py-1 z-10 relative"
-            />
-            <span className="bg-blue-800 rounded-full p-1 group-hover:ml-1 group-hover:bg-white z-10 transition-all duration-300">
-              <GoArrowRight className="text-white  group-hover:text-blue-800 text-sm z-10 relative transition-all duration-300" />
-            </span>
-          </div>
+          <ActionButton text="Learn More" icon={<GoArrowRight />} />
           <div className="flex items-center gap-3 group">
             <span
-            onClick={()=>setOpen(true)}
+              onClick={() => setOpen(true)}
               onMouseEnter={() => {
                 setHovered(true);
                 setContent(
@@ -71,7 +59,7 @@ const HeroSection = ({ setHovered, setContent }) => {
               }}
               className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-white transition-color duration-300"
             >
-              <FaPlay className="text-lg group-hover:text-blue-400"/>
+              <FaPlay className="text-lg group-hover:text-blue-400" />
             </span>
             <h3>Play video</h3>
           </div>

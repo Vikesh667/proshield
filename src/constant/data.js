@@ -224,22 +224,22 @@ export const chooseCounter = [
   {
     icon: iconChoose1,
     text: "Years of Experience",
-    count: "25+",
+    count: 25,
   },
   {
     icon: iconChoose2,
     text: "Project Completed",
-    count: "15K",
+    count: 15,
   },
   {
     icon: iconChoose3,
     text: "Customer Happy",
-    count: "16K",
+    count: 16,
   },
   {
     icon: iconChoose4,
     text: "Winning Awards",
-    count: "120",
+    count: 120,
   },
 ];
 

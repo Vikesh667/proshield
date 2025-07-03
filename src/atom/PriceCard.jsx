@@ -1,6 +1,8 @@
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Button from "../atom/Button";
+import ActionButton from "./ActionButton";
+import { GoArrowRight } from "react-icons/go";
 
 const PriceCard = ({ price, index }) => {
   return (
@@ -27,16 +29,17 @@ const PriceCard = ({ price, index }) => {
         }`}
       >
         {price.list.map((lis) => (
-          <h1
-            key={lis}
-            className="flex items-center gap-3 text-lg opacity-70"
-          >
+          <h1 key={lis} className="flex items-center gap-3 text-lg opacity-70">
             <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
             {lis}
           </h1>
         ))}
         <div className="mt-10 px-3">
-          <Button text="Get Started" />
+          {index === 1 ? (
+            <ActionButton text="Get Started" icon={<GoArrowRight/>} hoverColor="bg-[#010535]" />
+          ) : (
+            <Button text="Get Started" />
+          )}
         </div>
       </div>
     </motion.div>
