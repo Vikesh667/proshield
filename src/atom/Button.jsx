@@ -5,7 +5,7 @@ const Button = ({ text, type = "button" }) => {
     <button
       type={type}
       className="px-9 py-3  text-white text-lg font-semibold rounded-full relative group
-    bg-gradient-to-r from-indigo-600 via-blue-400 to-indigo-600
+    bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-600
     bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-500 ease-in-out"
     >
       <span className="relative z-10 flex items-center gap-2">

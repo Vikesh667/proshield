@@ -11,7 +11,7 @@ const Team = ({ setHovered, setContent }) => {
   return (
     <div className="w-full min-h-screen flex flex-col justify-between items-center mb-20">
       <TeamCard setContent={setContent} setHovered={setHovered} />
-      <div className="max-w-7xl h-84 bg-gradient-to-r from-blue-600 via-blue-500 to-sky-400 mt-65 flex  justify-between px-10 rounded-4xl">
+      <div className="max-w-7xl h-84 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 mt-65 flex  justify-between px-10 rounded-4xl">
         <div className="flex flex-col flex-2 py-15 px-10">
           <motion.div
             className="flex  justify-start"

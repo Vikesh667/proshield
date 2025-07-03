@@ -40,20 +40,21 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
   };
 
   return (
-    <div className="relative max-w-xl w-full h-auto flex items-center justify-center z-10 bg-gradient-to-r from-indigo-600 via-70% to-blue-400 rounded-3xl rounded-br-none p-5">
-      <div className="w-full h-full flex flex-col gap-10"
-       onMouseEnter={() => {
-              setHovered(true);
-              setContent(
-                <div className="flex flex-col items-center">
-                  <span className="text-sm">Drag</span>
-                </div>
-              );
-            }}
-            onMouseLeave={() => {
-              setHovered(false);
-              setContent(null);
-            }}
+    <div className="relative max-w-xl w-full h-auto flex items-center justify-center z-10 bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-300 rounded-3xl rounded-br-none p-5">
+      <div
+        className="w-full h-full flex flex-col gap-10"
+        onMouseEnter={() => {
+          setHovered(true);
+          setContent(
+            <div className="flex flex-col items-center">
+              <span className="text-sm">Drag</span>
+            </div>
+          );
+        }}
+        onMouseLeave={() => {
+          setHovered(false);
+          setContent(null);
+        }}
       >
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
@@ -61,7 +62,6 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
               key={index}
               className="flex flex-col gap-10 text-white h-full p-8 "
             >
-              
               {/* Top Row */}
               <div className="flex items-center justify-between mb-4">
                 <img src={companylogo} className="h-8 w-auto" />

@@ -5,22 +5,49 @@ import { LiaPhoneVolumeSolid } from "react-icons/lia";
 import Button from "../../atom/Button";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import SvgGradients from "../../atom/SvgGraduents";
+import { motion } from "framer-motion";
 const AboutSection = () => {
   return (
     <div className="min-w-screen min-h-screen bg-white flex  justify-around gap-10 py-12 px-25">
       <SvgGradients />
       <div className="flex gap-10 h-full w-full items-center justify-center mt-10 relative ">
-        <div className="flex items-end h-full mt-25">
+        <div className="flex items-end h-full mt-25 relative">
           <img className="rounded-4xl h-[70vh]" src={aboutAvatar[1]} />
+          <motion.div
+            className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
+            initial={{ scaleX: 1, opacity: 1 }}
+            whileInView={{ scaleX: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          />
         </div>
         <div className="flex flex-col gap-10">
-          <img className="rounded-4xl h-[40vh]" src={aboutAvatar[2]} />
-          <img className="rounded-4xl h-[40vh]" src={aboutAvatar[3]} />
+          <div className="relative">
+            {" "}
+            <img className="rounded-4xl h-[40vh]" src={aboutAvatar[2]} />
+            <motion.div
+              className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
+              initial={{ scaleX: 1, opacity: 1 }}
+              whileInView={{ scaleX: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </div>
+          <div className="relative">
+            <img className="rounded-4xl h-[40vh]" src={aboutAvatar[3]} />
+            <motion.div
+              className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
+              initial={{ scaleX: 1, opacity: 1 }}
+              whileInView={{ scaleX: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </div>
         </div>
         <div>
           <img
             src={securitySpinImage}
-            className="absolute left-1/3 top-1/3 ml-5 mt-5 my-spinning-element transation duration-1500"
+            className="absolute left-1/3 top-1/3 ml-5 mt-5 my-spinning-element transation duration-1500 z-30"
           />
         </div>
       </div>
@@ -64,11 +91,11 @@ const AboutSection = () => {
         <div className="w-full flex gap-10">
           <ul className="space-y-3">
             <li className="flex gap-3 items-center  font-sans text-md rounded-full">
-             <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
+              <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
               Threat Detection and Monitoring
             </li>
             <li className="flex gap-3 items-center  font-sans text-md rounded-full">
-               <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
+              <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
               Access Control Management
             </li>
             <li className="flex gap-3 items-center font-sans text-md rounded-full">
@@ -83,7 +110,7 @@ const AboutSection = () => {
               </div>
               <h2>+91123456789</h2>
             </div>
-           <Button text="More About"/>
+            <Button text="More About" />
           </div>
         </div>
       </div>
@@ -91,4 +118,3 @@ const AboutSection = () => {
   );
 };
 export default AboutSection;
-

@@ -83,7 +83,7 @@ const Testmonial = ({ setContent, setHovered }) => {
         </span>
         <h1 className="text-2xl text-white -ml-6 mt-5"> Watch video</h1>
       </div>
-      <div className="absolute top-30 right-25 bg-gradient-to-r from-indigo-600 via-20% to-blue-400 rounded-3xl">
+      <div className="absolute top-30 right-25 from-indigo-800 via-blue-400 to-sky-300 rounded-3xl">
         <TestimonilaSlider setContent={setContent} setHovered={setHovered} />
       </div>
       <div className="flex items-center gap-5  absolute z-10 bottom-45 -right-25">
