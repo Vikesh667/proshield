@@ -10,7 +10,7 @@ const Services=()=>{
         text:"Service"
     }
     return(
-        <div className="">
+        <div className="overflow-hidden">
          <TopSection content={content}/>
          <OurServices/>
          <WhyChooseUs/>

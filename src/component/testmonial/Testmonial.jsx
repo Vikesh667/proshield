@@ -6,13 +6,20 @@ import { useState } from "react";
 import TestimonilaSlider from "../../atom/TestimonilaSlider";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
 import Button from "../../atom/Button";
+import { motion } from "framer-motion";
 const Testmonial = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-full min-h-screen py-30 px-25 relative">
       <div className="flex flex-col items-start w-full">
         <div className="flex gap-3 items-center mb-5">
-          <div className="flex items-center text-indigo-950">
+          <motion.div
+            className="flex items-center text-indigo-950"
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <img
               src={iconHeading}
               alt="icon"
@@ -21,13 +28,19 @@ const Testmonial = ({ setContent, setHovered }) => {
             <span className="ml-2 text-xl tracking-wide uppercase">
               testimonials
             </span>
-          </div>
+          </motion.div>
         </div>
-        <div className=" flex  flex-col  justify-center ">
+        <motion.div
+          className=" flex  flex-col  justify-center "
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-5xl font-semibold leading-15  font-sans tracking-normal text-[#010535]">
             Our clients are saying
           </h1>
-        </div>
+        </motion.div>
       </div>
       <div className="overflow-hidden  w-full h-[75vh]  relative rounded-[4rem] mt-5">
         {open && <VideoPlay setOpen={setOpen} />}
@@ -73,13 +86,16 @@ const Testmonial = ({ setContent, setHovered }) => {
       <div className="absolute top-30 right-25 bg-gradient-to-r from-indigo-600 via-20% to-blue-400 rounded-3xl">
         <TestimonilaSlider setContent={setContent} setHovered={setHovered} />
       </div>
-        <div className="flex items-center gap-5  absolute z-10 bottom-45 -right-25">
-          <div className="w-12 h-12  rounded-full bg-gradient-to-r from-blue-800 to-blue-400 flex items-center justify-center">
-                <LiaPhoneVolumeSolid className="text-3xl text-white" />
-              </div>
-              <h1 className="text-white text-lg  w-1/3 tracking-tighter">If you any questions or need help contact with team. <span className="underline"> +91-123 456 789</span></h1>
-              <Button text="Contact Us"/>
+      <div className="flex items-center gap-5  absolute z-10 bottom-45 -right-25">
+        <div className="w-12 h-12  rounded-full bg-gradient-to-r from-blue-800 to-blue-400 flex items-center justify-center">
+          <LiaPhoneVolumeSolid className="text-3xl text-white" />
         </div>
+        <h1 className="text-white text-lg  w-1/3 tracking-tighter">
+          If you any questions or need help contact with team.{" "}
+          <span className="underline"> +91-123 456 789</span>
+        </h1>
+        <Button text="Contact Us" />
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import images from "../assets/page-header-bg.jpg";
 const TopSection = ({content}) => {
   return (
     <div
-      className="w-full h-[55vh] bg-center bg-cover bg-no-repeat relative"
+      className="w-full h-[55vh] bg-center bg-cover bg-no-repeat relative overflow-hidden"
       style={{ backgroundImage: `url(${images})` }}
     >
 

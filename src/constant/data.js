@@ -68,6 +68,10 @@ import gallery9 from "../assets/gallery-9.jpg";
 import serviceImage1 from "../assets/service-1.jpg";
 import serviceImage2 from "../assets/service-2.jpg";
 import serviceImage3 from "../assets/service-3.jpg";
+import project1 from "../assets/icon-project-detail-1.svg"
+import project2 from "../assets/icon-project-detail-2.svg"
+import project3 from "../assets/icon-project-detail-3.svg"
+import project4 from "../assets/icon-project-detail-4.svg"
 export const navItem = [
   {
     text: "Home",
@@ -581,3 +585,26 @@ export const blogsdetails = [
       "We develop cutting-edge cybersecurity solutions using the latest technologies like artificial intelligence, machine learning, and advanced analytics to proactively identify, prevent, and respond to emerging threats. Our innovative approach ensures comprehensive protection for your digital assets, helping your business maintain a secure and resilient environment.",
   },
 ];
+
+export const projectdetails=[
+  {
+   icon:project1,
+   category:"Category",
+   auth:"Authentication",
+  },
+    {
+   icon:project2,
+   category:"Client",
+   auth:"Camoren Williamson",
+  },
+    {
+   icon:project3,
+   category:"Date",
+   auth:"3 July 2025",
+  },
+    {
+   icon:project4,
+   category:"Estimation",
+   auth:"3 August",
+  }
+]

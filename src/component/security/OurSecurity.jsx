@@ -2,6 +2,7 @@ import iconHeading from "../../assets/icon-sub-heading.svg";
 import securityImage from "../../assets/our-security-image.jpg";
 import SvgGradients from "../../atom/SvgGraduents";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { motion } from "framer-motion";
 const OurSecurity = () => {
   return (
     <div className="w-full min-h-screen bg-white flex flex-col gap-25 py-20 px-25">
@@ -16,7 +17,7 @@ const OurSecurity = () => {
                   className="w-6 h-6 brightness-0 "
                 />
                 <span className="ml-2 text-xl tracking-wide uppercase">
-                 Our security
+                  Our security
                 </span>
               </div>
             </div>
@@ -48,16 +49,30 @@ const OurSecurity = () => {
             </p>
           </div>
         </div>
-        <div className="w-1/2 flex-col px-3 ">
-          <img className="w-full rounded-4xl" src={securityImage} />
+        <div className="w-1/2 flex-col px-3">
+          <div className="relative w-full h-80 overflow-hidden rounded-4xl">
+            <img
+              src={securityImage}
+              alt="Security"
+              className="w-full h-full object-cover rounded-4xl"
+            />
+            <motion.div
+              className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
+              initial={{ scaleX: 1, opacity: 1 }}
+              whileInView={{ scaleX: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }} // ✅ only animate the first time it comes
+            />
+          </div>
+
           <div className="flex flex-col gap-5 mt-10">
             <h1 className="text-xl capitalize text-[#010535] font-semibold">
               identity and access management:
             </h1>
             <p className="text-md text-gray-500/95">
-              identity and access management continuously analyzes network
+              Identity and access management continuously analyzes network
               traffic, user behavior, and system activity to detect and respond
-              to potential potentials security threats threats as they occur.
+              to potential security threats as they occur.
             </p>
           </div>
         </div>
@@ -65,25 +80,40 @@ const OurSecurity = () => {
       <div className="flex ">
         <SvgGradients />
         <div className="flex flex-col">
-        <div className="flex items-center gap-3">
-        <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl ">Computer security</h1>
+          <div className="flex items-center gap-3">
+            <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
+            <h1 className="text-[#010535] capitalize text-xl ">
+              Computer security
+            </h1>
+          </div>
+          <p className="text-md text-gray-500/95 px-10 py-2">
+            Protecting systems and data from unauthorized access, cyber threats
+            digital vulnerabilities.
+          </p>
         </div>
-        <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
+            <h1 className="text-[#010535] capitalize text-xl">
+              Computer security
+            </h1>
+          </div>
+          <p className="text-md text-gray-500/95 px-10 py-2">
+            Protecting systems and data from unauthorized access, cyber threats
+            digital vulnerabilities.
+          </p>
         </div>
-          <div className="flex flex-col">
-        <div className="flex items-center gap-3">
-        <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl">Computer security</h1>
-        </div>
-        <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
-        </div>
-          <div className="flex flex-col">
-        <div className="flex items-center gap-3">
-        <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
-        <h1 className="text-[#010535] capitalize text-xl ">Computer security</h1>
-        </div>
-        <p className="text-md text-gray-500/95 px-10 py-2">Protecting systems and data from unauthorized access, cyber threats digital vulnerabilities.</p>
+        <div className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
+            <h1 className="text-[#010535] capitalize text-xl ">
+              Computer security
+            </h1>
+          </div>
+          <p className="text-md text-gray-500/95 px-10 py-2">
+            Protecting systems and data from unauthorized access, cyber threats
+            digital vulnerabilities.
+          </p>
         </div>
       </div>
     </div>

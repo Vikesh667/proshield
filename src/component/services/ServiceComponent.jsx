@@ -5,8 +5,6 @@ import {
   serviceCategory,
   serviceImage,
 } from "../../constant/data";
-import iconHeading from "../../assets/icon-sub-heading.svg";
-import iconPhone from "../../assets/icon-phone.svg";
 import featureIcon from "../../assets/icon-ferature-1.svg";
 import featureIcon2 from "../../assets/icon-ferature-2.svg";
 import featureIcon3 from "../../assets/icon-ferature-3.svg";
@@ -14,39 +12,10 @@ import serviceInteryImage from "../../assets/service-entry-image.jpg";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import SvgGradients from "../../atom/SvgGraduents";
 import Accordion from "../../atom/Accordion";
+import Contact from "../../atom/Contact";
+import Slider from "../../atom/Slider";
 const ServiceComponent = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const totalSlides = serviceImage.length;
-  const extendedSlides = [...serviceImage, serviceImage[0]];
-  const sliderRef = useRef();
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => prev + 1);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (currentIndex === totalSlides) {
-      const timeout = setTimeout(() => {
-        setTransitionEnabled(false);
-        setCurrentIndex(0);
-      }, 1000);
-
-      return () => clearTimeout(timeout);
-    } else {
-      setTransitionEnabled(true);
-    }
-  }, [currentIndex]);
-
-  const handleDotClick = (i) => {
-    setTransitionEnabled(true);
-    setCurrentIndex(i);
-  };
-
+  
   return (
     <div className="w-full min-h-screen bg-white py-20 px-6 lg:px-24">
       <div className="w-full flex flex-col lg:flex-row gap-10">
@@ -63,90 +32,15 @@ const ServiceComponent = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="bg-gradient-to-r from-5% bg-indigo-500 via-60% to-sky-300 p-10 rounded-2xl flex flex-col gap-5">
-            <div className="flex items-center gap-3">
-              <span className="bg-white w-14 h-14 flex items-center justify-center rounded-full">
-                <img className="w-9 h-9" src={iconHeading} alt="heading" />
-              </span>
-              <h1 className="text-3xl font-semibold text-white">Proshield.</h1>
-            </div>
-            <p className="text-white text-md tracking-wide opacity-75 pr-5">
-              We are a leading cybersecurity firm dedicated to protecting
-              businesses from digital threats.
-            </p>
-            <hr className="border-white/20" />
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <span className="absolute h-full w-full animate-ping rounded-full bg-white opacity-75" />
-                <span className="relative flex w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-blue-400 items-center justify-center z-10">
-                  <img className="w-6 h-6" src={iconPhone} alt="phone" />
-                </span>
-              </div>
-              <div>
-                <h1 className="text-white text-xl">+(0) 123 - 456 - 789</h1>
-                <p className="text-white opacity-75 text-sm">
-                  Get free consultancy
-                </p>
-              </div>
-            </div>
-          </div>
+         <Contact/>
         </div>
 
         {/* Right Content */}
         <div className="w-full lg:w-[70%] ">
           {/* Image Slider */}
-          <div className="relative w-full h-[550px] overflow-hidden rounded-4xl">
-            <div
-              ref={sliderRef}
-              className={`flex h-full ${
-                transitionEnabled
-                  ? "transition-transform duration-1000 ease-in-out"
-                  : ""
-              }`}
-              style={{
-                width: `${extendedSlides.length * 100}%`,
-                transform: `translateX(-${
-                  (100 / extendedSlides.length) * currentIndex
-                }%)`,
-              }}
-            >
-              {extendedSlides.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`Slide ${i}`}
-                  className="h-full object-cover"
-                  style={{
-                    width: `${100 / extendedSlides.length}%`,
-                    flexShrink: 0,
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Dots */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-3 z-10">
-              {serviceImage.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => handleDotClick(i)}
-                  className={`w-4 h-4 border-2 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    currentIndex % totalSlides === i
-                      ? "border-blue-600"
-                      : "border-gray-300"
-                  }`}
-                >
-                  <span
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      currentIndex % totalSlides === i
-                        ? "bg-blue-600 scale-125"
-                        : "bg-gray-300"
-                    }`}
-                  ></span>
-                </button>
-              ))}
-            </div>
-          </div>
+           <Slider
+           serviceImage={serviceImage}
+           />
 
           {/* Description Section */}
           <div className="mt-10 flex flex-col gap-7 px-1">
