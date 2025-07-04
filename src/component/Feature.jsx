@@ -11,7 +11,7 @@ import ScrollCounter from "../atom/ScrollCounter";
 
 const Feature = () => {
   return (
-    <div className="w-full min-h-screen flex gap-10 p-20">
+    <div className="w-full min-h-screen flex flex-col lg:flex-row lg:gap-10 px-5 lg:p-20">
       <div className="flex flex-col gap-10 overflow-hidden flex-1">
         <div className="w-full h-full relative group overflow-hidden rounded-4xl">
           <img
@@ -34,7 +34,7 @@ const Feature = () => {
           />
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex flex-col lg:flex-row gap-5">
           <div className="w h-full relative group overflow-hidden rounded-4xl">
             <img src={featureImage2} className="rounded-4xl" alt="Feature 2" />
             <div
@@ -52,9 +52,9 @@ const Feature = () => {
             />
           </div>
 
-          <div className="w-52 h-66 bg-[linear-gradient(to_right,_#4338ca_5%,_#60a5fa_75%)] shadow-lg rounded-4xl flex flex-col items-center justify-around p-5 overflow-hidden relative group">
+          <div className="w-full lg:w-52 h-52 lg:h-66 bg-[linear-gradient(to_right,_#4338ca_5%,_#60a5fa_75%)] shadow-lg rounded-4xl flex flex-col items-center justify-around p-5 overflow-hidden relative group">
             <ScrollCounter from={0} to={25} duration={1.5} />
-            <h2 className="text-lg text-white font-sans text-center z-10">
+            <h2 className="text-md lg:text-lg text-white font-sans text-center z-10">
               Years of experience in cyber security
             </h2>
             <hr className="h-px border-0 bg-gray-300 opacity-30 w-40 z-10" />
@@ -79,7 +79,7 @@ const Feature = () => {
           </motion.div>
           <div className="flex flex-col gap-2 justify-center mb-15">
             <motion.h1
-              className="text-5xl font-bold font-sans tracking-wide text-indigo-950"
+              className=" text-2xl tracking-wider lg:text-5xl font-bold font-sans lg:tracking-wide text-indigo-950"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -87,7 +87,7 @@ const Feature = () => {
               Comprehensive protection
             </motion.h1>
             <motion.h1
-              className="text-5xl text-start font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent"
+              className="text-2xl lg:text-5xl text-start font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -107,18 +107,18 @@ const Feature = () => {
           >
             <img
               src={icon}
-              className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16"
+              className=" p-3 lg:p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-12 h-12 lg:w-16 lg:h-16"
               alt="feature-icon"
             />
             <div className="flex flex-col gap-3">
-              <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+              <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                 {i === 0
                   ? "Real-time threat detection"
                   : i === 1
                   ? "malware and virus prevention"
                   : "24/7 monitoring and support"}
               </h2>
-              <p className="text-gray-500 text-lg tracking-tight">
+              <p className="text-gray-500 text-md lg:text-lg tracking-tight">
                 {i === 0
                   ? "Real-Time Threat Detection provides instant monitoring & response to cyber threats, ensuring your devices and data remain secure."
                   : i === 1

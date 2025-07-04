@@ -8,26 +8,26 @@ const BottomNavbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
 
   return (
-    <nav className="w-full h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
+    <nav className="w-full h-16 lg:h-24 flex  justify-between items-center bg-white shadow-md px-8 relative z-50">
       {/* Brand */}
-      <div className=" ml-20"> 
-       <img src={logo} alt="Logo" className="w-40 h-auto" />
+      <div className=" lg:ml-20">
+        <img src={logo} alt="Logo" className="w-40 h-auto" />
       </div>
 
       {/* Navigation Menu */}
-      <ul className="flex gap-10 relative">
+      <ul className="lg:flex gap-10 relative hidden">
         {navItem.map((item) => (
-          <li
-            key={item.text}
-            className="group relative"
-          >
-            <a href={item.link} className="font-light text-lg cursor-pointer font-serif text-black/80 capitalize hover:text-blue-400">
+          <li key={item.text} className="group relative">
+            <a
+              href={item.link}
+              className="font-light text-lg cursor-pointer font-serif text-black/80 capitalize hover:text-blue-400"
+            >
               {item.text}
             </a>
 
             {/* Dropdown */}
             {item.submenu && (
-            <div className="bg-gradient-to-r bg-blue-700  to-blue-300 rounded-2xl opacity-0 w-56 h-auto absolute mt-3 left-0 top-full transform scale-y-0 origin-top group-hover:scale-y-100  group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden ">
+              <div className="bg-gradient-to-r bg-blue-700  to-blue-300 rounded-2xl opacity-0 w-56 h-auto absolute mt-3 left-0 top-full transform scale-y-0 origin-top group-hover:scale-y-100  group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden ">
                 {item.submenu.map((sub) => (
                   <Link
                     key={sub.name}
@@ -44,9 +44,10 @@ const BottomNavbar = () => {
       </ul>
 
       {/* CTA Button */}
-    <div className="mr-20">
-     <Button text="Get Started"/>
-</div>
+      <div className="mr-20 hidden lg:block">
+        <Button text="Get Started" />
+      </div>
+      <button className="block lg:hidden">Menu</button>
     </nav>
   );
 };

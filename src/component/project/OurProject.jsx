@@ -9,7 +9,7 @@ const OurProject = ({ setContent, setHovered }) => {
 
   return (
     <motion.div
-      className="w-full min-h-screen bg-gray-200 p-10"
+      className="w-full min-h-screen bg-gray-200 py-5 lg:p-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -21,22 +21,22 @@ const OurProject = ({ setContent, setHovered }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="flex gap-3 items-center mb-5">
+        <div className="flex gap-3 items-center lg:mb-5">
           <img src={iconHeading} className="text-white" />
           <h1 className="text-sm uppercase font-semibold tracking-widest">our project</h1>
         </div>
-        <div className="flex flex-col gap-2 justify-center mb-20">
-          <h1 className="text-5xl font-semibold font-serif tracking-tighter text-indigo-950">
-            Showcasing our cybersecurity
+        <div className="flex flex-col gap-2 justify-center items-center mb-20">
+          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-serif tracking-tighter text-indigo-950">
+            Showcasing our cybersecurity  latest
           </h1>
-          <h1 className="text-5xl text-center font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent">
-            latest projects
+          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent">
+            projects
           </h1>
         </div>
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="flex gap-[1px] w-full h-full">
+      <div className="flex flex-col  lg:flex-row p-4 gap-[1px] w-full h-full">
         {projectdetails.map((project, index) => (
           <motion.div
             key={index}
@@ -56,8 +56,8 @@ const OurProject = ({ setContent, setHovered }) => {
               setContent(null);
             }}
             className={`w-full h-auto overflow-hidden relative group 
-              ${index === 0 ? "rounded-l-3xl" : ""} 
-              ${index === projectdetails.length - 1 ? "rounded-r-3xl" : ""}
+              ${index === 0 ? "rounded-t-2xl lg:rounded-t-none lg:rounded-l-3xl" : ""} 
+              ${index === projectdetails.length - 1 ? "rounded-b-2xl  lg:rounded-bl-none lg:rounded-r-3xl" : ""}
             `}
           >
             <motion.img
@@ -87,12 +87,12 @@ const OurProject = ({ setContent, setHovered }) => {
 
       {/* Bottom Text */}
       <motion.div
-        className="w-full flex justify-center p-15"
+        className="w-full flex justify-center lg:p-15"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h1 className="w-1/2 text-center capitalize text-md text-gray-600">
+        <h1 className="w-full px-5 lg:w-1/2 text-center capitalize text-md text-gray-600">
           Cybersecurity Innovations Explore All Our Projects Safeguarding Digital Futures Against Evolving Threats.{" "}
           <span className="relative inline-block bg-gradient-to-r from-indigo-900 to-blue-400 bg-clip-text text-transparent capitalize cursor-pointer text-lg">
             all project

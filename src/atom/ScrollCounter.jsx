@@ -20,7 +20,7 @@ const ScrollCounter = ({ from = 0, to = 25, duration = 2 }) => {
   }, [isInView, from, to, duration]);
 
   return (
-    <h1 ref={ref} className="text-5xl font-bold font-sans text-white text-center z-10">
+    <h1 ref={ref} className="text-3xl lg:text-5xl font-bold font-sans text-white text-center z-10">
       {count}+
     </h1>
   );

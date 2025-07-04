@@ -9,11 +9,11 @@ import ChooseUsCard from "../../atom/ChooseUsCard";
 const WhyChooseUs = () => {
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-no-repeat bg-[#010535] p-10 md:p-20 flex flex-col gap-10"
+      className="w-full min-h-screen bg-cover bg-no-repeat bg-[#010535] px-5 lg:p-10 md:p-20 flex flex-col lg:gap-10"
       style={{ backgroundImage: `url(${choosebg})` }}
     >
       {/* Main Section */}
-      <div className="flex flex-col lg:flex-row gap-10 items-center">
+      <div className="flex flex-col lg:flex-row lg:gap-10 items-center">
         {/* Left: Image Reveal */}
         <div className="w-full lg:w-1/2 overflow-hidden origin-left">
           <div className="w-full relative">
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
           </motion.h1>
 
           <motion.div
-            className="flex flex-col gap-15 mt-10"
+            className="flex  flex-col gap-10 lg:gap-15 mt-10 w-full"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}

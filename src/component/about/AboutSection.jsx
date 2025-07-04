@@ -8,11 +8,14 @@ import SvgGradients from "../../atom/SvgGraduents";
 import { motion } from "framer-motion";
 const AboutSection = () => {
   return (
-    <div className="min-w-screen min-h-screen bg-white flex  justify-around gap-10 py-12 px-25">
+    <div className="min-w-screen min-h-screen bg-white flex flex-col lg:flex-row  justify-around gap-10 py-12 lg:px-25">
       <SvgGradients />
-      <div className="flex gap-10 h-full w-full items-center justify-center mt-10 relative ">
-        <div className="flex items-end h-full mt-25 relative">
-          <img className="rounded-4xl h-[70vh]" src={aboutAvatar[1]} />
+      <div className="flex gap-4 lg:gap-8 h-full w-full items-center justify-center mt-10 relative px-5 lg:px-0">
+        <div className="flex lg:items-end h-full w-full mt-15 lg:mt-25 relative ">
+          <img
+            className="rounded-2xl lg:rounded-4xl  h-[40vh] w-full lg:h-[70vh]"
+            src={aboutAvatar[1]}
+          />
           <motion.div
             className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
             initial={{ scaleX: 1, opacity: 1 }}
@@ -21,10 +24,13 @@ const AboutSection = () => {
             viewport={{ once: true }}
           />
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-3 lg:gap-7 w-full">
           <div className="relative">
             {" "}
-            <img className="rounded-4xl h-[40vh]" src={aboutAvatar[2]} />
+            <img
+              className="rounded-2xl lg:rounded-4xl w-full h-[23vh] lg:h-[40vh]"
+              src={aboutAvatar[2]}
+            />
             <motion.div
               className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
               initial={{ scaleX: 1, opacity: 1 }}
@@ -34,7 +40,10 @@ const AboutSection = () => {
             />
           </div>
           <div className="relative">
-            <img className="rounded-4xl h-[40vh]" src={aboutAvatar[3]} />
+            <img
+              className="rounded-2xl lg:rounded-4xl w-full h-[23vh] lg:h-[40vh]"
+              src={aboutAvatar[3]}
+            />
             <motion.div
               className="absolute top-0 right-0 w-full h-full bg-white z-10 origin-right pointer-events-none rounded-4xl"
               initial={{ scaleX: 1, opacity: 1 }}
@@ -47,48 +56,54 @@ const AboutSection = () => {
         <div>
           <img
             src={securitySpinImage}
-            className="absolute left-1/3 top-1/3 ml-5 mt-5 my-spinning-element transation duration-1500 z-30"
+            className="w-30 h-30 lg:w-44 lg:h-44 absolute left-1/3 top-1/3 lg:ml-0 mt-5 my-spinning-element transation duration-1500 z-30"
           />
         </div>
       </div>
-      <div className="flex gap-10 h-full w-full items-start flex-col ">
-        <div className="flex items-center text-black  mt-10 ">
+      <div className="flex gap-7 lg:gap-10 h-full w-full items-start flex-col px-5 lg:px-0 ">
+        <div className="flex items-center text-black mt-3 lg:mt-10 ">
           <img src={icon} alt="icon" className="w-6 h-6 " />
-          <span className="ml-2 text-lg text-black uppercase font-serif tracking-wider">
+          <span className="ml-2 text-md lg:text-lg text-black uppercase font-serif tracking-wide lg:tracking-wider">
             About Us
           </span>
         </div>
         <div className="-mt-5">
-          <h1 className="text-5xl font-semibold font-serif tracking-tighter text-indigo-950">
+          <h1 className="text-2xl lg:text-5xl font-semibold font-serif tracking-tighter text-indigo-950">
             Your trusted partner in our{" "}
           </h1>
-          <h1 className="text-5xl font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent ">
+          <h1 className="text-2xl lg:text-5xl font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent ">
             cyber security solutions
           </h1>
         </div>
-        <h2 className="font-serif text-lg text-gray-700/60 -mt-5">
+        <h2 className="font-serif text-md lg:text-lg text-gray-700/60 -mt-5">
           We provide reliable, cutting-edge cybersecurity solutions to protect
           your digital assets, ensuring safety and peace of mind.
         </h2>
-        <div class="flex items-center w-full">
-          <div class="hexagonal w-52 h-36 bg-blue-500">
+        <div className="flex items-center w-full ">
+          {/* Hexagonal image container (only on lg) */}
+          <div className="w-32 sm:w-1/2 lg:w-52 h-36 bg-blue-500 rounded-l-2xl lg:rounded-none overflow-hidden lg:hexagonal">
             <img
-              className="w-full h-full overflow-hidden"
               src={aboutAvatar[0]}
+              alt="Hex Avatar"
+              className="w-full h-full object-cover rounded-l-2xl lg:rounded-none"
             />
           </div>
 
-          <div class="flex-1 bg-gray-100 h-36 -ml-30">
-            <div class="hex-left w-full h-full bg-gradient-to-br bg-blue-800 to-blue-400 text-white p-4 flex flex-col  items-center rounded-r-full">
-              <h2 class="text-xl font-bold -ml-4 ">24/7 aecurity assistance</h2>
-              <p className="ml-35 text-md font-sans mt-3">
+          {/* Text Section */}
+          <div className="flex-1 h-36 bg-gray-100 lg:-ml-30">
+            <div className="w-full h-full bg-gradient-to-br from-blue-800 to-blue-400 text-white py-4 px-3 lg:p-4 lg:px-5 flex flex-col justify-center items-start rounded-r-2xl lg:rounded-r-full lg:hex-left">
+              <h2 className="text-md lg:text-xl font-bold lg:ml-35">
+                24/7 Security Assistance
+              </h2>
+              <p className="text-sm lg:text-lg pr-0.5 lg:tracking-tighter font-sans tracking-tighter px-1 mt-1 lg:ml-35">
                 Real-time support for all cybersecurity concerns, including
-                breach response, threat detection, guidance.
+                breach response, threat detection, and guidance.
               </p>
             </div>
           </div>
         </div>
-        <div className="w-full flex gap-10">
+
+        <div className="w-full flex flex-col lg:flex-row items-start gap-5 lg:gap-10">
           <ul className="space-y-3">
             <li className="flex gap-3 items-center  font-sans text-md rounded-full">
               <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
@@ -103,7 +118,7 @@ const AboutSection = () => {
               Security Awareness Training
             </li>
           </ul>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5 lg:gap-10">
             <div className="flex gap-3 items-center">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-800 to-blue-400 flex items-center justify-center">
                 <LiaPhoneVolumeSolid className="text-3xl text-white" />

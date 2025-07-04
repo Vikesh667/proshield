@@ -22,30 +22,33 @@
 }
 
 @layer utilities {
-  .hexagonal {
-    clip-path: polygon(25% 0%,
+  .lg\:hexagonal {
+    @media (min-width: 1024px) {
+      clip-path: polygon(
+        25% 0%,
         75% 0%,
         100% 50%,
         75% 100%,
         25% 100%,
-        0% 50%);
-  }
-
-  .hex-left {
-    clip-path: polygon(15% 0%,
-        /* top-left cut */
-        100% 0%,
-        /* top-right */
-        100% 100%,
-        /* bottom-right */
-        15% 100%,
-        /* bottom-left cut */
-        25% 50%
-        /* center-left point */
+        0% 50%
       );
+    }
   }
 
+  .lg\:hex-left {
+    @media (min-width: 1024px) {
+      clip-path: polygon(
+        15% 0%,
+        100% 0%,
+        100% 100%,
+        15% 100%,
+        25% 50%
+      );
+    }
+  }
 }
+
+
 
 @layer utilities {
   @keyframes shine {
