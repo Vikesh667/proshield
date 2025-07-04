@@ -4,6 +4,7 @@ import ActionButton from "../../atom/ActionButton";
 import { FaPlay } from "react-icons/fa6";
 import VideoPlay from "../../atom/VideoPlay";
 import { useState } from "react";
+import {motion} from "framer-motion"
 const Video = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -28,18 +29,30 @@ const Video = ({ setContent, setHovered }) => {
 
       {/* Hero content */}
       <div className="relative z-[2] px-8 py-36 max-w-6xl ml-20 text-white">
-        <div className="flex items-center text-white">
+        <motion.div className="flex items-center text-white"
+        initial={{y:30,opacity:0}}
+        whileInView={{y:0,opacity:1}}
+        transition={{duration:1}}
+        >
           <img src={icon} alt="icon" className="w-6 h-6 brightness-0 invert" />
           <span className="ml-2 text-xl">Welcome Cyber Security</span>
-        </div>
-        <h1 className="text-6xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6">
+        </motion.div>
+        <motion.h1 className="text-6xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6"
+         initial={{y:30,opacity:0}}
+        whileInView={{y:0,opacity:1}}
+        transition={{duration:1}}
+        >
           Secure your world,
           <br /> effortlessly today!
-        </h1>
-        <p className="text-lg text-white/90 max-w-2xl mb-10">
+        </motion.h1>
+        <motion.p className="text-lg text-white/90 max-w-2xl mb-10"
+         initial={{y:30,opacity:0}}
+        whileInView={{y:0,opacity:1}}
+        transition={{duration:1}}
+        >
           Protect your digital world with seamless, cutting-edge cybersecurity
           solutions designed to safeguard your data, systems, and peace of mind.
-        </p>
+        </motion.p>
         <div className="flex items-center gap-10 p-4">
          <ActionButton text="Learn More" icon={<GoArrowRight/>}/>
           <div className="flex items-center gap-3 group">
