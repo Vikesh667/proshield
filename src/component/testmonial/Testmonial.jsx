@@ -10,9 +10,9 @@ import { motion } from "framer-motion";
 const Testmonial = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="w-full min-h-screen py-30 px-25 relative">
+    <div className="w-full min-h-screen lg:py-28 py-10 px-5   lg:px-25 relative">
       <div className="flex flex-col items-start w-full">
-        <div className="flex gap-3 items-center mb-5">
+        <div className="flex gap-3 items-center lg:mb-5">
           <motion.div
             className="flex items-center text-indigo-950"
             initial={{ y: 100, opacity: 0 }}
@@ -37,15 +37,15 @@ const Testmonial = ({ setContent, setHovered }) => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-5xl font-semibold leading-15  font-sans tracking-normal text-[#010535]">
+          <h1 className="text-2xl lg:text-5xl font-semibold lg:leading-15  font-sans tracking-normal text-[#010535]">
             Our clients are saying
           </h1>
         </motion.div>
       </div>
-      <div className="overflow-hidden  w-full h-[75vh]  relative rounded-[4rem] mt-5">
+      <div className="overflow-hidden  w-full  h-[120vh] lg:h-[75vh]  relative lg:rounded-2xl mt-5">
         {open && <VideoPlay setOpen={setOpen} />}
         <img
-          className="w-full h-full object-cover  rounded-[4rem]"
+          className="w-full h-full object-cover  lg:rounded-2xl"
           src={testMonialImage}
           alt="testimonial"
         />
@@ -59,7 +59,10 @@ const Testmonial = ({ setContent, setHovered }) => {
           }}
         />
       </div>
-      <div className="absolute top-1/2 left-1/4 z-30">
+      <div
+        className="absolute top-36 left-1/2 transform -translate-x-1/2 
+                lg:left-1/4 lg:translate-x-0 lg:top-1/2 z-30"
+      >
         <span
           onClick={() => setOpen(true)}
           onMouseEnter={() => {
@@ -74,27 +77,37 @@ const Testmonial = ({ setContent, setHovered }) => {
             setHovered(false);
             setContent(null);
           }}
-          className="relative flex size-18"
+          className="relative flex size-16 lg:size-18"
         >
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FFFFFF]  transition duration-500"></span>
-          <span className="relative flex size-18 rounded-full bg-sky-500 items-center justify-center z-20">
+          <span className="relative flex size-16 lg:size-18 rounded-full bg-sky-500 items-center justify-center z-20">
             <FaPlay className="text-white text-2xl ml-1" />
           </span>
         </span>
         <h1 className="text-2xl text-white -ml-6 mt-5"> Watch video</h1>
       </div>
-      <div className="absolute top-30 right-25 from-indigo-800 via-blue-400 to-sky-300 rounded-3xl">
+      <div
+        className="absolute  inset-0 px-10 top-60 mt-10 
+                lg:inset-auto lg:top-32 lg:right-[4%] 
+               "
+      >
         <TestimonilaSlider setContent={setContent} setHovered={setHovered} />
       </div>
-      <div className="flex items-center gap-5  absolute z-10 bottom-45 -right-25">
-        <div className="w-12 h-12  rounded-full bg-gradient-to-r from-blue-800 to-blue-400 flex items-center justify-center">
-          <LiaPhoneVolumeSolid className="text-3xl text-white" />
+
+      <div className="flex px-3 flex-col lg:flex-row items-start lg:items-center gap-5 absolute z-10 bottom-16 lg:bottom-35 lg:right-24">
+        <div className="flex items-center gap-3 lg:max-w-md">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-800 to-blue-400 flex items-center justify-center shrink-0">
+            <LiaPhoneVolumeSolid className="text-2xl lg:text-3xl text-white" />
+          </div>
+          <h1 className="text-white text-sm lg:text-base tracking-tight leading-snug max-w-xs lg:max-w-sm">
+            If you have any questions or need help
+            <br className="hidden lg:block" />, contact our team.{" "}
+            <span className="underline">+91-123 456 789</span>
+          </h1>
         </div>
-        <h1 className="text-white text-lg  w-1/3 tracking-tighter">
-          If you any questions or need help contact with team.{" "}
-          <span className="underline"> +91-123 456 789</span>
-        </h1>
-        <Button text="Contact Us" />
+        <div className="w-auto shrink-0">
+          <Button text="Contact Us" />
+        </div>
       </div>
     </div>
   );

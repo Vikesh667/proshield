@@ -11,7 +11,7 @@ const PriceCard = ({ price, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="w-96 h-auto flex flex-col gap-[0.715px] rounded-4xl bg-white border-[1px] border-gray-200"
+      className="w-full lg:w-96 h-auto flex flex-col gap-[0.715px] rounded-4xl bg-white border-[1px] border-gray-200"
     >
       <div className="w-full h-44 bg-gradient-to-r from-indigo-500 via-blue-500 to-blue-400 rounded-t-4xl p-5 flex flex-col gap-5">
         <h1 className="text-white text-xl">{price.plan}</h1>

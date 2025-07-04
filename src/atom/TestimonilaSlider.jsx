@@ -10,7 +10,7 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
   // Custom Prev Arrow
   const PrevArrow = ({ onClick }) => (
     <button
-      className="absolute bottom-10 right-16 z-50 bg-white/30 text-white p-2 rounded-full hover:bg-white/50 transition"
+      className="absolute -bottom-7 right-36 lg:bottom-10 lg:right-16 z-50 p-2 bg-white/30 text-white  rounded-full hover:bg-white/50 transition"
       onClick={onClick}
     >
       <FaArrowLeft size={14} />
@@ -20,7 +20,7 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
   // Custom Next Arrow
   const NextArrow = ({ onClick }) => (
     <button
-      className="absolute bottom-10 right-5 z-50 bg-white/30 text-white p-2 rounded-full hover:bg-white/50 transition"
+      className="absolute -bottom-7 right-22  lg:bottom-10 lg:right-5 z-50 bg-white/30 text-white p-2 rounded-full hover:bg-white/50 transition"
       onClick={onClick}
     >
       <FaArrowRight size={14} />
@@ -40,7 +40,7 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
   };
 
   return (
-    <div className="relative max-w-xl w-full h-auto flex items-center justify-center z-10 bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-300 rounded-3xl rounded-br-none p-5">
+    <div className="relative  lg:max-w-xl w-full h-[70vh] flex items-center justify-center z-10 bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-300 rounded-3xl lg:rounded-br-none lg:p-5">
       <div
         className="w-full h-full flex flex-col gap-10"
         onMouseEnter={() => {
@@ -60,20 +60,20 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex flex-col gap-10 text-white h-full p-8 "
+              className="flex flex-col gap-10 text-white h-full p-3 lg:p-8 "
             >
               {/* Top Row */}
-              <div className="flex items-center justify-between mb-4">
+              <div className="w-full flex items-center justify-between mb-4">
                 <img src={companylogo} className="h-8 w-auto" />
                 <img src={quote} className="h-6 w-6" />
               </div>
 
               {/* Testimonial Text */}
               <div className="flex flex-col gap-4">
-                <h3 className="text-lg font-medium leading-relaxed opacity-90 tracking-tight">
+                <h3 className="text-sm lg:text-lg font-medium leading-relaxed opacity-90 tracking-tight">
                   {testimonial.para}
                 </h3>
-                <h3 className="text-lg font-medium leading-relaxed opacity-90 tracking-tight">
+                <h3 className="text-sm lg:text-lg font-medium leading-relaxed opacity-90 tracking-tight">
                   {testimonial.para1}
                 </h3>
               </div>
