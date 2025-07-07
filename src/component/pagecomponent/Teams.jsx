@@ -10,7 +10,7 @@ const Teams = () => {
   return (
   <div className="w-full min-h-screen">
     <TopSection content={content}/>
-      <div className="w-full h-[800px] grid grid-cols-4 px-25 gap-10 py-10">
+      <div className="w-full lg:h-[800px] grid grid-cols-1 lg:grid-cols-4 lg:px-25 px-5 gap-10 py-10">
       {ourteam.map((team) => (
         <div
           className="w-full h-full rounded-3xl overflow-hidden relative group"

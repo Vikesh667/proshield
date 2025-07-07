@@ -9,7 +9,7 @@ import ChooseUsCard from "../../atom/ChooseUsCard";
 const WhyChooseUs = () => {
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-no-repeat bg-[#010535] px-5 lg:p-10 md:p-20 flex flex-col lg:gap-10"
+      className="w-full min-h-screen bg-cover bg-no-repeat bg-[#010535] px-5 py-10 lg:p-10 md:p-20 flex flex-col lg:gap-10"
       style={{ backgroundImage: `url(${choosebg})` }}
     >
       {/* Main Section */}
