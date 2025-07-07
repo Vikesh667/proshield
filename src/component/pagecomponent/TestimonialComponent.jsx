@@ -2,7 +2,7 @@ import { testimonialCard, testimonials } from "../../constant/data"
 
 const TestimonialComponent=()=>{
     return(
-       <div className="w-full h-full grid grid-cols-3 gap-10 py-20 px-20  bg-gray-100/60 overflow-hidden">
+       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-3 gap-10 py-10 lg:py-20 lg:px-20  bg-gray-100/60 overflow-hidden">
          {
            testimonialCard.map((testimonial)=>(
             <div className="w-full h-full  flex flex-col gap-5 p-10 bg-white rounded-3xl ">

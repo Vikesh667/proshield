@@ -13,7 +13,7 @@ const VideoGallery = () => {
   return (
     <div className="w-full min-h-screen overflow-hidden">
       <TopSection content={content} />
-      <div className="w-full h-auto grid grid-cols-3 py-20 px-20 gap-10 ">
+      <div className="w-full h-auto grid grid-cols-1 lg:grid-cols-3 py-10 lg:py-20 px-5 lg:px-20 gap-10 ">
         {gallery.map((image) => (
           <div className="w-full h-full relative group overflow-hidden rounded-3xl">
             <img

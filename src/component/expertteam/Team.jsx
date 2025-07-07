@@ -23,7 +23,7 @@ const Team = ({ setHovered, setContent }) => {
         </div>
 
         {/* Team Cards */}
-        <div className="mt-16">
+        <div className="mt-16 px-10">
           <TeamCard setHovered={setHovered} setContent={setContent} />
         </div>
       </div>
