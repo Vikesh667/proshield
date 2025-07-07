@@ -3,6 +3,7 @@ import TopSection from "../../atom/TopSection";
 import { contacts } from "../../constant/data";
 import contactbg from "../../assets/contact-box-bg.jpg";
 import Button from "../../atom/Button";
+
 const Contact = () => {
   const content = {
     heading: "Contact us",
@@ -11,7 +12,7 @@ const Contact = () => {
   return (
     <div className="w-full min-h-screen overflow-hidden">
       <TopSection content={content} />
-      <div className="w-full h-full pt-20 overflow-hidden">
+      <div className="w-full h-full  pt-5 lg:pt-20 overflow-hidden">
         <div className="w-full flex flex-col items-center gap-4 ">
           <div className="flex gap-5">
             <img src={iconHeading} />
@@ -20,43 +21,44 @@ const Contact = () => {
             </h1>
           </div>
           <div className="w-full flex flex-col items-center">
-            <h1 className="text-6xl font-bold text-[#010535]">
+            <h1 className="text-2xl lg:text-6xl font-bold text-[#010535]">
               Do you have questions?
             </h1>
-            <h1 className="text-5xl bg-gradient-to-r bg-indigo-600 via-30% to-blue-400 bg-clip-text font-bold">
+            <h1 className="text-2xl lg:text-5xl bg-gradient-to-r bg-indigo-600 via-30% to-blue-400 bg-clip-text font-bold">
               <span className=" text-transparent">ask us anytime</span>
             </h1>
           </div>
         </div>
         <div className="w-full h-full mt-30 flex flex-col items-center relative">
-          <div className="w-[70vw] flex justify-center  rounded-2xl  bg-blue-500  absolute -top-20 z-10">
+          <div className="lg:w-[70vw] w-[80%] flex flex-col lg:flex-row justify-center rounded-2xl bg-blue-500 absolute -top-20 z-10">
             {contacts.map((contact) => (
-              <div className="flex flex-col items-start  p-10 w-84 h-66 justify-center gap-5  border-r-[0.1px]  border-gray-300/30 last:border-r-0 ">
-                <div className="flex flex-col items-start justify-start gap-5 ">
-                  <div className="bg-white p-4 rounded-full">
-                    {" "}
+              <div className="flex flex-col items-start p-6 lg:p-10 w-full lg:w-84 justify-center gap-3 lg:gap-5 border-b-[0.1px] lg:border-r-[0.1px] border-gray-300/30 last:border-r-0">
+                <div className="flex flex-col items-start justify-start gap-3 lg:gap-5">
+                  <div className="bg-white p-2 lg:p-4 rounded-full">
                     <img
                       src={contact.icon}
                       alt="icon"
-                      className="w-10 h-10 object-contain"
+                      className="w-7 h-7 lg:w-10 lg:h-10 object-contain"
                     />
                   </div>
-                  <h1 className="text-xl capitalize text-white">
+                  <h1 className="text-lg lg:text-xl capitalize text-white">
                     {contact.heading}
                   </h1>
                 </div>
                 <div>
-                  <h1 className="text-md font-semibold text-white">
+                  <h1 className="text-sm lg:text-md font-semibold text-white">
                     {contact.para1}
                   </h1>
-                  <h1 className="text-md text-white">{contact.para2}</h1>
+                  <h1 className="text-sm lg:text-md text-white">
+                    {contact.para2}
+                  </h1>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="w-full min-h-screen py-20 px-20">
-            <div className="relative w-full h-full rounded-4xl overflow-hidden">
+          <div className="w-full min-h-screen px-5 lg:py-20 lg:px-20">
+            <div className="relative w-full h-[200vh] lg:h-full rounded-4xl overflow-hidden">
               <img
                 src={contactbg}
                 alt="Contact Background"
@@ -70,7 +72,7 @@ const Contact = () => {
                   zIndex: 1,
                 }}
               />
-              <div className="w-full h-full absolute top-0 flex items-center justify-center">
+              <div className="w-full h-full absolute top-50 lg:top-0 flex items-center justify-center">
                 <form className="w-full max-w-6xl mx-auto  bg-opacity-90 p-10 rounded-2xl shadow-lg z-10">
                   <h1 className="text-3xl font-semibold text-center text-white mb-8">
                     Get in touch with us
@@ -115,19 +117,20 @@ const Contact = () => {
             </div>
           </div>
         </div>
-         <div className="w-full h-full overflow-hidden">
-           <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14688.159233904453!2d72.8257178!3d21.1702406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f8c97d8ea31%3A0x409aeb86b6b1c0c5!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-          width="100%"
-          height="600"
-          allowFullScreen=""
-          loading="lazy"
-          style={{ border: 0 }}
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-         </div>
+        <div className="w-full h-full overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14688.159233904453!2d72.8257178!3d21.1702406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f8c97d8ea31%3A0x409aeb86b6b1c0c5!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            width="100%"
+            height="600"
+            allowFullScreen=""
+            loading="lazy"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
 };
+
 export default Contact;
