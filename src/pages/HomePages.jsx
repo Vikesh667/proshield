@@ -47,7 +47,7 @@ const HomePages = () => {
       <OurSecurity />
       <PricePlan />
       <Testmonial setContent={setContent} setHovered={setHovered} />
-      {/* <Team setContent={setContent} setHovered={setHovered} /> */}
+      <Team setContent={setContent} setHovered={setHovered} />
       <Faq />
       <LatestProjects setContent={setContent} setHovered={setHovered} />
 
