@@ -7,7 +7,7 @@ import WhatWedo from "../component/about/WhatWeDo";
 import Work from "../component/about/Work";
 import WhyChooseUs from "../component/choose/WhyChooseUs";
 import Testmonial from "../component/testmonial/Testmonial";
-import Faq from "../component/faq/Faq"
+import Faq from "../component/faq/Faq";
 const AboutUsPage = () => {
   const content = {
     heading: "About Us",
@@ -18,15 +18,17 @@ const AboutUsPage = () => {
       <TopSection content={content} />
       <AboutSection />
       <OurApproch />
-       <WhatWedo/>
-      <WhyChooseUs/>
-       <Work/>
-     <div className="w-full min-h-screen flex flex-col justify-between items-center">
-      <TeamCard/>
-      </div>
-      <Testmonial/>
-      <Benfit/>
-      <Faq/>
+      <WhatWedo />
+      <WhyChooseUs />
+      <Work />
+{/* 
+     <div className="w-full h-[60vh] relative px-28">
+       <TeamCard />
+     </div> */}
+
+      <Testmonial />
+      <Benfit />
+      <Faq />
     </div>
   );
 };

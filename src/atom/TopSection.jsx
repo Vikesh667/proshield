@@ -2,7 +2,7 @@ import images from "../assets/page-header-bg.jpg";
 const TopSection = ({content}) => {
   return (
     <div
-      className="w-full h-[55vh] bg-center bg-cover bg-no-repeat relative overflow-hidden"
+      className="w-full h-[40vh] lg:h-[55vh] bg-center bg-cover bg-no-repeat relative overflow-hidden"
       style={{ backgroundImage: `url(${images})` }}
     >
 
@@ -14,8 +14,8 @@ const TopSection = ({content}) => {
           zIndex: 1,
         }}
       />
-         <div className="absolute inset-0  top-0 left-0 transform translate-x-24 translate-y-40 z-10">
-        <h1 className="text-7xl text-white font-bold">{content.heading}</h1>
+         <div className="absolute inset-0  top-0 left-0 transform  translate-y-1/3 px-5 lg:translate-x-24 lg:translate-y-40 z-10">
+        <h1 className="text-3xl lg:text-7xl text-white font-bold">{content.heading}</h1>
         <h3 className="text-lg text-white mt-1">Home https://Html.Awaikenthemes.Com/ {content.text}</h3>
         </div>  
     </div>
