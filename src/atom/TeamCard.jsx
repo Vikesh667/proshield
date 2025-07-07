@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const TeamCard = ({ setHovered, setContent }) => {
   const teams = ourteam.slice(0, 4);
   return (
-    <div className="w-full h-[70vh] bg-[#010535] bg-cover  relative">
+    <div className="w-full h-[100vh] lg:h-[70vh] bg-[#010535] bg-cover  relative ">
       <img className="z-20" src={ourteambg} alt="" />
       <div className="flex flex-col items-center absolute top-20 left-1/3 -ml-5 z-20 ">
         <motion.div
@@ -34,7 +34,7 @@ const TeamCard = ({ setHovered, setContent }) => {
           </motion.h1>
         </div>
       </div>
-      <div className="w-full h-96 flex gap-7 px-25  absolute -bottom-40">
+      <div className="w-full lg:h-96  flex flex-col lg:flex-row gap-7 lg:px-25  absolute -bottom-40">
         {teams.map((team,index) => (
           <motion.div
             className="w-full h-full rounded-3xl overflow-hidden relative group"
@@ -57,7 +57,7 @@ const TeamCard = ({ setHovered, setContent }) => {
             viewport={{once:true}}
           >
             <img
-              className="w-full h-full group-hover:scale-110 transition duration-500"
+              className="w-full h-96 group-hover:scale-110 transition duration-500"
               src={team.image}
             />
             <div className="absolute bottom-10 w-full  flex flex-col items-center">

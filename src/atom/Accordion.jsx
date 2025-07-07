@@ -31,8 +31,8 @@ const Accordion = ({
             }`}
             style={{ height }}
           >
-            <div className="w-full flex items-center justify-between mt-7 transition duration-500 px-5">
-              <h1 className={`text-xl font-semibold ${isOpen ? textOpen : textClosed}`}>
+            <div className="w-full flex items-center justify-between mt-4 lg:mt-7 transition duration-500 px-5">
+              <h1 className={`text-md lg:text-xl font-semibold ${isOpen ? textOpen : textClosed}`}>
                 {item.heading}
               </h1>
               <button onClick={() => handleToggle(index)}>
@@ -41,11 +41,11 @@ const Accordion = ({
             </div>
 
             <div
-              className="w-full h-52 flex flex-col justify-center transition-all duration-500 origin-bottom"
+              className="w-full  h-52 flex flex-col justify-center transition-all duration-500 origin-bottom"
               style={{ transform: `scaleY(${scaleY})` }}
             >
               <hr className="w-full border-[0.1px] border-amber-50 opacity-15 mb-2" />
-              <p className={`text-lg tracking-tighter px-11 py-3 ${textOpen}`}>
+              <p className={`text-md lg:text-lg tracking-tighter mb-5 px-11 lg:py-3 ${textOpen}`}>
                 {item.para}
               </p>
             </div>

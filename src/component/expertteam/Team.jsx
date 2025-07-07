@@ -9,9 +9,11 @@ const Team = ({ setHovered, setContent }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-between items-center mb-20">
-      <TeamCard setContent={setContent} setHovered={setHovered} />
-      <div className="max-w-7xl h-84 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 mt-65 flex  justify-between px-10 rounded-4xl">
+    <div className="w-full min-h-screen flex flex-col gap-20 justify-between items-center lg:mb-20">
+     <div className="mt-10">
+       <TeamCard setContent={setContent} setHovered={setHovered} />
+     </div>
+      <div className="max-w-7xl h-84 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 mt-30 flex  justify-between px-10 rounded-4xl">
         <div className="flex flex-col flex-2 py-15 px-10">
           <motion.div
             className="flex  justify-start"

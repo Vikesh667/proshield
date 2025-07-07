@@ -4,7 +4,7 @@ const Post = ({post,setContent,setHovered,index}) => {
   return (
     <div
       key={index}
-      className="group w-full h-full relative flex items-center overflow-hidden rounded-4xl"
+      className="group w-full h-[50vh] relative flex items-center overflow-hidden rounded-4xl"
       onMouseEnter={() => {
         setHovered(true);
         setContent(

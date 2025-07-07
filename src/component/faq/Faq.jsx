@@ -5,10 +5,10 @@ import { faq } from "../../constant/data";
 import { motion } from "framer-motion";
 const Faq = () => {
   return (
-    <div className="w-full min-h-screen bg-gray-200 px-25 py-20 flex">
+    <div className="w-full min-h-screen bg-gray-200 px-5 py-5 lg:px-25 lg:py-20 flex flex-col lg:flex-row">
       <div className="flex flex-1 w-full h-full flex-col gap-10">
         <div className="flex flex-col items-start w-full">
-          <div className="flex gap-3 items-center mb-5">
+          <div className="flex gap-3 items-center lg:mb-5">
             <motion.div
               className="flex items-center text-indigo-950"
               initial={{ y: 1, opacity: 0 }}
@@ -25,7 +25,7 @@ const Faq = () => {
           </div>
           <div className=" flex  flex-col  justify-center ">
             <motion.h1
-              className="text-5xl font-semibold leading-16 font-sans tracking-normal text-[#010535]"
+              className="text-3xl lg:text-5xl font-semibold lg:leading-16 font-sans tracking-normal text-[#010535]"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
@@ -35,7 +35,7 @@ const Faq = () => {
             </motion.h1>
 
             <motion.h1
-              className="text-5xl font-semibold font-sans tracking-normal bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400 bg-clip-text text-transparent"
+              className="text-3xl lg:text-5xl font-semibold font-sans tracking-normal bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400 bg-clip-text text-transparent"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
@@ -57,7 +57,7 @@ const Faq = () => {
         </div>
       </div>
       <div className="flex flex-1 w-full h-full">
-        <div className="p-10 mt-20">
+        <div className="lg:p-10 lg:mt-20">
           <Accordion
             data={faq}
             openHeight="28vh"
