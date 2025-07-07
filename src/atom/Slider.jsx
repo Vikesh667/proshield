@@ -34,7 +34,7 @@ const Slider = ({ serviceImage }) => {
   };
 
   return (
-    <div className="relative w-full h-[550px] overflow-hidden rounded-4xl">
+    <div className="relative w-full lg:h-[550px] overflow-hidden rounded-4xl">
       <div
         ref={sliderRef}
         className={`flex h-full ${

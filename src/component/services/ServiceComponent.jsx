@@ -20,9 +20,9 @@ const ServiceComponent = () => {
     <div className="w-full min-h-screen bg-white py-20 px-6 lg:px-24">
       <div className="w-full flex flex-col lg:flex-row gap-10">
         {/* Left Sidebar */}
-        <div className="lg:w-[30%] w-full flex-shrink-0 flex flex-col gap-10 sticky top-20 self-start h-fit">
+        <div className="lg:w-[30%] w-full flex-shrink-0 flex flex-col gap-10 lg:sticky top-20 self-start h-fit">
           {/* Service Categories */}
-          <div className="bg-gray-100 p-5 rounded-2xl flex flex-col gap-5">
+          <div className="bg-gray-100 px-5 rounded-2xl flex flex-col gap-5">
             <h1 className="text-lg font-semibold text-black">
               Services Category
             </h1>
@@ -35,8 +35,8 @@ const ServiceComponent = () => {
          <Contact/>
         </div>
 
-        {/* Right Content */}
-        <div className="w-full lg:w-[70%] ">
+
+        <div className="flex flex-col gap-5 w-full lg:w-[70%] ">
           {/* Image Slider */}
            <Slider
            serviceImage={serviceImage}
@@ -62,8 +62,8 @@ const ServiceComponent = () => {
           </div>
 
           {/* Heading Section */}
-          <div className="mt-14 px-1">
-            <h1 className="text-5xl text-indigo-950 font-bold mb-5">
+          <div className="lg:mt-14 px-1">
+            <h1 className="text-2xl lg:text-5xl text-indigo-950 font-bold mb-5">
               Why choose endpoint security
             </h1>
             <p className="text-md text-gray-700 opacity-90 leading-7">
@@ -72,15 +72,15 @@ const ServiceComponent = () => {
               device connected to your network, we provide a robust defense
               against malware, ransomware, and unauthorized access.
             </p>
-            <div className="w-full grid grid-cols-2 gap-10  place-items-center mt-5 py-5 ">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10  place-items-center mt-5 py-5 ">
               <div className="flex gap-5  bg-gray-100 rounded-2xl p-4">
                 <img
                   src={featureIcon}
-                  className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16 "
+                  className="p-2 lg:p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-12 h-12 lg:w-16 lg:h-16 "
                 />
 
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                <div className="flex flex-col justify-center gap-3">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                     comprehensive protection for all connected devices
                   </h2>
                 </div>
@@ -88,10 +88,10 @@ const ServiceComponent = () => {
               <div className="flex gap-5  bg-gray-100 rounded-2xl p-4">
                 <img
                   src={featureIcon2}
-                  className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16"
+                  className="p-2 lg:p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-12 h-12 lg:w-16 lg:h-16"
                 />
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                <div className="flex flex-col justify-center gap-3">
+                  <h2 className="text-md lg:text-xl capitalize tracking-tight text-indigo-950 font-semibold font-serif">
                     24/7 support & continuous security updates
                   </h2>
                 </div>
@@ -99,10 +99,10 @@ const ServiceComponent = () => {
               <div className="flex gap-5  bg-gray-100 rounded-2xl p-4">
                 <img
                   src={featureIcon3}
-                  className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16"
+                  className="p-2 lg:p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-12 h-12 lg:w-16 lg:h-16"
                 />
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                <div className="flex flex-col justify-center gap-3">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                     seamless integration existing it infrastructure
                   </h2>
                 </div>
@@ -110,10 +110,10 @@ const ServiceComponent = () => {
               <div className="flex gap-5  bg-gray-100 rounded-2xl p-4">
                 <img
                   src={featureIcon3}
-                  className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16"
+                  className="p-2 lg:p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-12 h-12 lg:w-16 lg:h-16"
                 />
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                <div className="flex flex-col justify-center gap-3">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                     seamless integration existing it infrastructure
                   </h2>
                 </div>
@@ -125,7 +125,7 @@ const ServiceComponent = () => {
               to safeguard all your connected devices and ensure business
               continuity.
             </h1>
-            <h1 className="text-5xl text-indigo-950 font-bold mb-5 mt-5">
+            <h1 className="text-2xl tracking-wide lg:text-5xl text-indigo-950 font-bold mb-5 mt-5">
               Feature of endpoint security
             </h1>
             <p className="text-md text-gray-700 opacity-90 leading-7">
@@ -134,14 +134,14 @@ const ServiceComponent = () => {
               device connected to your network, we provide a robust defense
               against malware, ransomware, and unauthorized access.
             </p>
-            <div className="w-full flex mt-5 py-5 ">
+            <div className="w-full flex flex-col lg:flex-row mt-5 py-5 ">
               <div className="flex flex-col  gap-5  bg-gray-100 rounded-2xl p-4">
-                <div className="flex  gap-3">
+                <div className="flex items-center gap-3">
                   <img
                     src={featureIcon}
                     className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16 "
                   />
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold  tracking-tighter font-serif">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold  tracking-tighter font-serif">
                     advanced threat detection
                   </h2>
                 </div>
@@ -150,12 +150,12 @@ const ServiceComponent = () => {
                 </p>
               </div>
               <div className="flex flex-col  gap-5  bg-gray-100 rounded-2xl p-4">
-                <div className="flex  gap-3">
+                <div className="flex items-center  gap-3">
                   <img
                     src={featureIcon}
                     className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16 "
                   />
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                     real-time monitoring
                   </h2>
                 </div>
@@ -164,12 +164,12 @@ const ServiceComponent = () => {
                 </p>
               </div>
               <div className="flex flex-col  gap-5  bg-gray-100 rounded-2xl p-4">
-                <div className="flex  gap-3">
+                <div className="flex items-center  gap-3">
                   <img
                     src={featureIcon}
                     className="p-4 bg-gradient-to-r bg-indigo-800 to-blue-400 rounded-full w-16 h-16 "
                   />
-                  <h2 className="text-xl capitalize text-indigo-950 font-semibold font-serif">
+                  <h2 className="text-md lg:text-xl capitalize text-indigo-950 font-semibold font-serif">
                     user-friendly interface
                   </h2>
                 </div>
@@ -178,7 +178,7 @@ const ServiceComponent = () => {
                 </p>
               </div>
             </div>
-            <div className="w-full flex gap-7">
+            <div className="w-full flex flex-col lg:flex-row gap-7">
               <img src={serviceInteryImage} alt="" className="rounded-4xl" />
               <div className="flex flex-col gap-5">
                 <p className="text-md text-gray-600 opacity-90">
@@ -211,7 +211,7 @@ const ServiceComponent = () => {
             </div>
 
             <div className="flex flex-col mt-10 gap-5">
-              <h1 className="text-5xl text-indigo-950 font-semibold">
+              <h1 className="text-3xl lg:text-5xl text-indigo-950 font-semibold">
                 Frequently<span className="bg-gradient-to-r bg-indigo-600 via-25% to-blue-400 bg-clip-text text-transparent"> asked questions</span>
               </h1>
               <Accordion
