@@ -14,14 +14,14 @@ import Accordion from "../../atom/Accordion";
 const ProjectDetailComponent = () => {
   return (
     <div className="w-full h-full ">
-    <div className=" flex gap-15 py-20 px-28">
-      <div className="w-1/3 h-full flex flex-col gap-10 sticky top-10">
+    <div className=" flex flex-col lg:flex-row gap-15 py-20 px-5  lg:px-28">
+      <div className="w-full lg:w-1/3 h-full flex flex-col gap-10 lg:sticky top-10">
         <div className="w-full h-full bg-gray-200 flex flex-col gap-5 px-5 py-3 rounded-2xl">
           <h1 className="text-lg text-indigo-950 font-semibold py-3">
             Project Details
           </h1>
           {projectdetails.map((project) => (
-            <div className="w-84 h-full flex gap-5 bg-white rounded-2xl items-center px-5 py-3">
+            <div className="w-full lg:w-84 h-full flex gap-5 bg-white rounded-2xl items-center px-5 py-3">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-r from-5% bg-indigo-500 via-45% to-sky-400">
                 {" "}
                 <img src={project.icon} alt={project.category} />
@@ -42,7 +42,7 @@ const ProjectDetailComponent = () => {
       <div className="w-full h-full flex flex-col gap-10">
         <Slider serviceImage={projects} />
         <div className="w-full h-full flex flex-col gap-5">
-          <h1 className="text-5xl text-[#010535] font-bold tracking-wide font-serif">
+          <h1 className="text-3xl lg:text-5xl text-[#010535] font-bold tracking-wide font-serif">
             Project overview
           </h1>
           <p className="text-md text-gray-500 opacity-90 tracking-wide pr-3 text-start">
@@ -64,7 +64,7 @@ const ProjectDetailComponent = () => {
           </p>
         </div>
         <div className="flex flex-col gap-5">
-          <h1 className="text-5xl text-[#010535] font-bold tracking-tight font-serif">
+          <h1 className="text-3xl lg:text-5xl text-[#010535] font-bold tracking-tight font-serif">
             Challenges of project
           </h1>
           <p className="text-md text-gray-500 opacity-90 tracking-wide">
@@ -74,7 +74,7 @@ const ProjectDetailComponent = () => {
             vulnerabilities. Ensuring compatibility across different device
             types.
           </p>
-          <div className="flex gap-5 mt-5">
+          <div className="flex flex-col lg:flex-row gap-5 mt-5">
             <SvgGradients />
             <div className="flex flex-col gap-5">
               <h1 className="text-xl text-[#010535] font-bold tracking-tight font-serif">
@@ -114,7 +114,6 @@ const ProjectDetailComponent = () => {
               </ul>
             </div>
             <div className="w-full h-full relative">
-              {" "}
               <img
                 className="w-full h-full rounded-4xl"
                 src={videoImage}
@@ -131,8 +130,8 @@ const ProjectDetailComponent = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-10 mt-5">
-          <h1 className="text-5xl text-[#010535] font-bold tracking-tight font-serif">
+        <div className="flex flex-col gap-5 lg:gap-10 mt-5">
+          <h1 className="text-3xl lg:text-5xl text-[#010535] font-bold tracking-tight font-serif">
             Scope of project
           </h1>
           <p className="text-md text-gray-500 opacity-90 tracking-wide">
@@ -142,7 +141,7 @@ const ProjectDetailComponent = () => {
             includes the following key components:
           </p>
           <div className="w-full h-full">
-            <ul className="space-y-3 grid grid-cols-2">
+            <ul className="space-y-3 grid grid-cols-1 lg:grid-cols-2">
               <li className="flex gap-3 items-center  font-sans text-md rounded-full">
                 <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
                 <p className="text-md text-gray-500 opacity-90 tracking-wide">
@@ -173,11 +172,11 @@ const ProjectDetailComponent = () => {
               </li>
             </ul>
           </div>
-          <div className="w-full h-full flex gap-5">
+          <div className="w-full h-full flex flex-col lg:flex-row gap-5">
             <img className="w-full h-full rounded-4xl" src={entryImage1} />
             <img className="w-full h-full rounded-4xl" src={entryImage2} />
           </div>
-          <div className="flex items-center gap-10">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex gap-5 items-start">
               <img src={icon1}/>
               <div className="flex flex-col gap-4">
@@ -200,7 +199,7 @@ const ProjectDetailComponent = () => {
             </div>
           </div>
             <div className="flex flex-col mt-10 gap-5">
-              <h1 className="text-5xl text-indigo-950 font-semibold">
+              <h1 className="text-3xl lg:text-5xl text-indigo-950 font-semibold">
                 Frequently<span className="bg-gradient-to-r bg-indigo-600 via-25% to-blue-400 bg-clip-text text-transparent"> asked questions</span>
               </h1>
               <Accordion
