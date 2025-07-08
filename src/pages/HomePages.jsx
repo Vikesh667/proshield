@@ -13,13 +13,14 @@ import Testmonial from "../component/testmonial/Testmonial";
 import Team from "../component/expertteam/Team";
 import Faq from "../component/faq/Faq";
 import LatestProjects from "../component/project/LatestProjects";
+import PopComponent from "../atom/PopComponent";
 
 const HomePages = () => {
   const location = useLocation();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [content, setContent] = useState(null);
-
+  const [component,setComponent]=useState(false)
   useEffect(() => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -30,7 +31,11 @@ const HomePages = () => {
 
   // ✅ Define which paths will show HeroSection
   const isCustomHome = ["/video", "/image", "/slider"].includes(location.pathname);
-
+useEffect(()=>{
+    setTimeout(()=>{
+        setComponent(true)
+    },500)
+},[])
   return (
     <div className="relative overflow-hidden">
       {isCustomHome ? (
@@ -50,7 +55,7 @@ const HomePages = () => {
       <Team setContent={setContent} setHovered={setHovered} />
       <Faq />
       <LatestProjects setContent={setContent} setHovered={setHovered} />
-
+     {component &&   <PopComponent setComponent={setComponent}/>}
       {/* Custom Cursor */}
       <div
         style={{

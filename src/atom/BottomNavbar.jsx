@@ -5,15 +5,27 @@ import Button from "./Button";
 import { Link } from "react-router-dom";
 import Marquee from "./Marquee";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { IoIosMenu, IoMdClose } from "react-icons/io";
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
-  const [isRunning, setRunning] = useState(true);
+  const [isRunning, setRunning] = useState(false);
   const controls = useAnimation();
-
+  const [menu, setMenu] = useState(false);
+  const [translate, setTranslate] = useState(0);
   const toggleRunning = () => setRunning((prev) => !prev);
   const changeDirection = () =>
     setDirection((prev) => (prev === "left" ? "right" : "left"));
+  const handleMenu = () => {
+    setMenu(!menu);
+    setTranslate(100);
+  };
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+
+  const toggleSubmenu = (index) => {
+    setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
+  };
 
   return (
     <div className="flex flex-col justify-center">
@@ -37,9 +49,7 @@ const BottomNavbar = () => {
         )}
       </AnimatePresence>
 
-      <nav
-        className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50"
-      >
+      <nav className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
         <div className="lg:ml-20">
           <img src={logo} alt="Logo" className="w-40 h-auto" />
         </div>
@@ -69,6 +79,52 @@ const BottomNavbar = () => {
             </li>
           ))}
         </ul>
+        {menu && (
+          <div className="lg:hidden bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 w-full absolute left-0 top-15 p-10 transition duration-500">
+            <ul className="flex flex-col gap-3 relative">
+              {navItem.map((item, index) => (
+                <li key={item.text} className="relative">
+                  <div
+                    onClick={() => toggleSubmenu(index)}
+                    className="flex justify-between items-center cursor-pointer"
+                  >
+                    <Link
+                      to={item.link}
+                      className=" text-md font-sans text-white font-semibold capitalize hover:text-blue-400"
+                    >
+                      {item.text}
+                    </Link>
+
+                    {item.submenu && (
+                      <span className="text-black ml-2">
+                        {openSubmenuIndex === index ? (
+                          <FaAngleUp />
+                        ) : (
+                          <FaAngleDown />
+                        )}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Submenu visible only if clicked */}
+                  {item.submenu && openSubmenuIndex === index && (
+                    <div className="bg-gradient-to-r from-blue-700 to-blue-300 rounded-2xl w-full mt-2 transition-all duration-500 ease-in-out overflow-hidden">
+                      {item.submenu.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          to={sub.url}
+                          className="block text-white px-4 py-2 text-md font-semibold font-serif hover:text-black hover:ml-2 transition-all duration-500"
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mr-20 hidden lg:flex gap-5">
           <Button text="Get Started" />
@@ -76,7 +132,12 @@ const BottomNavbar = () => {
           {isRunning && <Button text={direction} onClick={changeDirection} />}
         </div>
 
-        <button className="block lg:hidden">Menu</button>
+        <button
+          onClick={handleMenu}
+          className="block lg:hidden p-1 bg-gradient-to-r from-blue-700 to-blue-300   text-2xl text-white rounded-lg"
+        >
+          {menu ? <IoMdClose /> : <IoIosMenu />}
+        </button>
       </nav>
     </div>
   );

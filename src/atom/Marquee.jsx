@@ -3,7 +3,6 @@ import { motion} from "framer-motion";
 import { gallerys } from "../constant/data";
 
 const Marquee = ({isRunning,direction,controls}) => {
-
   useEffect(() => {
     if (isRunning) {
       controls.start({
