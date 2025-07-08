@@ -18,9 +18,9 @@ const ChooseCounter = () => {
       className="w-12 h-12 lg:w-16 lg:h-16 object-contain"
     />
 
-    <h1 className="text-xl text-center lg:text-5xl font-semibold text-white">
+    <div className="text-xl text-center lg:text-5xl font-semibold text-white">
       <ScrollCounter to={ccounter.count} />
-    </h1>
+    </div>
 
     <h1 className="text-md text-center lg:text-xl text-white">{ccounter.text}</h1>
   </div>

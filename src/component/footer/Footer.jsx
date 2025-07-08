@@ -52,15 +52,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 -mt-10">
-            {footerItem.map((footeritem) => (
-              <div className="w-full h-full">
+            {footerItem.map((footeritem,index) => (
+              <div
+              key={index}
+              className="w-full h-full">
                 <h1 className="text-white text-lg hover:text-indigo-950 cursor-pointer relative group py-2 overflow-hidden">
                   <span>{footeritem.title}</span>
                   <span className="h-[3px] w-16 bg-white absolute   bottom-0 left-0 transform -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-500"></span>
                 </h1>
                 <ul className="w-full h-full mt-3 flex flex-col items-start gap-2">
-                  {footeritem.list.map((lis) => (
-                    <li className="text-md text-white font-serif hover:text-indigo-950 cursor-pointer">
+                  {footeritem.list.map((lis,index) => (
+                    <li
+                    key={index}
+                    className="text-md text-white font-serif hover:text-indigo-950 cursor-pointer">
                       {lis}
                     </li>
                   ))}

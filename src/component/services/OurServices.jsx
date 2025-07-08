@@ -34,8 +34,10 @@ const OurServices = () => {
         </div> 
       </div>
       <div className="flex w-full flex-wrap gap-10 items-center justify-between cursor-pointer">
-        {services.map((service) => (
-          <motion.div className="w-96 h-60 lg:h-84 bg-white rounded-2xl flex flex-col justify-between py-5 px-5 lg:p-10 group relative overflow-hidden shadow-sm"
+        {services.map((service,index) => (
+          <motion.div 
+          key={index}
+          className="w-96 h-60 lg:h-84 bg-white rounded-2xl flex flex-col justify-between py-5 px-5 lg:p-10 group relative overflow-hidden shadow-sm"
          initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

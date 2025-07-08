@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
               alt="Why Choose Us"
               className="rounded-4xl w-full h-full object-cover origin-left"
               initial={{ scaleX: 0, opacity: 0 }}
-              whileInView={{ scaleX: 1, opacity: 1 }}
+              whileinview={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1 }}
               style={{ display: "block" }}
             />
