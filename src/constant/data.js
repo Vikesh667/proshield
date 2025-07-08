@@ -608,3 +608,15 @@ export const projectdetails=[
    auth:"3 August",
   }
 ]
+export const gallerys = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yFh8JegZm5yUiRkL__HAsCIbYy-40Tr96w&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTEWllVDV7DVWlufOlfrAPNAPGogIxFNXFUVFtQ8I5d4gNGLiRKo2eXWW1v_gfNJF8Zp8&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0s6rfR_YTwns1cJIHjzsk8jw9T7ERYvlNEDxD_e6Z8PMm9J19Cqq8cmW3MYfbiNQxt5M&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bETknwydjGX7UoJQb5SKkgxBkKJ56ed9MHPcqou2Lwv_jPGAwdAZPN5c8-reVQFrSZQ&usqp=CAU",
+  "https://img.freepik.com/premium-photo/finger-print-network-cyber-security-background_42077-14657.jpg",
+  "https://img.freepik.com/free-vector/internet-security-technology-template-vector-social-media-post-dark-blue-tone_53876-112209.jpg",
+  "https://www.shutterstock.com/image-vector/abstract-cyber-security-shield-blue-260nw-1648216726.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAGfO2ZtFUTpGCf_iJcq9JF9bhBT5d2Y5uK8uCVDIYELTx9SxavSqLE99vUfjEKWnXZ_M&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMXjUzvLuw3a8t3XVG57aZ8BIM0Z7Ho6w4UcbednHby3CfwepM-YKcy1r5rKe-T26uMN8&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Xf4N2qRKK96PLTqzzosdf0JiKjh-d4S5RRM9PiH5d-6MMUjJ3_kkzUTe80fT6N5K6hc&usqp=CAU",
+];

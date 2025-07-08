@@ -1,8 +1,9 @@
 import { GoArrowRight } from "react-icons/go";
 
-const Button = ({ text, type = "button" }) => {
+const Button = ({ text, type = "button" ,onClick, icon={} }) => {
   return (
     <button
+    onClick={onClick}
       type={type}
       className="px-9 py-3  text-white text-lg font-semibold rounded-full relative group
     bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-600
