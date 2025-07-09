@@ -57,12 +57,12 @@ const BottomNavbar = () => {
         <ul className="lg:flex gap-10 relative hidden">
           {navItem.map((item) => (
             <li key={item.text} className="group relative">
-              <a
-                href={item.link}
+              <Link
+                to={item.link}
                 className="font-light text-lg cursor-pointer font-serif text-black/80 capitalize hover:text-blue-400"
               >
                 {item.text}
-              </a>
+              </Link>
               {item.submenu && (
                 <div className="bg-gradient-to-r from-blue-700 to-blue-300 rounded-2xl opacity-0 w-56 absolute mt-3 left-0 top-full transform scale-y-0 origin-top group-hover:scale-y-100 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
                   {item.submenu.map((sub) => (
