@@ -26,7 +26,7 @@ const scrollTop=()=>{
           </h1>
         </motion.div>
         <div className=" flex  flex-col lg:gap-2 justify-center mb-5 lg:mb-20">
-          <motion.h1 className=" text-2xl lg:text-5xl font-semibold font-serif tracking-tighter text-indigo-950"
+          <motion.h1 className=" text-xl lg:text-5xl font-semibold font-serif tracking-tighter text-indigo-950"
           initial={{y:30,opacity:0}}
           whileInView={{y:0,opacity:1}}
           transition={{duration:1}}
