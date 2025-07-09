@@ -8,7 +8,7 @@ import {motion} from "framer-motion"
 const Video = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full h-full lg:min-h-screen overflow-hidden">
    
       <div className="absolute inset-0 bg-no-repeat bg-center bg-cover">
         <video loop
