@@ -25,8 +25,8 @@ const Work = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 py-10 lg:py-28 gap-16">
-      <div className="w-full lg:w-1/2 relative flex flex-col items-start gap-10">
+    <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 py-5 lg:py-28 gap-16">
+      <div className="w-full lg:w-1/2 relative flex flex-col items-start gap-5 lg:gap-10">
         <div className="flex items-center gap-2 text-black">
           <img src={icon} alt="icon" className="w-6 h-6" />
           <span className="text-lg uppercase font-serif tracking-wider">
@@ -68,7 +68,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-10 lg:mt-0">
+      <div className="w-full lg:w-1/2 relative flex justify-center items-center ">
         <img
           src={workImage1}
           alt="Main"

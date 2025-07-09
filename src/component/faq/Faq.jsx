@@ -25,7 +25,7 @@ const Faq = () => {
           </div>
           <div className=" flex  flex-col  justify-center ">
             <motion.h1
-              className="text-3xl lg:text-5xl font-semibold lg:leading-16 font-sans tracking-normal text-[#010535]"
+              className="text-2xl lg:text-5xl font-semibold lg:leading-16 font-sans tracking-normal text-[#010535]"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
@@ -35,7 +35,7 @@ const Faq = () => {
             </motion.h1>
 
             <motion.h1
-              className="text-3xl lg:text-5xl font-semibold font-sans tracking-normal bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400 bg-clip-text text-transparent"
+              className="text-2xl lg:text-5xl font-semibold font-sans tracking-normal bg-gradient-to-r from-indigo-600 via-blue-500 to-sky-400 bg-clip-text text-transparent"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
@@ -52,7 +52,7 @@ const Faq = () => {
             initial={{ scaleX: 1, opacity: 1 }}
             whileInView={{ scaleX: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }} 
+            viewport={{ once: true }}
           />
         </div>
       </div>

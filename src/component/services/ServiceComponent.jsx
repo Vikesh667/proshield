@@ -22,7 +22,7 @@ const ServiceComponent = () => {
        
         <div className="lg:w-[30%] w-full flex-shrink-0 flex flex-col gap-10 lg:sticky top-20 self-start h-fit">
          
-          <div className="bg-gray-100 px-5 rounded-2xl flex flex-col gap-5">
+          <div className="bg-gray-100 px-5 py-5 rounded-2xl flex flex-col gap-5">
             <h1 className="text-lg font-semibold text-black">
               Services Category
             </h1>

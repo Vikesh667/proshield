@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const LatestProjects = ({ setContent, setHovered }) => {
   return (
-    <div className="w-full flex flex-col gap-16 py-10 px-4 md:px-10 lg:px-20 bg-white">
+    <div className="w-full flex flex-col gap-5 lg:gap-16 py-5 px-4 md:px-10 lg:px-20 bg-white">
       
       <motion.div
         className="flex flex-col items-center text-center"
@@ -16,7 +16,7 @@ const LatestProjects = ({ setContent, setHovered }) => {
         viewport={{ once: true }}
       >
        
-        <div className="flex gap-3 items-center mb-4">
+        <div className="flex gap-3 items-center lg:mb-4">
           <img src={iconHeading} className="w-6 h-6" alt="heading-icon" />
           <h1 className="text-sm uppercase font-semibold tracking-widest text-gray-700">
             Latest post
@@ -25,10 +25,10 @@ const LatestProjects = ({ setContent, setHovered }) => {
 
        
         <div className="flex flex-wrap justify-center gap-2">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-serif text-indigo-950">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold font-serif text-indigo-950">
             Our latest
           </h1>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-serif bg-gradient-to-r from-blue-900 to-blue-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold font-serif bg-gradient-to-r from-blue-900 to-blue-300 bg-clip-text text-transparent">
             insight blog
           </h1>
         </div>
@@ -61,8 +61,6 @@ const LatestProjects = ({ setContent, setHovered }) => {
           </motion.div>
         ))}
       </motion.div>
-
-      <div className="h-20" />
     </div>
   );
 };

@@ -11,8 +11,9 @@ const Teams = ({setContent,setHovered}) => {
   <div className="w-full min-h-screen">
     <TopSection content={content}/>
       <div className="w-full lg:h-[800px] grid grid-cols-1 lg:grid-cols-4 lg:px-25 px-5 gap-10 py-10">
-      {ourteam.map((team) => (
+      {ourteam.map((team,index) => (
         <div
+        key={index}
           className="w-full h-full rounded-3xl overflow-hidden relative group"
           onMouseEnter={() => {
             setHovered(true);

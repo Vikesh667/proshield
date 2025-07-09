@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const AboutSection = () => {
   return (
-    <div className="min-w-screen min-h-screen bg-white flex flex-col lg:flex-row  justify-around gap-10 py-12 lg:px-25">
+    <div className="min-w-screen min-h-screen bg-white flex flex-col lg:flex-row  justify-around gap-10 py-5 mb-5 lg:px-25">
       <SvgGradients />
       <div className="flex gap-4 lg:gap-8 h-full w-full items-center justify-center mt-10 relative px-5 lg:px-0">
         <div className="flex lg:items-end h-full w-full mt-15 lg:mt-25 relative ">
@@ -96,7 +96,7 @@ const AboutSection = () => {
               <h2 className="text-md lg:text-xl font-bold lg:ml-35">
                 24/7 Security Assistance
               </h2>
-              <p className="text-sm lg:text-lg pr-0.5 lg:tracking-tighter font-sans tracking-tighter px-1 mt-1 lg:ml-35">
+              <p className="text-sm lg:text-lg pr-0.5 lg:tracking-tighter font-sans tracking-tighter px-1  mt-1 lg:ml-35">
                 Real-time support for all cybersecurity concerns, including
                 breach response, threat detection, and guidance.
               </p>

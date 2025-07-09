@@ -14,7 +14,7 @@ const TeamCard = ({ setHovered, setContent }) => {
             className="h-96 bg-black rounded-3xl overflow-hidden relative group transition-transform lg:-translate-y-24"
          
             onMouseEnter={() => {
-              setHovered(true);
+              setHovered(true)
               setContent(<div className="text-sm">View</div>);
             }}
             onMouseLeave={() => {

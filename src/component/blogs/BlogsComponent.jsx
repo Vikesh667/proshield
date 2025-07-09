@@ -47,8 +47,8 @@ const BlogsComponent = () => {
           </div>
         </div>
       ))}
-      <div className="w-full h-full flex-col lg:flex-row py-10 lg:px-28 gap-5  mt-10 flex items-start lg:items-center justify-between">
-        <div className="flex items-center gap-5 flex-col lg:flex-row ">
+      <div className="w-full h-full flex-col lg:flex-row py-10 lg:px-28 gap-5  lg:mt-10 flex items-start lg:items-center justify-between">
+        <div className="flex items-center gap-5 flex-wrap lg:flex-row ">
           <h1 className="text-black font-semibold text-xl">Tags:</h1>
           <button className="bg-gradient-to-r from-5% bg-indigo-500 via-55% to-sky-500 py-2 px-5 text-lg text-white rounded-lg">
             Security

@@ -13,7 +13,7 @@ const Team = ({ setHovered, setContent }) => {
   return (
     <div className="w-full min-h-screen relative overflow-hidden py-10 ">
   
-      <div className="bg-[#010535] pt-20  relative z-10 w-full h-[100vh] lg:h-[70vh]">
+      <div className="bg-[#010535] pt-10 lg:pt-20  relative z-10 w-full h-[100vh] lg:h-[70vh]">
         <div className="text-center text-white">
           <div className="flex justify-center items-center gap-3 mb-2">
             <img src={iconHeading} className="w-6 h-6 invert" />
@@ -22,8 +22,7 @@ const Team = ({ setHovered, setContent }) => {
           <h2 className="text-3xl lg:text-5xl font-bold">Our expert team member</h2>
         </div>
 
-  
-        <div className="mt-16 px-10">
+        <div className="mt-5 lg:mt-16 lg:px-10">
           <TeamCard setHovered={setHovered} setContent={setContent} />
         </div>
       </div>
@@ -31,9 +30,8 @@ const Team = ({ setHovered, setContent }) => {
    
       <div className="bg-white h-52 lg:h-64 w-full absolute bottom-0 z-0" />
 
- 
     <div className="w-full h-full px-5 flex justify-center">
-        <div className="w-full h-full z-20  lg:max-w-7xl  mt-[75rem] lg:mt-60 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 flex flex-col lg:flex-row justify-between px-6 lg:px-10 rounded-3xl shadow-xl relative">
+        <div className="w-full h-full z-20  lg:max-w-7xl  mt-[70rem] lg:mt-60 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 flex flex-col lg:flex-row justify-between px-6 lg:px-10 rounded-3xl shadow-xl relative">
      
         <div className="flex flex-col flex-2 py-10 lg:py-16">
           <motion.div
@@ -55,8 +53,8 @@ const Team = ({ setHovered, setContent }) => {
             <h1 className="text-white text-xl lg:text-2xl flex items-center gap-3">
               <MdOutlineAttachEmail /> Sent e-mail
             </h1>
-            <div className="absolute right-4 top-2 lg:right-2/5 lg:top-20">
-              <img className="animate-wiggle" src={ctaArrowImage} />
+            <div className="absolute right-4 top-1/5  lg:right-2/5 lg:top-28">
+              <img className="animate-wiggle w-25 h-25 lg:w-40 lg:h-40" src={ctaArrowImage} />
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const CommonCard = ({item}) => {
 
   return (
     <div
-      className="relative w-84 h-14 flex items-center justify-between px-3 py-3 rounded-xl overflow-hidden bg-white group"
+      className="relative w-full h-14 flex items-center justify-between  py-3 rounded-xl overflow-hidden bg-white group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >   

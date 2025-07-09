@@ -26,11 +26,11 @@ const OurProject = ({ setContent, setHovered }) => {
           <img src={iconHeading} className="text-white" />
           <h1 className="text-sm uppercase font-semibold tracking-widest">our project</h1>
         </div>
-        <div className="flex flex-col gap-2 justify-center items-center mb-20">
-          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-serif tracking-tighter text-indigo-950">
-            Showcasing our cybersecurity  latest
+        <div className="flex flex-col gap-2 justify-center items-center lg:mb-20">
+          <h1 className="text-2xl lg:text-5xl text-center font-bold font-sans tracking-tighter text-indigo-950">
+            Showcasing our cybersecurity latest
           </h1>
-          <h1 className="text-3xl lg:text-5xl text-center font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent">
+          <h1 className="text-2xl lg:text-5xl text-center font-semibold font-serif tracking-tight bg-gradient-to-r bg-blue-900 to-blue-300 bg-clip-text text-transparent">
             projects
           </h1>
         </div>

@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+        <div className="w-full lg:w-1/2 flex flex-col gap-5 lg:gap-8 pt-6 lg:pt-0">
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
