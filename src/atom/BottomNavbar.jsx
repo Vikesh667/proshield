@@ -127,7 +127,7 @@ const BottomNavbar = () => {
         )}
 
         <div className="mr-20 hidden lg:flex gap-5">
-          <Button text="Get Started" />
+          <Link to="/contact"><Button text="Get Started" /></Link>
           <Button text={isRunning ? "Off" : "On"} onClick={toggleRunning} />
           {isRunning && <Button text={direction} onClick={changeDirection} />}
         </div>

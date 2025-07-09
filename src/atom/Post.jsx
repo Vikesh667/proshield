@@ -1,4 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Post = ({post,setContent,setHovered,index}) => {
   return (
@@ -29,7 +30,7 @@ const Post = ({post,setContent,setHovered,index}) => {
           {post.title}
         </h1>
         <button className="p-3 bg-white text-blue-700 rounded-full hover:text-white hover:bg-blue-700">
-          <FaArrowRight />
+         <Link to="/blogsdetails"> <FaArrowRight /></Link>
         </button>
       </div>
       <div className="absolute rounded-3xl inset-0 bg-white/20 scale-0 group-hover:scale-[2.5] rotate-[-45deg] transition-transform duration-500 ease-out origin-center pointer-events-none" />

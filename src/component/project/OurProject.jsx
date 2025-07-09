@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import { projects } from "../../constant/data";
+import { Link } from "react-router-dom";
 
 const OurProject = ({ setContent, setHovered }) => {
   const projectdetails = projects.slice(0, 4);
@@ -95,7 +96,7 @@ const OurProject = ({ setContent, setHovered }) => {
         <h1 className="w-full px-5 lg:w-1/2 text-center capitalize text-md text-gray-600">
           Cybersecurity Innovations Explore All Our Projects Safeguarding Digital Futures Against Evolving Threats.{" "}
           <span className="relative inline-block bg-gradient-to-r from-indigo-900 to-blue-400 bg-clip-text text-transparent capitalize cursor-pointer text-lg">
-            all project
+          <Link to="/project">all project</Link>
             <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gradient-to-r from-indigo-900 to-blue-400"></span>
           </span>
         </h1>

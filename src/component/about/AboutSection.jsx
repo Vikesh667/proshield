@@ -6,6 +6,7 @@ import Button from "../../atom/Button";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import SvgGradients from "../../atom/SvgGraduents";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const AboutSection = () => {
   return (
     <div className="min-w-screen min-h-screen bg-white flex flex-col lg:flex-row  justify-around gap-10 py-12 lg:px-25">
@@ -105,15 +106,15 @@ const AboutSection = () => {
 
         <div className="w-full flex flex-col lg:flex-row items-start gap-5 lg:gap-10">
           <ul className="space-y-3">
-            <li className="flex gap-3 items-center  font-sans text-md rounded-full">
+            <li className="flex gap-3 items-center text-gray-500/90  font-sans text-md rounded-full">
               <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
               Threat Detection and Monitoring
             </li>
-            <li className="flex gap-3 items-center  font-sans text-md rounded-full">
+            <li className="flex gap-3 items-center text-gray-500/90  font-sans text-md rounded-full">
               <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
               Access Control Management
             </li>
-            <li className="flex gap-3 items-center font-sans text-md rounded-full">
+            <li className="flex gap-3 items-center text-gray-500/90  font-sans text-md rounded-full">
               <HiOutlineBadgeCheck className="text-3xl stroke-[url(#iconGradientStroke)] stroke-[2px] fill-none" />
               Security Awareness Training
             </li>
@@ -125,7 +126,7 @@ const AboutSection = () => {
               </div>
               <h2>+91123456789</h2>
             </div>
-            <Button text="More About" />
+           <Link to="/about"> <Button text="More About" /></Link>
           </div>
         </div>
       </div>

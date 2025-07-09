@@ -2,7 +2,16 @@ import { services } from "../../constant/data";
 import iconHeading from "../../assets/icon-sub-heading.svg";
 import {  FaArrowRight } from "react-icons/fa";
 import {motion} from "framer-motion"
+import { Link } from "react-router-dom";
+
+
 const OurServices = () => {
+const scrollTop=()=>{
+  window.scroll({
+    top:0,
+    behavior:"smooth"
+  })
+}
   return (
     <div className="w-full min-h-screen bg-gray-100 overflow-hidden py-5 px-5 lg:p-20 flex flex-col items-center">
       <div className="flex flex-col items-center">
@@ -52,7 +61,9 @@ const OurServices = () => {
                   {service.text}
                 </h1>
                 <span className="rounded-full p-3 bg-gradient-to-r z-10 bg-indigo-800 to-blue-400   group-hover:bg-white  transition-all duration-300">
-                  <FaArrowRight className="text-white font-bold  group-hover:text-blue-800 text-xl z-10 relative transition-all duration-300" />
+                  <Link 
+                  onClick={scrollTop}
+                  to="/servicedetails"><FaArrowRight className="text-white font-bold  group-hover:text-blue-800 text-xl z-10 relative transition-all duration-300" /></Link>
                 </span>
               </div>
               <p className="text-md font-sans text-gray-500/90 z-10 group-hover:text-white">{service.para}</p>
