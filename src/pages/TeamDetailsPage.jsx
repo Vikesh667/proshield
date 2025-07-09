@@ -1,4 +1,5 @@
 import TopSection from "../atom/TopSection"
+import TeamDetailsComponent from "../component/pagecomponent/TeamDetailsComponenet"
 
 const TeamDetailsPage=()=>{
     const content={
@@ -8,6 +9,7 @@ const TeamDetailsPage=()=>{
   return(
    <div className="w-full h-full">
    <TopSection content={content}/>
+   <TeamDetailsComponent/>
    </div>
   )
 }

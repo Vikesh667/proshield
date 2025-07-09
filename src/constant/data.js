@@ -72,6 +72,9 @@ import project1 from "../assets/icon-project-detail-1.svg"
 import project2 from "../assets/icon-project-detail-2.svg"
 import project3 from "../assets/icon-project-detail-3.svg"
 import project4 from "../assets/icon-project-detail-4.svg"
+import iconphone from "../assets/icon-phone-accent.svg";
+import iconMail from "../assets/icon-mail-accent.svg";
+import iconLocation from "../assets/icon-location.svg";
 export const navItem = [
   {
     text: "Home",
@@ -620,3 +623,28 @@ export const gallerys = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMXjUzvLuw3a8t3XVG57aZ8BIM0Z7Ho6w4UcbednHby3CfwepM-YKcy1r5rKe-T26uMN8&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Xf4N2qRKK96PLTqzzosdf0JiKjh-d4S5RRM9PiH5d-6MMUjJ3_kkzUTe80fT6N5K6hc&usqp=CAU",
 ];
+
+export const teamsContact=[
+  {
+    icon:iconphone,
+    contact:"+123456789",
+  },
+   {
+    icon:iconMail,
+    contact:"+123456789",
+  },
+   {
+    icon:iconLocation,
+    contact:"+123456789",
+  }
+]
+
+export const teamMember=[
+  {
+    profession:"CyberSecurity Analyst",
+    heading:"About me",
+    description:"Sophia Carter is a dedicated cybersecurity professional with a strong background in network security, threat analysis, and vulnerability management. With over [X] years of experience in the field, Sophia excels at identifying risks and implementing robust security measures to protect sensitive data and digital assets.",
+    description2:"Her expertise includes designing and deploying advanced threat detection systems, conducting security audits, and ensuring compliance with industry standards and regulations. Sophia is passionate about staying ahead of emerging cyber threats and leveraging innovative solutions to safeguard businesses.",
+    followers:"Follow me on :"
+  }
+]
