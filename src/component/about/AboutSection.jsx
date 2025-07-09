@@ -81,7 +81,7 @@ const AboutSection = () => {
           your digital assets, ensuring safety and peace of mind.
         </h2>
         <div className="flex items-center w-full ">
-          {/* Hexagonal image container (only on lg) */}
+        
           <div className="w-32 sm:w-1/2 lg:w-52 h-36 bg-blue-500 rounded-l-2xl lg:rounded-none overflow-hidden lg:hexagonal">
             <img
               src={aboutAvatar[0]}
@@ -90,7 +90,7 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Text Section */}
+         
           <div className="flex-1 h-36 bg-gray-100 lg:-ml-30">
             <div className="w-full h-full bg-gradient-to-br from-blue-800 to-blue-400 text-white py-4 px-3 lg:p-4 lg:px-5 flex flex-col justify-center items-start rounded-r-2xl lg:rounded-r-full lg:hex-left">
               <h2 className="text-md lg:text-xl font-bold lg:ml-35">

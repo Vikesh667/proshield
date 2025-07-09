@@ -25,9 +25,7 @@ const ChooseCounter = () => {
     <h1 className="text-md text-center lg:text-xl text-white">{ccounter.text}</h1>
   </div>
 ))}
-
-
-    </div>
+   </div>
   );
 };
 

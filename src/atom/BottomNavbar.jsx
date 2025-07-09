@@ -106,7 +106,6 @@ const BottomNavbar = () => {
                     )}
                   </div>
 
-                  {/* Submenu visible only if clicked */}
                   {item.submenu && openSubmenuIndex === index && (
                     <div className="bg-gradient-to-r from-blue-700 to-blue-300 rounded-2xl w-full mt-2 transition-all duration-500 ease-in-out overflow-hidden">
                       {item.submenu.map((sub) => (

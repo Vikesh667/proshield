@@ -12,7 +12,7 @@ const TeamCard = ({ setHovered, setContent }) => {
           <motion.div
             key={index}
             className="h-96 bg-black rounded-3xl overflow-hidden relative group transition-transform lg:-translate-y-24"
-            // 👆 Pull only on large screens
+         
             onMouseEnter={() => {
               setHovered(true);
               setContent(<div className="text-sm">View</div>);
@@ -32,13 +32,13 @@ const TeamCard = ({ setHovered, setContent }) => {
               className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
             />
 
-            {/* Text */}
+      
             <div className="absolute bottom-10 w-full text-center z-10">
               <h1 className="text-white text-xl font-semibold">{team.name}</h1>
               <p className="text-white text-sm opacity-75">{team.expert}</p>
             </div>
 
-            {/* Hover Overlay */}
+          
             <div className="absolute inset-0 bg-black/30 scale-0 group-hover:scale-100 transition duration-500 flex items-center justify-center gap-4 z-20">
               <span className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
                 <FaXTwitter className="text-white" />

@@ -9,7 +9,7 @@ const Video = ({ setContent, setHovered }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background image */}
+   
       <div className="absolute inset-0 bg-no-repeat bg-center bg-cover">
         <video loop
       autoPlay
@@ -27,7 +27,7 @@ const Video = ({ setContent, setHovered }) => {
         />
       </div>
 
-      {/* Hero content */}
+     
       <div className="relative z-[2] px-8 py-20 lg:py-36 max-w-6xl lg:ml-20 text-white">
         <motion.div className="flex items-center text-white"
         initial={{y:30,opacity:0}}

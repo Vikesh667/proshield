@@ -19,9 +19,9 @@ const ServiceComponent = () => {
   return (
     <div className="w-full min-h-screen bg-white py-20 px-6 lg:px-24">
       <div className="w-full flex flex-col lg:flex-row gap-10">
-        {/* Left Sidebar */}
+       
         <div className="lg:w-[30%] w-full flex-shrink-0 flex flex-col gap-10 lg:sticky top-20 self-start h-fit">
-          {/* Service Categories */}
+         
           <div className="bg-gray-100 px-5 rounded-2xl flex flex-col gap-5">
             <h1 className="text-lg font-semibold text-black">
               Services Category
@@ -31,18 +31,17 @@ const ServiceComponent = () => {
             ))}
           </div>
 
-          {/* Contact Info */}
          <Contact/>
         </div>
 
 
         <div className="flex flex-col gap-5 w-full lg:w-[70%] ">
-          {/* Image Slider */}
+      
            <Slider
            serviceImage={serviceImage}
            />
 
-          {/* Description Section */}
+        
           <div className="mt-10 flex flex-col gap-7 px-1">
             <p className="text-md text-gray-700 opacity-90 leading-7">
               Our Endpoint Security Solutions safeguard all devices connected to
@@ -61,7 +60,7 @@ const ServiceComponent = () => {
             </p>
           </div>
 
-          {/* Heading Section */}
+          
           <div className="lg:mt-14 px-1">
             <h1 className="text-2xl lg:text-5xl text-indigo-950 font-bold mb-5">
               Why choose endpoint security

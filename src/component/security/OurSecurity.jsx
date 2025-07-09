@@ -61,7 +61,7 @@ const OurSecurity = () => {
               initial={{ scaleX: 1, opacity: 1 }}
               whileInView={{ scaleX: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }} // ✅ only animate the first time it comes
+              viewport={{ once: true }} 
             />
           </div>
 

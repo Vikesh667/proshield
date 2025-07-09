@@ -15,7 +15,7 @@ const OurProject = ({ setContent, setHovered }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Heading Section */}
+      
       <motion.div
         className="flex flex-col items-center"
         initial={{ opacity: 0, y: 50 }}
@@ -36,7 +36,7 @@ const OurProject = ({ setContent, setHovered }) => {
         </div>
       </motion.div>
 
-      {/* Projects Grid */}
+    
       <div className="flex flex-col  lg:flex-row p-4 gap-[1px] w-full h-full">
         {projectdetails.map((project, index) => (
           <motion.div
@@ -86,7 +86,7 @@ const OurProject = ({ setContent, setHovered }) => {
         ))}
       </div>
 
-      {/* Bottom Text */}
+      
       <motion.div
         className="w-full flex justify-center lg:p-15"
         initial={{ opacity: 0 }}

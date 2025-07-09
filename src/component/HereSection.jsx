@@ -14,7 +14,7 @@ const HeroSection = ({ setHovered, setContent }) => {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background image with gradient overlay */}
+    
       <div
         className="absolute inset-0 w-full h-full bg-center bg-cover bg-no-repeat z-0"
         style={{ backgroundImage: `url(${heroImage})` }}
@@ -22,7 +22,7 @@ const HeroSection = ({ setHovered, setContent }) => {
         <div className="absolute inset-0 bg-gradient-to-l from-[#01053547] to-[#010535cc] z-10" />
       </div>
 
-      {/* Hero content */}
+     
       <div className="relative z-20 px-4 mt-10 sm:px-6 lg:px-20 py-10 lg:py-36 max-w-[1440px] mx-auto text-white">
         <motion.div
           className="flex items-center mb-3"
@@ -54,7 +54,6 @@ const HeroSection = ({ setHovered, setContent }) => {
           solutions designed to safeguard your data, systems, and peace of mind.
         </motion.p>
 
-        {/* Call to Action and Video Play */}
         <div className="flex flex-wrap items-center gap-6 sm:gap-10 mb-10">
           <ActionButton text="Learn More" icon={<GoArrowRight />} />
 
@@ -83,7 +82,6 @@ const HeroSection = ({ setHovered, setContent }) => {
           {open && <VideoPlay setOpen={setOpen} />}
         </div>
 
-        {/* Feature list and client card */}
         <div className="w-full flex flex-col sm:flex-row sm:items-start sm:gap-10">
           <div className="flex flex-col gap-6 text-white">
             <motion.div

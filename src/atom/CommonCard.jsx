@@ -6,7 +6,7 @@ const CommonCard = ({item}) => {
   const [visible, setVisible] = useState(true); 
 
   const handleMouseEnter = () => {
-    setVisible(true); // show again
+    setVisible(true); 
     setTranslateClass("translate-y-0"); 
   };
 

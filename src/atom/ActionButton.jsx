@@ -18,7 +18,6 @@ const ActionButton = ({
       onMouseLeave={() => setIsHovered(false)}
       className="relative overflow-hidden px-6 py-3 rounded-full group bg-white"
     >
-      {/* Hover Overlay */}
       <AnimatePresence>
         {isHovered && (
           <motion.span
@@ -31,10 +30,8 @@ const ActionButton = ({
         )}
       </AnimatePresence>
 
-      {/* Content */}
+
       <span className="relative z-10 flex items-center gap-3 transition-colors duration-300">
-        {/* Icon with dynamic color and background */}
-        
         <span
           className={`text-lg font-semibold transition-colors duration-300 ${
             isHovered ? "text-white" : "text-blue-700"

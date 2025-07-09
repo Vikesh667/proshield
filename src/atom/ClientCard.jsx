@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { avatarList } from "../constant/data"
 import Card from "./Card";
 
 const ClientCard=({className})=>{

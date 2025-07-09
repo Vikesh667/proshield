@@ -7,7 +7,7 @@ import companylogo from "../assets/company-logo.svg";
 import quote from "../assets/testimonial-quote.svg";
 
 const TestimonilaSlider = ({ setContent, setHovered }) => {
-  // Custom Prev Arrow
+
   const PrevArrow = ({ onClick }) => (
     <button
       className="absolute -bottom-7 right-36 lg:bottom-10 lg:right-16 z-50 p-2 bg-white/30 text-white  rounded-full hover:bg-white/50 transition"
@@ -17,7 +17,7 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
     </button>
   );
 
-  // Custom Next Arrow
+  
   const NextArrow = ({ onClick }) => (
     <button
       className="absolute -bottom-7 right-22  lg:bottom-10 lg:right-5 z-50 bg-white/30 text-white p-2 rounded-full hover:bg-white/50 transition"
@@ -62,13 +62,13 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
               key={index}
               className="flex flex-col gap-10 text-white h-full p-3 lg:p-8 "
             >
-              {/* Top Row */}
+             
               <div className="w-full flex items-center justify-between mb-4">
                 <img src={companylogo} className="h-8 w-auto" />
                 <img src={quote} className="h-6 w-6" />
               </div>
 
-              {/* Testimonial Text */}
+           
               <div className="flex flex-col gap-4">
                 <h3 className="text-sm lg:text-lg font-medium leading-relaxed opacity-90 tracking-tight">
                   {testimonial.para}
@@ -78,7 +78,7 @@ const TestimonilaSlider = ({ setContent, setHovered }) => {
                 </h3>
               </div>
 
-              {/* User Info */}
+            
               <div className="flex items-center gap-4 mt-5">
                 <img
                   className="w-16 h-16 rounded-full object-cover border-2 border-white"

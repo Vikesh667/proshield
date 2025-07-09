@@ -12,9 +12,7 @@ const WhyChooseUs = () => {
       className="w-full min-h-screen bg-cover bg-no-repeat bg-[#010535] px-5 py-10 lg:p-10 md:p-20 flex flex-col lg:gap-10"
       style={{ backgroundImage: `url(${choosebg})` }}
     >
-      {/* Main Section */}
       <div className="flex flex-col lg:flex-row lg:gap-10 items-center">
-        {/* Left: Image Reveal */}
         <div className="w-full lg:w-1/2 overflow-hidden origin-left">
           <div className="w-full relative">
             < img
@@ -31,12 +29,11 @@ const WhyChooseUs = () => {
               initial={{ scaleX: 1, opacity: 1 }}
               whileInView={{ scaleX: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }} // ✅ only animate the first time it comes
+              viewport={{ once: true }} 
             />
           </div>
         </div>
 
-        {/* Right: Text */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8">
           <motion.div
             initial={{ y: 100, opacity: 0 }}

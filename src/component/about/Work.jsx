@@ -26,15 +26,14 @@ const Work = () => {
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 py-10 lg:py-28 gap-16">
-      {/* Left Section */}
       <div className="w-full lg:w-1/2 relative flex flex-col items-start gap-10">
-        {/* Heading */}
         <div className="flex items-center gap-2 text-black">
           <img src={icon} alt="icon" className="w-6 h-6" />
-          <span className="text-lg uppercase font-serif tracking-wider">how it works</span>
+          <span className="text-lg uppercase font-serif tracking-wider">
+            how it works
+          </span>
         </div>
 
-        {/* Title */}
         <div className="-mt-4">
           <h1 className="text-2xl lg:text-5xl font-semibold font-serif text-indigo-950">
             Streamlined process,
@@ -44,23 +43,18 @@ const Work = () => {
           </h1>
         </div>
 
-        {/* Timeline */}
         <div className="relative w-full">
-          {/* Dotted Line */}
           <div className="absolute left-6 lg:left-10 top-10 h-72  border-l-2 border-dashed border-blue-500"></div>
 
-          {/* Step items */}
           <div className="flex flex-col gap-5 mt-4 relative">
             {steps.map((step, index) => (
               <div key={index} className="flex items-start gap-6">
-                {/* Number Circle aligned to the line */}
                 <div className="relative">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-indigo-500 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg lg:text-2xl shadow-md relative left-6 lg:left-10 -translate-x-1/2" >
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-indigo-500 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg lg:text-2xl shadow-md relative left-6 lg:left-10 -translate-x-1/2">
                     {step.number}
                   </div>
                 </div>
 
-                {/* Text Content aligned vertically with number */}
                 <div className="flex flex-col">
                   <h2 className="text-lg lg:text-2xl capitalize font-semibold text-[#010535]">
                     {step.title}
@@ -74,8 +68,6 @@ const Work = () => {
           </div>
         </div>
       </div>
-
-      {/* Right Image */}
       <div className="w-full lg:w-1/2 relative flex justify-center items-center mt-10 lg:mt-0">
         <img
           src={workImage1}

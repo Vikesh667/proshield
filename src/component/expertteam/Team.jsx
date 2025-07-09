@@ -12,7 +12,7 @@ const Team = ({ setHovered, setContent }) => {
 
   return (
     <div className="w-full min-h-screen relative overflow-hidden py-10 ">
-      {/* Top Blue Background with Cards */}
+  
       <div className="bg-[#010535] pt-20  relative z-10 w-full h-[100vh] lg:h-[70vh]">
         <div className="text-center text-white">
           <div className="flex justify-center items-center gap-3 mb-2">
@@ -22,19 +22,19 @@ const Team = ({ setHovered, setContent }) => {
           <h2 className="text-3xl lg:text-5xl font-bold">Our expert team member</h2>
         </div>
 
-        {/* Team Cards */}
+  
         <div className="mt-16 px-10">
           <TeamCard setHovered={setHovered} setContent={setContent} />
         </div>
       </div>
 
-      {/* White Background that cards overlap into */}
+   
       <div className="bg-white h-52 lg:h-64 w-full absolute bottom-0 z-0" />
 
-      {/* CTA Section */}
+ 
     <div className="w-full h-full px-5 flex justify-center">
         <div className="w-full h-full z-20  lg:max-w-7xl  mt-[75rem] lg:mt-60 bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 flex flex-col lg:flex-row justify-between px-6 lg:px-10 rounded-3xl shadow-xl relative">
-        {/* Left Text Column */}
+     
         <div className="flex flex-col flex-2 py-10 lg:py-16">
           <motion.div
             className="flex justify-start"
@@ -61,7 +61,6 @@ const Team = ({ setHovered, setContent }) => {
           </div>
         </div>
 
-        {/* Right Image Column */}
         <div className="h-full flex-1 w-full flex items-center justify-center py-10 relative">
           <img src={ctaImage} alt="cta" className="w-full h-full rounded-3xl object-cover" />
           <motion.div

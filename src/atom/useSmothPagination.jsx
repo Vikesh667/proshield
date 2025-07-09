@@ -1,4 +1,4 @@
-// src/hooks/useSmoothPagination.js
+
 import { useEffect, useRef, useState } from "react";
 
 const useSmoothPagination = (interval = 3000, maxPages = 5) => {

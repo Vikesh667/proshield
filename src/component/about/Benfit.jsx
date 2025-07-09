@@ -10,42 +10,36 @@ import Button from "../../atom/Button";
 const Benfit = () => {
   return (
     <div className="w-full flex flex-col lg:flex-row items-center justify-between bg-gray-200 py-16 px-5 lg:px-20 gap-10">
-      {/* Left Images Section */}
-    {/* Left Images Section */}
-{/* Left Images Section */}
-<div className="relative w-full lg:w-[45%] flex items-start justify-start h-[370px] lg:h-[600px] pr-4 lg:pr-10">
-  <div className="w-full max-w-[480px] h-full relative">
-    <img
-      src={benfitImage}
-      alt="Main"
-      className="w-full h-full object-cover rounded-3xl"
-    />
-    {/* Overlay Image */}
-    <img
-      src={benfitImage2}
-      alt="Overlay"
-      className="absolute w-40 h-36 lg:w-60 lg:h-72 bottom-5 -right-7 lg:-right-10 lg:bottom-10 border-4 lg:border-8 border-white rounded-xl lg:rounded-3xl object-cover z-10"
-    />
-    {/* Spinning SVG */}
-    <img
-      src={securitySpinImage}
-      alt="Spin"
-      className="absolute w-24 h-24 lg:w-36 lg:h-36 -right-7  lg:-right-10 top-10 animate-spin-slow"
-    />
-  </div>
-</div>
+      <div className="relative w-full lg:w-[45%] flex items-start justify-start h-[370px] lg:h-[600px] pr-4 lg:pr-10">
+        <div className="w-full max-w-[480px] h-full relative">
+          <img
+            src={benfitImage}
+            alt="Main"
+            className="w-full h-full object-cover rounded-3xl"
+          />
 
+          <img
+            src={benfitImage2}
+            alt="Overlay"
+            className="absolute w-40 h-36 lg:w-60 lg:h-72 bottom-5 -right-7 lg:-right-10 lg:bottom-10 border-4 lg:border-8 border-white rounded-xl lg:rounded-3xl object-cover z-10"
+          />
 
+          <img
+            src={securitySpinImage}
+            alt="Spin"
+            className="absolute w-24 h-24 lg:w-36 lg:h-36 -right-7  lg:-right-10 top-10 animate-spin-slow"
+          />
+        </div>
+      </div>
 
-      {/* Right Text Section */}
       <div className="w-full lg:w-1/2 flex flex-col gap-3 lg:gap-6">
-        {/* Section Heading */}
         <div className="flex items-center gap-2">
           <img src={icon} alt="icon" className="w-6 h-6" />
-          <span className="text-lg uppercase font-serif tracking-wider text-black">our benefits</span>
+          <span className="text-lg uppercase font-serif tracking-wider text-black">
+            our benefits
+          </span>
         </div>
 
-        {/* Title */}
         <h1 className="text-3xl lg:text-5xl font-semibold font-serif text-indigo-950 leading-tight">
           Reliable solutions for
         </h1>
@@ -53,7 +47,6 @@ const Benfit = () => {
           cybersecurity excellence
         </h1>
 
-        {/* Subtext */}
         <p className="text-gray-700 opacity-80 text-base lg:text-lg">
           Our comprehensive cybersecurity solutions provide robust protection,
           minimizing risks and giving you peace of mind knowing your data and
@@ -61,9 +54,7 @@ const Benfit = () => {
           navigate today's threats.
         </p>
 
-        {/* Icon Cards */}
         <div className="flex flex-col sm:flex-row gap-5">
-          {/* Card 1 */}
           <div className="flex gap-4 items-center bg-white py-3 px-4 rounded-xl shadow-sm">
             <div className="w-14 h-14 p-2 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-indigo-600 bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-500">
               <img src={benfitBody1} alt="icon1" className="w-full h-full" />
@@ -73,7 +64,6 @@ const Benfit = () => {
             </h2>
           </div>
 
-          {/* Card 2 */}
           <div className="flex gap-4 items-center bg-white py-3 px-4 rounded-xl shadow-sm">
             <div className="w-14 h-14 p-2 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-indigo-600 bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-500">
               <img src={benfitBody2} alt="icon2" className="w-full h-full" />
@@ -84,9 +74,7 @@ const Benfit = () => {
           </div>
         </div>
 
-        {/* Bullet List and Button */}
         <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-8 mt-6">
-          {/* Bullet Points */}
           <ul className="space-y-3">
             {[
               "Enhanced Business Continuity",
@@ -103,7 +91,6 @@ const Benfit = () => {
             ))}
           </ul>
 
-          {/* CTA Button */}
           <div className="mt-2 lg:mt-0">
             <Button text="Get Started" />
           </div>

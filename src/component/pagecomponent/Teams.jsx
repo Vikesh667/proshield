@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { ourteam } from "../../constant/data";
 import TopSection from "../../atom/TopSection";
 
-const Teams = () => {
+const Teams = ({setContent,setHovered}) => {
     const content={
         heading:"Our Team",
         text:"Team"

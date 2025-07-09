@@ -7,8 +7,8 @@ const PopComponent = ({ setComponent }) => {
     height:50, 
   });
 
-  const [position, setPosition] = useState(50); // Left position in %
-  const [topPos, setTopPos] = useState(50); // Top position in %
+  const [position, setPosition] = useState(50); 
+  const [topPos, setTopPos] = useState(50); 
 
 const handleLeft=()=>{
   setPosition(0)
@@ -35,7 +35,6 @@ const handleCenter=()=>{
         maxWidth: "90vw",
         maxHeight: "90vh",
       }}
-      // Entry animation using Framer Motion
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
@@ -43,7 +42,6 @@ const handleCenter=()=>{
     >
       <h1 className="text-xl sm:text-2xl text-center text-white">Side Effect</h1>
 
-      {/* Close button */}
       <button
         onClick={() => setComponent(false)}
         className="text-white border px-3 py-1 rounded 

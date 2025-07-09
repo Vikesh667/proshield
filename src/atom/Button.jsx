@@ -1,6 +1,6 @@
 import { GoArrowRight } from "react-icons/go";
 
-const Button = ({ text, type = "button" ,onClick, icon={} }) => {
+const Button = ({ text, type = "button" ,onClick }) => {
   return (
     <button
     onClick={onClick}

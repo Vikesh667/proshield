@@ -9,10 +9,10 @@ const Counter = ({  }) => {
     if (counter < count) {
       const timer = setTimeout(() => {
         setCounter((prev) => prev + 1);
-      }, 50); // You can adjust speed here
+      }, 50); 
       return () => clearTimeout(timer);
     }
-  }, [counter]); // Include count in dependency
+  }, [counter]);
 
   return <span>{counter}</span>;
 };

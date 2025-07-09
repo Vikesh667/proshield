@@ -8,7 +8,6 @@ const ProjectDetailsPage = () => {
   };
 
   return (
-    // REMOVE overflow-hidden from here
     <div className="w-full min-h-screen">
       <TopSection content={content} />
       <ProjectDetailComponent />
