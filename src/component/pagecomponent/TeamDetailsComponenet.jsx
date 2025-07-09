@@ -48,7 +48,7 @@ const TeamDetailsComponent = () => {
             alt="sofiya carter"
           />
         </div>
-        <div className="w-84 h-full bg-gray-100 px-5 py-5 mt-10 rounded-lg">
+        <div className="w-full lg:w-84 h-full bg-gray-100 px-5 py-5 mt-10 rounded-lg">
           <div className="w-full h-full flex flex-col items-start gap-5 py-5">
             <h1 className="text-2xl font-sans font-semibold">Get in touch:</h1>
             <p className="text-md font-sans tracking-tight text-start text-gray-500 opacity-80">
@@ -56,7 +56,7 @@ const TeamDetailsComponent = () => {
               or learn more about our innovative solutions.
             </p>
           </div>
-          <div className="w-full h-full flex flex-col gap-5">
+          <div className="w-full h-full flex flex-col  gap-5">
             {teamsContact.map((item, index) => (
               <div
                 key={index}
@@ -98,7 +98,7 @@ const TeamDetailsComponent = () => {
                   {member.description2}
                 </p>
               </div>
-              <div className="w-full h-full flex items-center gap-10 mt-5 lg:mt-10">
+              <div className="w-full h-full flex items-center gap-5 lg:gap-10 mt-5 lg:mt-10">
                 <h1 className="text-xl lg:text-3xl">{member.followers}</h1>
                 <div className="flex items-center gap-5">
                   <span className="w-10 h-10   bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-600 bg-[length:200%_auto] bg-left hover:bg-right transition-all duration-500 ease-in-out text-xl text-white flex items-center justify-center rounded-full">
