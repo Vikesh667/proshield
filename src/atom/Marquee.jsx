@@ -1,8 +1,8 @@
-import React, { useEffect} from "react";
-import { motion} from "framer-motion";
-import { gallerys } from "../constant/data";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { gallerys, securityTexts } from "../constant/data";
 
-const Marquee = ({isRunning,direction,controls}) => {
+const Marquee = ({ isRunning, direction, controls }) => {
   useEffect(() => {
     if (isRunning) {
       controls.start({
@@ -10,35 +10,32 @@ const Marquee = ({isRunning,direction,controls}) => {
         transition: {
           x: {
             repeat: Infinity,
-            duration: 10,
+            duration: 30,
             ease: "linear",
           },
         },
-      })
+      });
     } else {
       controls.stop();
     }
   }, [isRunning, direction, controls]);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="bg-gray-950 w-full h-auto flex flex-col items-center justify-center"
-    >
 
-      <div className="w-full overflow-hidden">
-        <motion.div
-          className="flex gap-5 w-max"
-          animate={controls}
-          initial={{ x: direction === "left" ? "100%" : "-100%" }}
-        >
-          {gallerys.map((image, index) => (
-            <img key={index} src={image} className="w-20 h-10" alt="" />
-          ))}
-        </motion.div>
-      </div>
+  return (
+    <motion.div className="w-full bg-[#0f172a] text-white py-2 border-y border-cyan-500 overflow-hidden">
+      <motion.div
+        className="flex items-center gap-10 w-max px-5"
+        animate={controls}
+        initial={{ x: direction === "left" ? "100%" : "-100%" }}
+      >
+        {gallerys.map((image, index) => (
+          <div key={index} className="flex items-center gap-3">
+            <img src={image} alt="" className="w-8 h-8 object-contain" />
+            <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
+              {securityTexts[index]}
+            </p>
+          </div>
+        ))}
+      </motion.div>
     </motion.div>
   );
 };

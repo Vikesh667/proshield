@@ -612,7 +612,7 @@ export const projectdetails=[
   }
 ]
 export const gallerys = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yFh8JegZm5yUiRkL__HAsCIbYy-40Tr96w&s",
+  "https://t3.ftcdn.net/jpg/03/09/61/38/360_F_309613855_MjtjxhOKcKcwM6zSqqtUR638v3K4ho2t.jpg",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTEWllVDV7DVWlufOlfrAPNAPGogIxFNXFUVFtQ8I5d4gNGLiRKo2eXWW1v_gfNJF8Zp8&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0s6rfR_YTwns1cJIHjzsk8jw9T7ERYvlNEDxD_e6Z8PMm9J19Cqq8cmW3MYfbiNQxt5M&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bETknwydjGX7UoJQb5SKkgxBkKJ56ed9MHPcqou2Lwv_jPGAwdAZPN5c8-reVQFrSZQ&usqp=CAU",
@@ -624,6 +624,17 @@ export const gallerys = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Xf4N2qRKK96PLTqzzosdf0JiKjh-d4S5RRM9PiH5d-6MMUjJ3_kkzUTe80fT6N5K6hc&usqp=CAU",
 ];
 
+export const securityTexts = [
+  "Firewall Protection",
+  "Threat Detection",
+  "Data Encryption",
+  "Network Security",
+  "Cloud Security",
+  "Vulnerability Assessment",
+  "Real-Time Monitoring",
+  "Incident Response",
+  "Secure Authentication",
+];
 export const teamsContact=[
   {
     icon:iconphone,

@@ -122,11 +122,37 @@ const BottomNavbar = () => {
                 </li>
               ))}
             </ul>
+            <div className="flex gap-5 items-center mt-5">
+              <button
+                onClick={toggleRunning}
+                className={`w-10 h-10 rounded-full font-sans font-semibold text-sm ${
+                  isRunning
+                    ? " text-red-500 "
+                    : "text-[#010535]"
+                }`}
+              >
+                {isRunning ? "Off" : "On"}
+              </button>
+              {isRunning && (
+                <button
+                  onClick={changeDirection}
+                  className={`w-10 h-10 rounded-full font-sans font-semibold text-2xl pb-1 text-center ${
+                    direction=="left"
+                      ? " text-[#010535] "
+                      : " text-white"
+                  }`}
+                >
+                  {direction === "left" ? "→" : "←"}
+                </button>
+              )}
+            </div>
           </div>
         )}
 
         <div className="mr-20 hidden lg:flex gap-5">
-          <Link to="/contact"><Button text="Get Started" /></Link>
+          <Link to="/contact">
+            <Button text="Get Started" />
+          </Link>
           <Button text={isRunning ? "Off" : "On"} onClick={toggleRunning} />
           {isRunning && <Button text={direction} onClick={changeDirection} />}
         </div>
