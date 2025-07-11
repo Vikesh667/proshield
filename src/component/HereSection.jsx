@@ -9,7 +9,7 @@ import ClientCard from "../atom/ClientCard";
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const HeroSection = ({ setHovered, setContent }) => {
+const HeroSection = ({ setHovered, setContent,chnageTheme }) => {
   const [open, setOpen] = useState(false);
 
   return (

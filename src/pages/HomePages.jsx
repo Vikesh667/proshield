@@ -20,7 +20,8 @@ const HomePages = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [content, setContent] = useState(null);
-  const [component,setComponent]=useState(false)
+  const [component, setComponent] = useState(false);
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -29,15 +30,17 @@ const HomePages = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // ✅ Define which paths will show HeroSection
-  const isCustomHome = ["/video", "/image", "/slider"].includes(location.pathname);
-useEffect(()=>{
-    setTimeout(()=>{
-        setComponent(true)
-    },500)
-},[])
+  const isCustomHome = ["/video", "/image", "/slider"].includes(
+    location.pathname
+  );
+  useEffect(() => {
+    setTimeout(() => {
+      setComponent(true);
+    }, 500);
+  }, []);
+
   return (
-    <div className="relative overflow-hidden">
+    <div className={`relative overflow-hidden`}>
       {isCustomHome ? (
         <HeroSection setContent={setContent} setHovered={setHovered} />
       ) : (
@@ -55,7 +58,7 @@ useEffect(()=>{
       <Team setContent={setContent} setHovered={setHovered} />
       <Faq />
       <LatestProjects setContent={setContent} setHovered={setHovered} />
-     {component &&   <PopComponent setComponent={setComponent}/>}
+      {component && <PopComponent setComponent={setComponent} />}
       {/* Custom Cursor */}
       <div
         style={{
