@@ -622,6 +622,7 @@ export const gallerys = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAGfO2ZtFUTpGCf_iJcq9JF9bhBT5d2Y5uK8uCVDIYELTx9SxavSqLE99vUfjEKWnXZ_M&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMXjUzvLuw3a8t3XVG57aZ8BIM0Z7Ho6w4UcbednHby3CfwepM-YKcy1r5rKe-T26uMN8&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Xf4N2qRKK96PLTqzzosdf0JiKjh-d4S5RRM9PiH5d-6MMUjJ3_kkzUTe80fT6N5K6hc&usqp=CAU",
+  
 ];
 
 export const securityTexts = [

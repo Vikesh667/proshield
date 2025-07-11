@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { gallerys, securityTexts } from "../constant/data";
 
-const Marquee = ({ isRunning, direction, controls }) => {
+const Marquee = ({ isRunning = true, direction = "left" }) => {
+  const controls = useAnimation();
+
   useEffect(() => {
     if (isRunning) {
       controls.start({
-        x: direction === "left" ? "-100%" : "100%",
+        x: direction === "left" ? "-50%" : "0%",
         transition: {
           x: {
             repeat: Infinity,
-            duration: 30,
+            repeatType: "loop",
+            duration: 20,
             ease: "linear",
           },
         },
@@ -20,23 +23,34 @@ const Marquee = ({ isRunning, direction, controls }) => {
     }
   }, [isRunning, direction, controls]);
 
+  const MarqueeContent = () => (
+    <>
+      {gallerys.map((image, index) => (
+        <div key={index} className="flex items-center gap-3 min-w-max">
+          <img src={image} alt="" className="w-8 h-8 object-contain" />
+          <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
+            {securityTexts[index]}
+          </p>
+        </div>
+      ))}
+    </>
+  );
+
   return (
-    <motion.div className="w-full bg-[#0f172a] text-white py-2 border-y border-cyan-500 overflow-hidden">
+    <div className="relative w-full overflow-hidden bg-[#0f172a] text-white py-2 border-y border-cyan-500">
       <motion.div
-        className="flex items-center gap-10 w-max px-5"
+        className="flex gap-10 w-max absolute left-0"
         animate={controls}
-        initial={{ x: direction === "left" ? "100%" : "-100%" }}
+        initial={{ x: "0%" }}
       >
-        {gallerys.map((image, index) => (
-          <div key={index} className="flex items-center gap-3">
-            <img src={image} alt="" className="w-8 h-8 object-contain" />
-            <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
-              {securityTexts[index]}
-            </p>
-          </div>
-        ))}
+        <div className="flex gap-10">
+          <MarqueeContent />
+        </div>
+        <div className="flex gap-10">
+          <MarqueeContent />
+        </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
