@@ -93,7 +93,7 @@ const AboutSection = () => {
          
           <div className="flex-1 h-36 bg-gray-100 lg:-ml-30">
             <div className="w-full h-full bg-gradient-to-br from-blue-800 to-blue-400 text-white py-6 px-3 lg:p-4 lg:px-5 flex flex-col justify-center items-start rounded-r-2xl lg:rounded-r-full lg:hex-left">
-              <h2 className="text-md lg:text-xl font-bold lg:ml-35">
+              <h2 className="text-sm lg:text-xl font-bold lg:ml-35">
                 24/7 Security Assistance
               </h2>
               <p className="text-sm lg:text-lg pr-0.5 lg:tracking-tighter font-sans tracking-tighter px-1   mt-1 lg:ml-35">
