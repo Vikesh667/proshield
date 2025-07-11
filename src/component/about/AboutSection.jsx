@@ -96,7 +96,7 @@ const AboutSection = () => {
               <h2 className="text-sm lg:text-xl font-bold lg:ml-35">
                 24/7 Security Assistance
               </h2>
-              <p className="text-sm lg:text-lg pr-0.5 lg:tracking-tighter font-sans tracking-tighter px-1   mt-1 lg:ml-35">
+              <p className="text-sm lg:text-lg leading-5 lg:tracking-tighter font-sans tracking-tighter px-1    mt-1 lg:ml-35">
                 Real-time support for all cybersecurity concerns, including
                 breach response, threat detection, and guidance.
               </p>
