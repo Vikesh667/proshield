@@ -1,4 +1,5 @@
 import TopSection from "../atom/TopSection"
+import FaqComponent from "../component/pagecomponent/FaqComponent"
 
 const FaqPages=()=>{
   const content={
@@ -8,6 +9,7 @@ const FaqPages=()=>{
   return(
    <div className="w-full h-full">
    <TopSection content={content}/>
+   <FaqComponent/>
    </div>
   )
 }
