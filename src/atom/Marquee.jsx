@@ -27,7 +27,7 @@ const Marquee = ({ isRunning = true, direction = "left" }) => {
     <>
       {gallerys.map((image, index) => (
         <div key={index} className="flex items-center gap-3 min-w-max">
-          <img src={image} alt="" className="w-8 h-8 object-contain" />
+         <img src={image} alt="" className="w-8 h-8 object-contain" />
           <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
             {securityTexts[index]}
           </p>
@@ -47,7 +47,7 @@ const Marquee = ({ isRunning = true, direction = "left" }) => {
           <MarqueeContent />
         </div>
         <div className="flex gap-10">
-          <MarqueeContent />
+         👉 <MarqueeContent />
         </div>
       </motion.div>
     </div>

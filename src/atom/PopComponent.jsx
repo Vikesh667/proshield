@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const PopComponent = ({ setComponent }) => {
   const [viewHeight, setViewHeight] = useState({
-    width: 80,
-    height: 25,
+    width: 70,
+    height: 40,
   });
 
-  const [position, setPosition] = useState(10);
+  const [position, setPosition] = useState(50);
   const [topPos, setTopPos] = useState(22);
 
   const handleLeft = () => {
@@ -25,7 +25,7 @@ const PopComponent = ({ setComponent }) => {
   };
   return (
     <motion.div
-      className="fixed z-50 flex items-center justify-center gap-6 
+      className="fixed z-50 flex items-center justify-center flex-col gap-6 transform -translate-x-1/2
                  p-4 sm:p-6 rounded-xl text-white bg-gray-800 shadow-lg 
                  overflow-auto "
       style={{
@@ -33,8 +33,8 @@ const PopComponent = ({ setComponent }) => {
         top: `${topPos}%`,
         width: `${viewHeight.width}vw`,
         height: `${viewHeight.height}vh`,
-        maxWidth: "90vw",
-        maxHeight: "90vh",
+        maxWidth: "60vh",
+        maxHeight: "60vh",
       }}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +44,7 @@ const PopComponent = ({ setComponent }) => {
       <h1 className="text-sm  lg:text-xl text-center text-white">
         Secure Your Business Today! We provide enterprise-grade cybersecurity
         solutions to protect what matters most. 👉 Get a Free Security 
-        Assessment. <Link to="/contact" className="underline text-cyan-400">Contact </Link> and stay one step ahead of hackers.
+        Assessment.Contact and stay one step ahead of hackers.
       </h1>
       
       <button
@@ -54,6 +54,7 @@ const PopComponent = ({ setComponent }) => {
       >
         X
       </button>
+      <button className="py-3 px-5 rounded-full bg-red-600 tracking-wide hover:bg-red-400 hover:scale-110 transition duration-500"><Link to="/contact">Subscribe</Link></button>
     </motion.div>
   );
 };

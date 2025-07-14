@@ -12,6 +12,9 @@ import "aos/dist/aos.css";
 import Layout from "./component/layout/Layout";
 import FullPageLoader from "./atom/FullPageLoader";
 import Video from "./component/home/Video";
+import Login from "./component/auth/Login";
+import Protected from "./component/auth/Protected";
+import Dashbord from "./component/dashbord/Dashbord";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -45,28 +48,43 @@ const App = () => {
   // ✅ All routes defined once
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePages />} />
-        <Route path="image" element={<HomePages />} />
-        <Route path="video" element={<Video />} />
-        <Route path="slider" element={<HomePages />} />
-        <Route path="about" element={<AboutUsPage />} />
-        <Route path="services" element={<Services />} />
-        <Route path="blog" element={<BlogsPage />} />
-        <Route path="contact" element={<Contactus />} />
-        <Route path="project" element={<Projects />} />
-        <Route path="team" element={<Teams />} />
-        <Route path="price" element={<Pricing />} />
-        <Route path="gallery" element={<Imagegallery />} />
-        <Route path="videogallery" element={<VideoGallery />} />
-        <Route path="testimonials" element={<TestimonialPages />} />
-        <Route path="faqs" element={<FaqPages />} />
-        <Route path="servicedetails" element={<ServicesDetails />} />
-        <Route path="blogsdetails" element={<BlogsDetailsPages />} />
-        <Route path="projectdetails" element={<ProjectDetailsPage />} />
-        <Route path="teamdetails" element={<TeamDetailsPage />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Route>
+     <>
+  <Route path="/login" element={<Login />} />
+  <Route path="/unauthorized" element={<PageNotFound />} />
+       <Route
+        path="/admin/dashboard"
+        element={
+          <Protected allowedRoles={["Admin"]}>
+            <Dashbord />
+          </Protected>
+        }
+      />
+  <Route path="/" element={<Layout />}>
+    <Route index element={<Protected><HomePages /></Protected>} />
+    <Route path="image" element={<Protected><HomePages /></Protected>} />
+    <Route path="video" element={<Protected><Video /></Protected>} />
+    <Route path="slider" element={<Protected><HomePages /></Protected>} />
+    
+
+    {/* Public routes */}
+    <Route path="about" element={<AboutUsPage />} />
+    <Route path="services" element={<Services />} />
+    <Route path="blog" element={<BlogsPage />} />
+    <Route path="contact" element={<Contactus />} />
+    <Route path="project" element={<Projects />} />
+    <Route path="team" element={<Teams />} />
+    <Route path="price" element={<Pricing />} />
+    <Route path="gallery" element={<Imagegallery />} />
+    <Route path="videogallery" element={<VideoGallery />} />
+    <Route path="testimonials" element={<TestimonialPages />} />
+    <Route path="faqs" element={<FaqPages />} />
+    <Route path="servicedetails" element={<ServicesDetails />} />
+    <Route path="blogsdetails" element={<BlogsDetailsPages />} />
+    <Route path="projectdetails" element={<ProjectDetailsPage />} />
+    <Route path="teamdetails" element={<TeamDetailsPage />} />
+    <Route path="*" element={<PageNotFound />} />
+  </Route>
+</>
     )
   );
 

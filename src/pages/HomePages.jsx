@@ -34,9 +34,11 @@ const HomePages = () => {
     location.pathname
   );
   useEffect(() => {
-    setTimeout(() => {
-      setComponent(true);
-    }, 500);
+    const hasSession=sessionStorage.getItem("hassSession")
+    if(!hasSession){
+      setComponent(true)
+    }
+    sessionStorage.setItem("hassSession","true")
   }, []);
 
   return (
