@@ -1,13 +1,14 @@
 
 import { Outlet } from "react-router-dom";
+import Sidebar from "./siderbar/Sidebar";
 
 const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-200">
-       <h1>Sidebar</h1>
+       <Sidebar/>
       <div className="flex-1 flex flex-col bg-blue-400">
-        <h1>Header</h1>
-        <main className="p-4 overflow-auto bg-white">
+        <div className="bg-white w-full h-20 flex items-center justify-center text-[#010535] text-2xl"><h1>Admin Dashbord</h1></div>
+        <main className="p-4 overflow-auto">
           <Outlet />
         </main>
       </div>

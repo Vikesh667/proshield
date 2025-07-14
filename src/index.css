@@ -97,3 +97,8 @@
 .animate-spin-slow {
   animation: spin-slow 1.5s linear infinite;
 }
+@layer components {
+  .sidebar {
+    @apply w-52 py-2 px-5 hover:bg-gray-200 rounded-lg hover:text-[#010535] font-semibold
+  }
+}

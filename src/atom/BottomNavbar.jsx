@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItem } from "../constant/data";
 import logo from "../assets/logo.svg";
 import Button from "./Button";
@@ -7,13 +7,17 @@ import Marquee from "./Marquee";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
+import { socket } from "./Socket";
+
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
-  const [isRunning, setRunning] = useState(false);
+  const [isRunning, setRunning] = useState(null);
   const controls = useAnimation();
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+
   const toggleRunning = () => setRunning((prev) => !prev);
   const changeDirection = () =>
     setDirection((prev) => (prev === "left" ? "right" : "left"));
@@ -21,11 +25,36 @@ const BottomNavbar = () => {
     setMenu(!menu);
     setTranslate(100);
   };
-  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
-
   const toggleSubmenu = (index) => {
     setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/api/notification/status");
+        const data = await response.json();
+        setRunning(data.data.isNotification);
+      } catch (error) {
+        console.error("Error fetching status:", error);
+      }
+    };
+
+    fetchStatus();
+
+    // ✅ Connect and listen to socket
+    socket.connect();
+
+    socket.on("notification", (data) => {
+      console.log("🔔 Real-time update:", data);
+      setRunning(data.isNotification);
+    });
+
+    // ✅ Cleanup on unmount (but not reconnect each time)
+    return () => {
+      socket.off("notification");
+    };
+  }, []);
 
   return (
     <div className="flex flex-col justify-center">
@@ -79,6 +108,7 @@ const BottomNavbar = () => {
             </li>
           ))}
         </ul>
+
         {menu && (
           <div className="lg:hidden bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 w-full absolute left-0 top-15 p-10 transition duration-500">
             <ul className="flex flex-col gap-3 relative">
@@ -97,11 +127,7 @@ const BottomNavbar = () => {
 
                     {item.submenu && (
                       <span className="text-black ml-2">
-                        {openSubmenuIndex === index ? (
-                          <FaAngleUp />
-                        ) : (
-                          <FaAngleDown />
-                        )}
+                        {openSubmenuIndex === index ? <FaAngleUp /> : <FaAngleDown />}
                       </span>
                     )}
                   </div>
@@ -122,30 +148,6 @@ const BottomNavbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex gap-5 items-center mt-5">
-              <button
-                onClick={toggleRunning}
-                className={`w-10 h-10 rounded-full font-sans font-semibold text-sm ${
-                  isRunning
-                    ? " text-red-500 "
-                    : "text-[#010535]"
-                }`}
-              >
-                {isRunning ? "Off" : "On"}
-              </button>
-              {isRunning && (
-                <button
-                  onClick={changeDirection}
-                  className={`w-10 h-10 rounded-full font-sans font-semibold text-2xl pb-1 text-center ${
-                    direction=="left"
-                      ? " text-[#010535] "
-                      : " text-white"
-                  }`}
-                >
-                  {direction === "left" ? "→" : "←"}
-                </button>
-              )}
-            </div>
           </div>
         )}
 
@@ -153,13 +155,12 @@ const BottomNavbar = () => {
           <Link to="/contact">
             <Button text="Get Started" />
           </Link>
-          <Button text={isRunning ? "Off" : "On"} onClick={toggleRunning} />
           {isRunning && <Button text={direction} onClick={changeDirection} />}
         </div>
 
         <button
           onClick={handleMenu}
-          className="block lg:hidden p-1 bg-gradient-to-r from-blue-700 to-blue-300   text-2xl text-white rounded-lg"
+          className="block lg:hidden p-1 bg-gradient-to-r from-blue-700 to-blue-300 text-2xl text-white rounded-lg"
         >
           {menu ? <IoMdClose /> : <IoIosMenu />}
         </button>

@@ -15,6 +15,8 @@ import Video from "./component/home/Video";
 import Login from "./component/auth/Login";
 import Protected from "./component/auth/Protected";
 import Dashbord from "./component/dashbord/Dashbord";
+import DashboardHome from "./component/dashbord/DashbordHome";
+import Settings from "./component/dashbord/setting/Setting";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -25,10 +27,16 @@ const Contactus = React.lazy(() => import("./pages/Contactus"));
 const Projects = React.lazy(() => import("./component/pagecomponent/Projects"));
 const Teams = React.lazy(() => import("./component/pagecomponent/Teams"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
-const Imagegallery = React.lazy(() => import("./component/pagecomponent/ImageGallery"));
-const VideoGallery = React.lazy(() => import("./component/pagecomponent/VideoGallery"));
+const Imagegallery = React.lazy(() =>
+  import("./component/pagecomponent/ImageGallery")
+);
+const VideoGallery = React.lazy(() =>
+  import("./component/pagecomponent/VideoGallery")
+);
 const ServicesDetails = React.lazy(() => import("./pages/ServicesDetails"));
-const ProjectDetailsPage = React.lazy(() => import("./pages/ProjectDetailsPage"));
+const ProjectDetailsPage = React.lazy(() =>
+  import("./pages/ProjectDetailsPage")
+);
 const TeamDetailsPage = React.lazy(() => import("./pages/TeamDetailsPage"));
 const BlogsDetailsPages = React.lazy(() => import("./pages/BlogsDetailsPages"));
 const TestimonialPages = React.lazy(() => import("./pages/TestimonialPages"));
@@ -48,43 +56,74 @@ const App = () => {
   // ✅ All routes defined once
   const router = createBrowserRouter(
     createRoutesFromElements(
-     <>
-  <Route path="/login" element={<Login />} />
-  <Route path="/unauthorized" element={<PageNotFound />} />
-       <Route
-        path="/admin/dashboard"
-        element={
-          <Protected allowedRoles={["Admin"]}>
-            <Dashbord />
-          </Protected>
-        }
-      />
-  <Route path="/" element={<Layout />}>
-    <Route index element={<Protected><HomePages /></Protected>} />
-    <Route path="image" element={<Protected><HomePages /></Protected>} />
-    <Route path="video" element={<Protected><Video /></Protected>} />
-    <Route path="slider" element={<Protected><HomePages /></Protected>} />
-    
+      <>
+        <Route path="/login" element={<Login />} />
+        <Route path="/unauthorized" element={<PageNotFound />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <Protected allowedRoles={["Admin"]}>
+              <Dashbord />
+            </Protected>
+          }
+        >
+          <Route index element={<DashboardHome />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
 
-    {/* Public routes */}
-    <Route path="about" element={<AboutUsPage />} />
-    <Route path="services" element={<Services />} />
-    <Route path="blog" element={<BlogsPage />} />
-    <Route path="contact" element={<Contactus />} />
-    <Route path="project" element={<Projects />} />
-    <Route path="team" element={<Teams />} />
-    <Route path="price" element={<Pricing />} />
-    <Route path="gallery" element={<Imagegallery />} />
-    <Route path="videogallery" element={<VideoGallery />} />
-    <Route path="testimonials" element={<TestimonialPages />} />
-    <Route path="faqs" element={<FaqPages />} />
-    <Route path="servicedetails" element={<ServicesDetails />} />
-    <Route path="blogsdetails" element={<BlogsDetailsPages />} />
-    <Route path="projectdetails" element={<ProjectDetailsPage />} />
-    <Route path="teamdetails" element={<TeamDetailsPage />} />
-    <Route path="*" element={<PageNotFound />} />
-  </Route>
-</>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <Protected>
+                <HomePages />
+              </Protected>
+            }
+          />
+          <Route
+            path="image"
+            element={
+              <Protected>
+                <HomePages />
+              </Protected>
+            }
+          />
+          <Route
+            path="video"
+            element={
+              <Protected>
+                <Video />
+              </Protected>
+            }
+          />
+          <Route
+            path="slider"
+            element={
+              <Protected>
+                <HomePages />
+              </Protected>
+            }
+          />
+
+          {/* Public routes */}
+          <Route path="about" element={<AboutUsPage />} />
+          <Route path="services" element={<Services />} />
+          <Route path="blog" element={<BlogsPage />} />
+          <Route path="contact" element={<Contactus />} />
+          <Route path="project" element={<Projects />} />
+          <Route path="team" element={<Teams />} />
+          <Route path="price" element={<Pricing />} />
+          <Route path="gallery" element={<Imagegallery />} />
+          <Route path="videogallery" element={<VideoGallery />} />
+          <Route path="testimonials" element={<TestimonialPages />} />
+          <Route path="faqs" element={<FaqPages />} />
+          <Route path="servicedetails" element={<ServicesDetails />} />
+          <Route path="blogsdetails" element={<BlogsDetailsPages />} />
+          <Route path="projectdetails" element={<ProjectDetailsPage />} />
+          <Route path="teamdetails" element={<TeamDetailsPage />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </>
     )
   );
 
