@@ -8,10 +8,10 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("user");
   const [error, setError] = useState(null);
-
+  const [success, setSuccess] = useState(null);
   const navigate = useNavigate();
 
-  const submitForm =async(e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
     const trimmedName = name.trim();
@@ -32,21 +32,30 @@ const Register = () => {
       name: trimmedName,
       email: trimmedEmail,
       password: trimmedPassword,
-      role
+      role,
     };
 
     try {
-    const response=await fetch("https://proshieldcybersecurity.onrender.com/api/register",{
-        method:"POST",
-        headers:{
-            "content-type":"application/json"
-        },
-        body:JSON.stringify(user)
-    })
-      const data=await response.json()
+      const response = await fetch(
+        "https://proshieldcybersecurity.onrender.com/api/register",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(data.message);
+        navigate("/login");
+      } else {
+        setError(data.message || "Registration failed");
+      }
     } catch (error) {
-      console.error(error);
-      setError("Something went wrong. Please try again.");
+      setError(error);
     }
   };
   return (
@@ -55,6 +64,10 @@ const Register = () => {
         onSubmit={submitForm}
         className="w-full max-w-md bg-white/10 backdrop-blur-md flex flex-col items-center shadow-2xl p-8 sm:p-10 gap-6 border border-white/30 rounded-xl"
       >
+        {error && <p className="text-red-500 text-sm font-sans">{error}</p>}
+        {success && (
+          <p className="text-green-500 text-sm font-sans">✅{success}</p>
+        )}
         <h1 className="text-white text-2xl text-center font-sans font-semibold">
           Sign Up
         </h1>
@@ -84,14 +97,17 @@ const Register = () => {
         </select>
 
         <input
-        value={password}
-        onChange={(e)=>setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Enter your password"
           className="bg-white/20 text-white placeholder-white/70 rounded-md px-4 py-2 w-full outline-none focus:ring-2 focus:ring-white/40"
         />
 
-        <button type="submit" className="py-3 px-5 bg-gray-800 rounded-xl text-white text-lg font-sans hover:bg-gray-900 cursor-pointer hover:scale-95 transition duration-300 w-full">
+        <button
+          type="submit"
+          className="py-3 px-5 bg-gray-800 rounded-xl text-white text-lg font-sans hover:bg-gray-900 cursor-pointer hover:scale-95 transition duration-300 w-full"
+        >
           Submit
         </button>
 
