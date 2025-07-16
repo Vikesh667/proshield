@@ -152,6 +152,9 @@ const BottomNavbar = () => {
                   )}
                 </li>
               ))}
+               <button
+           onClick={logout}
+          className="bg-red-500 py-3 px-5 rounded-lg text-md font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer">Log out</button>
             </ul>
           </div>
         )}
