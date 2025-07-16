@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -47,35 +47,46 @@ const Login = () => {
       alert("Something went wrong. Please try again.");
     }
   };
-  return (
-    <div className="w-full h-screen py-20 lg:py-0 px-10 lg:px-0 flex lg:items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-400">
-      <div className="w-96 h-96 flex items-center justify-center border-2 border-white rounded-2xl shadow-2xl">
-        <form
-          onSubmit={loginHandle}
-          className="flex items-center flex-col gap-5"
-        >
-          <h1 className="text-center text-2xl text-white">Login</h1>
+ return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-400 px-4">
+      <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-2xl p-8 sm:p-10 md:p-12">
+        <form onSubmit={loginHandle} className="flex flex-col gap-6">
+          <h1 className="text-3xl font-bold text-white text-center">Login</h1>
+
           <input
             onChange={(e) => setEmail(e.target.value)}
-            type="text"
+            type="email"
             placeholder="Enter your email"
-            className="py-3 px-5 rounded-lg outline-none border-[1px] border-white text-white opacity-80"
+            className="w-full py-3 px-4 rounded-lg outline-none bg-white/20 text-white placeholder-white/70 border border-white/30 focus:ring-2 focus:ring-white/40 transition"
           />
+
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter your password"
-            className="py-3 px-5 rounded-lg outline-none border-[1px] border-white text-white opacity-80"
+            className="w-full py-3 px-4 rounded-lg outline-none bg-white/20 text-white placeholder-white/70 border border-white/30 focus:ring-2 focus:ring-white/40 transition"
           />
+
           <button
             type="submit"
-            className="text-lg text-white py-3 px-10 bg-blue-500 rounded-2xl shadow-2xl hover:bg-blue-700 hover:scale-110 transition duration-500"
+            className="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 hover:scale-[1.02] transition duration-300 shadow-md"
           >
             Login
           </button>
+
+          <p className="text-white text-center text-sm">
+            Don’t have an account?{" "}
+            <Link
+              to="/register"
+              className="font-semibold underline hover:text-blue-200 transition"
+            >
+              Create one now
+            </Link>
+          </p>
         </form>
       </div>
     </div>
   );
+
 };
 export default Login;

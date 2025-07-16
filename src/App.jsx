@@ -17,6 +17,7 @@ import Protected from "./component/auth/Protected";
 import Dashbord from "./component/dashbord/Dashbord";
 import DashboardHome from "./component/dashbord/DashbordHome";
 import Settings from "./component/dashbord/setting/Setting";
+import Register from "./component/auth/Register";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -58,6 +59,7 @@ const App = () => {
     createRoutesFromElements(
       <>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register/>}/>
         <Route path="/unauthorized" element={<PageNotFound />} />
         <Route
           path="/admin/dashboard"
