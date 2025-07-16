@@ -12,15 +12,12 @@ import { socket } from "./Socket";
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
-  const [isRunning, setRunning] = useState(null);
+  const [isRunning, setRunning] = useState(false);
   const controls = useAnimation();
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
 
-  const toggleRunning = () => setRunning((prev) => !prev);
-  const changeDirection = () =>
-    setDirection((prev) => (prev === "left" ? "right" : "left"));
   const handleMenu = () => {
     setMenu(!menu);
     setTranslate(100);
@@ -29,37 +26,41 @@ const BottomNavbar = () => {
     setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
 
-  useEffect(() => {
-    const fetchStatus = async () => {
-      try {
-        const response = await fetch("http://localhost:4000/api/notification/status");
-        const data = await response.json();
-        setRunning(data.data.isNotification);
-      } catch (error) {
-        console.error("Error fetching status:", error);
-      }
-    };
+ useEffect(() => {
+  const fetchStatus = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/status");
+      const data = await response.json();
 
-    fetchStatus();
+      setRunning(data.data.isNotification);
+      setDirection(data.data.direction || "left"); 
+    } catch (error) {
+      console.error("Error fetching status:", error);
+    }
+  };
 
-    // ✅ Connect and listen to socket
+  fetchStatus();
+
+  if (!socket.connected) {
     socket.connect();
+  }
 
-    socket.on("notification", (data) => {
-      console.log("🔔 Real-time update:", data);
-      setRunning(data.isNotification);
-    });
+  socket.on("notification", (data) => {
+    console.log("Real-time update:", data);
+    setRunning(data.isNotification);
+    setDirection(data.direction);
+  });
 
-    // ✅ Cleanup on unmount (but not reconnect each time)
-    return () => {
-      socket.off("notification");
-    };
-  }, []);
+
+  return () => {
+    socket.off("notification");
+  };
+}, []);
 
   return (
     <div className="flex flex-col justify-center">
       <AnimatePresence>
-        {isRunning && (
+        {isRunning ? (
           <motion.div
             className="w-full flex justify-center overflow-hidden"
             initial={{ height: 0, opacity: 0 }}
@@ -75,7 +76,7 @@ const BottomNavbar = () => {
               controls={controls}
             />
           </motion.div>
-        )}
+        ):""}
       </AnimatePresence>
 
       <nav className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
@@ -155,7 +156,6 @@ const BottomNavbar = () => {
           <Link to="/contact">
             <Button text="Get Started" />
           </Link>
-          {isRunning && <Button text={direction} onClick={changeDirection} />}
         </div>
 
         <button

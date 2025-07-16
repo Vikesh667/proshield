@@ -10,13 +10,16 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://proshieldcybersecurity.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await response.json();
 
@@ -27,7 +30,7 @@ const Login = () => {
         // ✅ Decode token to extract role
         const decoded = jwtDecode(data.token);
         const role = decoded.role;
-      
+
         // ✅ Redirect to dashboard based on role
         if (role === "Admin") {
           navigate("/admin/dashboard");
@@ -45,7 +48,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-400">
+    <div className="w-full h-screen py-20 lg:py-0 px-10 lg:px-0 flex lg:items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-400">
       <div className="w-96 h-96 flex items-center justify-center border-2 border-white rounded-2xl shadow-2xl">
         <form
           onSubmit={loginHandle}

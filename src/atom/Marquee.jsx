@@ -1,55 +1,54 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimationFrame } from "framer-motion";
 import { gallerys, securityTexts } from "../constant/data";
 
-const Marquee = ({ isRunning = true, direction = "left" }) => {
-  const controls = useAnimation();
+const Marquee = ({ speed = 50, direction = "left" }) => {
+  const containerRef = useRef(null);
+  const contentRef = useRef(null);
+  const x = useRef(0);
 
-  useEffect(() => {
-    if (isRunning) {
-      controls.start({
-        x: direction === "left" ? "-50%" : "0%",
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 20,
-            ease: "linear",
-          },
-        },
-      });
+  useAnimationFrame((t, delta) => {
+    const container = containerRef.current;
+    const content = contentRef.current;
+    if (!container || !content) return;
+
+    const scrollWidth = content.offsetWidth / 2;
+    const deltaX = (speed * delta) / 500; 
+
+    if (direction === "left") {
+      x.current -= deltaX;
+      if (x.current <= -scrollWidth) x.current = 0;
     } else {
-      controls.stop();
+      x.current += deltaX;
+      if (x.current >= 0) x.current = -scrollWidth;
     }
-  }, [isRunning, direction, controls]);
+
+    content.style.transform = `translateX(${x.current}px)`;
+  });
 
   const MarqueeContent = () => (
-    <>
+    <div className="flex gap-10">
       {gallerys.map((image, index) => (
-        <div key={index} className="flex items-center gap-3 min-w-max">
-         <img src={image} alt="" className="w-8 h-8 object-contain" />
+        <div key={index} className="flex items-center gap-3 min-w-max px-4">
+          <img src={image} alt="" className="w-8 h-8 object-contain" />
           <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
-            {securityTexts[index]}
+            {securityTexts[index] || ""}
           </p>
         </div>
       ))}
-    </>
+    </div>
   );
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0f172a] text-white py-2 border-y border-cyan-500">
-      <motion.div
-        className="flex gap-10 w-max absolute left-0"
-        animate={controls}
-        initial={{ x: "0%" }}
-      >
-        <div className="flex gap-10">
-          <MarqueeContent />
-        </div>
-        <div className="flex gap-10">
-         👉 <MarqueeContent />
-        </div>
-      </motion.div>
+    <div
+      ref={containerRef}
+      className="relative w-full overflow-hidden bg-[#0f172a] py-2 border-y border-cyan-500"
+    >
+      <div ref={contentRef} className="flex w-max">
+        {/* Duplicate content for seamless scroll */}
+        <MarqueeContent />
+        <MarqueeContent />
+      </div>
     </div>
   );
 };
