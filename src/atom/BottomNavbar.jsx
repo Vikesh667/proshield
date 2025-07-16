@@ -12,7 +12,7 @@ import { socket } from "./Socket";
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
-  const [isRunning, setRunning] = useState(false);
+  const [isRunning, setRunning] = useState(null);
   const controls = useAnimation();
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
@@ -33,7 +33,7 @@ const BottomNavbar = () => {
  useEffect(() => {
   const fetchStatus = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/status");
+      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/status");
       const data = await response.json();
 
       setRunning(data.data.isNotification);
@@ -63,8 +63,8 @@ const BottomNavbar = () => {
 
   return (
     <div className="flex flex-col justify-center">
-    <AnimatePresence>
-  {isRunning && (
+   { isRunning === true && (
+  <AnimatePresence>
     <motion.div
       className="w-full flex justify-center overflow-hidden"
       initial={{ height: 0, opacity: 0 }}
@@ -80,8 +80,9 @@ const BottomNavbar = () => {
         controls={controls}
       />
     </motion.div>
-  )}
-</AnimatePresence>
+  </AnimatePresence>
+)}
+
 
 
       <nav className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
