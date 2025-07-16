@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "build" # or "dist" for Vite, ".next" for Next.js (not recommended to deploy SSR on Netlify without adapters)
+
+# Redirects (useful for single-page apps)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
