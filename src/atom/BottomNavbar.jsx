@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { navItem } from "../constant/data";
 import logo from "../assets/logo.svg";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Marquee from "./Marquee";
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
@@ -17,11 +17,15 @@ const BottomNavbar = () => {
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
-
+  const navigate=useNavigate()
   const handleMenu = () => {
     setMenu(!menu);
     setTranslate(100);
   };
+  const logout=()=>{
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
   const toggleSubmenu = (index) => {
     setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
@@ -156,6 +160,9 @@ const BottomNavbar = () => {
           <Link to="/contact">
             <Button text="Get Started" />
           </Link>
+          <button
+           onClick={logout}
+          className="bg-red-500 py-3 px-5 rounded-lg text-md font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer">Log out</button>
         </div>
 
         <button
