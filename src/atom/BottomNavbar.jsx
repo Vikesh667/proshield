@@ -63,25 +63,26 @@ const BottomNavbar = () => {
 
   return (
     <div className="flex flex-col justify-center">
-      <AnimatePresence>
-        {isRunning ? (
-          <motion.div
-            className="w-full flex justify-center overflow-hidden"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "4rem", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            <Marquee
-              direction={direction}
-              setDirection={setDirection}
-              isRunning={isRunning}
-              setRunning={setRunning}
-              controls={controls}
-            />
-          </motion.div>
-        ):""}
-      </AnimatePresence>
+    <AnimatePresence>
+  {isRunning && (
+    <motion.div
+      className="w-full flex justify-center overflow-hidden"
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "4rem", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+    >
+      <Marquee
+        direction={direction}
+        setDirection={setDirection}
+        isRunning={isRunning}
+        setRunning={setRunning}
+        controls={controls}
+      />
+    </motion.div>
+  )}
+</AnimatePresence>
+
 
       <nav className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
         <div className="lg:ml-20">
