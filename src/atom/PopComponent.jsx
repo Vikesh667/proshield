@@ -15,7 +15,7 @@ const PopComponent = ({ setComponent }) => {
 
     const getPosition = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/getpops");
+        const res = await fetch("https://proshieldcybersecurity.onrender.com/api/getpops");
         const data = await res.json();
         setPosition({
           left: data?.position?.position?.left ?? 50,
