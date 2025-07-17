@@ -8,6 +8,7 @@ const UpdateComponent = ({ setUpdateShow }) => {
   const updatePopPosition = async (e) => {
     e.preventDefault();
     const positionData = { top, left };
+    console.log(positionData)
     if (text && text.trim() !== "") {
       positionData.text = text;
     }
