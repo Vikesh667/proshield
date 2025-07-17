@@ -7,7 +7,7 @@ const AllMarquee = () => {
   const [open, setOpen] = useState(false);
 
   const getMarquees = async () => {
-    const responve = await fetch("http://localhost:4000/api/marquee/");
+    const responve = await fetch("https://proshieldcybersecurity.onrender.com/api/marquee/");
     const data = await responve.json();
     setMarquee(data.marquees);
     console.log(data.marquees);
