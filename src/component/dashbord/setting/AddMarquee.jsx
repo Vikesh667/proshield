@@ -27,7 +27,10 @@ const AddMarquee = () => {
         method: "POST",
         body:formData,
       });
-      console.log(response.json());
+      const data=response.json()
+      if(response.ok){
+        alert("The marquee data is added successfully")
+      }
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +38,7 @@ const AddMarquee = () => {
 
   return (
     <div className="w-full h-screen bg-black/80 flex justify-center">
-      <div className="w-66 h-auto bg-white p-10">
+      <div className="w-66 h-96 bg-white p-10">
         <form onSubmit={upLoadImage} className="flex flex-col gap-5">
           <h1 className=" text-[#010535] text-xl font-sans font-semibold text-center">
             Add Marquee
