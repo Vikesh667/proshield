@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-const UpdateComponent = ({setUpdateShow}) => {
+const UpdateComponent = ({ setUpdateShow }) => {
   const [text, setText] = useState("");
   const [top, setTop] = useState("");
   const [left, setLeft] = useState("");
@@ -13,16 +13,19 @@ const UpdateComponent = ({setUpdateShow}) => {
     }
 
     try {
-      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/popup", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ position: positionData }),
-      });
+      const response = await fetch(
+        "https://proshieldcybersecurity.onrender.com/api/popup",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ position: positionData }),
+        }
+      );
 
       const data = await response.json();
-       setUpdateShow(false)
+      setUpdateShow(false);
     } catch (error) {
       console.error("Error updating popup:", error);
     }
@@ -77,27 +80,27 @@ const UpdateComponent = ({setUpdateShow}) => {
             onChange={(e) => setLeft(Number(e.target.value))}
             className="w-full py-3 px-5 rounded-xl outline-none border border-white bg-gray-400"
           >
-              <option value={0}>0</option>
+            <option value={0}>0</option>
             <option value={22}>22</option>
             <option value={35}>35</option>
             <option value={70}>70</option>
           </select>
         </div>
 
-       <div className="flex gap-5 justify-center">
-         <button
-          type="submit"
-          className="mt-6 py-3 px-5 bg-green-400 rounded-xl hover:bg-green-500 transition duration-200"
-        >
-         Submit
-        </button>
+        <div className="flex gap-5 justify-center">
           <button
-          type="submit"
-          className="mt-6 py-3 px-5 bg-white rounded-xl hover:scale-90  transition duration-200"
-        >
-        Cancel
-        </button>
-       </div>
+            type="submit"
+            className="mt-6 py-3 px-5 bg-green-400 rounded-xl hover:bg-green-500 transition duration-200"
+          >
+            Submit
+          </button>
+          <button
+            type="submit"
+            className="mt-6 py-3 px-5 bg-white rounded-xl hover:scale-90  transition duration-200"
+          >
+            Cancel
+          </button>
+        </div>
       </form>
     </motion.div>
   );
