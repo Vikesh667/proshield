@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimationFrame } from "framer-motion";
 import { gallerys, securityTexts } from "../constant/data";
 
 const Marquee = ({ speed = 50, direction = "left" }) => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
+  const [marquee, setMarquee] = useState([]);
   const x = useRef(0);
 
   useAnimationFrame((t, delta) => {
@@ -13,7 +14,7 @@ const Marquee = ({ speed = 50, direction = "left" }) => {
     if (!container || !content) return;
 
     const scrollWidth = content.offsetWidth / 2;
-    const deltaX = (speed * delta) / 500; 
+    const deltaX = (speed * delta) / 500;
 
     if (direction === "left") {
       x.current -= deltaX;
@@ -25,14 +26,22 @@ const Marquee = ({ speed = 50, direction = "left" }) => {
 
     content.style.transform = `translateX(${x.current}px)`;
   });
-
+  const getMarquees = async () => {
+    const responve = await fetch("http://localhost:4000/api/marquee/");
+    const data = await responve.json();
+    setMarquee(data.marquees);
+    console.log(data.marquees);
+  };
+  useEffect(() => {
+    getMarquees();
+  }, []);
   const MarqueeContent = () => (
     <div className="flex gap-10">
-      {gallerys.map((image, index) => (
-        <div key={index} className="flex items-center gap-3 min-w-max px-4">
-          <img src={image} alt="" className="w-8 h-8 object-contain" />
+      {marquee.map((image) => (
+        <div key={image._id} className="flex items-center gap-3 min-w-max px-4">
+          <img src={image.imageUrl} alt="" className="w-8 h-8 object-contain" />
           <p className="whitespace-nowrap text-sm text-cyan-200 font-medium">
-            {securityTexts[index] || ""}
+            {image.title}
           </p>
         </div>
       ))}

@@ -18,6 +18,7 @@ import Dashbord from "./component/dashbord/Dashbord";
 import DashboardHome from "./component/dashbord/DashbordHome";
 import Settings from "./component/dashbord/setting/Setting";
 import Register from "./component/auth/Register";
+import AllMarquee from "./component/dashbord/AllMarquee";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -71,6 +72,7 @@ const App = () => {
         >
           <Route index element={<DashboardHome />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="marquee" element={<AllMarquee/>}/>
         </Route>
 
         <Route path="/" element={<Layout />}>

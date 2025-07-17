@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import UpdateComponent from "./UpdateComponent";
 import AddComponent from "./AddComponent";
+import { RiImageEditLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Settings = () => {
   const [direction, setDirection] = useState("left");
   const [isRunning, setIsRunning] = useState(false);
-  const [addShow,setAddShow]=useState(false)
-  const [updateShow,setUpdateShow]=useState(false)
-
+  const [addShow, setAddShow] = useState(false);
+  const [updateShow, setUpdateShow] = useState(false);
 
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const response = await fetch("https://proshieldcybersecurity.onrender.com/api/status");
+        const response = await fetch(
+          "https://proshieldcybersecurity.onrender.com/api/status"
+        );
         const data = await response.json();
         setDirection(data.data.direction);
         setIsRunning(data.data.isNotification);
@@ -26,13 +29,16 @@ const Settings = () => {
 
   const notificationStart = async () => {
     try {
-      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/start", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ direction }),
-      });
+      const response = await fetch(
+        "https://proshieldcybersecurity.onrender.com/api/start",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ direction }),
+        }
+      );
       const data = await response.json();
       setIsRunning(true);
     } catch (error) {
@@ -42,12 +48,15 @@ const Settings = () => {
 
   const notificationStop = async () => {
     try {
-      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/stop", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://proshieldcybersecurity.onrender.com/api/stop",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       setIsRunning(false);
     } catch (error) {
@@ -125,9 +134,8 @@ const Settings = () => {
       console.log(error);
     }
     e.preventDefault();
-    
   };
-    
+
   return (
     <div className="w-full h-full flex flex-col lg:flex-row gap-10 items-center ">
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col gap-5 items-center p-5">
@@ -146,6 +154,11 @@ const Settings = () => {
             disabled={!isRunning}
           >
             Off
+          </button>
+          <button
+            className="rounded-full shadow text-2xl text-[#010535] hover:scale-90 transition duration-300 cursor-pointer"
+          >
+           <Link to="/admin/dashboard/marquee"> <RiImageEditLine /></Link>
           </button>
         </div>
       </div>
@@ -206,15 +219,21 @@ const Settings = () => {
         </div>
       </div> */}
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col  lg:flex-row gap-5 items-center justify-center p-5">
-        <button 
-        onClick={()=>setUpdateShow(true)}
-        className="py-3 px-5 bg-green-400 rounded-lg hover:scale-95 transition-all duration-300 text-white shadow-lg">Edit</button>
         <button
-        onClick={()=>setAddShow(true)}
-        className="py-3 px-5 bg-amber-400 rounded-lg hover:scale-95 transition-all duration-300 text-white shadow-lg">Add</button>
+          onClick={() => setUpdateShow(true)}
+          className="py-3 px-5 bg-green-400 rounded-lg hover:scale-95 transition-all duration-300 text-white shadow-lg"
+        >
+          Edit
+        </button>
+        <button
+          onClick={() => setAddShow(true)}
+          className="py-3 px-5 bg-amber-400 rounded-lg hover:scale-95 transition-all duration-300 text-white shadow-lg"
+        >
+          Add
+        </button>
       </div>
-    { updateShow &&  <UpdateComponent setUpdateShow={setUpdateShow}/> }
-    {addShow && <AddComponent setAddShow={setAddShow}/>}
+      {updateShow && <UpdateComponent setUpdateShow={setUpdateShow} />}
+      {addShow && <AddComponent setAddShow={setAddShow} />}
     </div>
   );
 };
