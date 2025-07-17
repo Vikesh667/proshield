@@ -13,7 +13,6 @@ const AddMarquee = () => {
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
 
-    // Cleanup to avoid memory leaks
     return () => URL.revokeObjectURL(url);
   }, [file]);
 
