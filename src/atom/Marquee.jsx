@@ -27,7 +27,7 @@ const Marquee = ({ speed = 50, direction = "left" }) => {
     content.style.transform = `translateX(${x.current}px)`;
   });
   const getMarquees = async () => {
-    const responve = await fetch("http://localhost:4000/api/marquee/");
+    const responve = await fetch("https://proshieldcybersecurity.onrender.com/api/marquee/");
     const data = await responve.json();
     setMarquee(data.marquees);
     console.log(data.marquees);

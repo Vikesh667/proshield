@@ -23,7 +23,7 @@ const AddMarquee = () => {
     formData.append("image", file); // key = image
     formData.append("title", title);
     try {
-      const response = await fetch("http://localhost:4000/api/uplod", {
+      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/uplod", {
         method: "POST",
         body:formData,
       });
