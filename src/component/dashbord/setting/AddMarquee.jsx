@@ -37,7 +37,7 @@ const AddMarquee = () => {
 
   return (
     <div className="w-full h-screen bg-black/80 flex justify-center">
-      <div className="w-66 h-96 bg-white p-10">
+      <div className="w-66 h-96 bg-white p-10 mt-10">
         <form onSubmit={upLoadImage} className="flex flex-col gap-5">
           <h1 className=" text-[#010535] text-xl font-sans font-semibold text-center">
             Add Marquee
