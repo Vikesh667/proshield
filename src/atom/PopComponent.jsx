@@ -17,6 +17,7 @@ const PopComponent = ({ setComponent }) => {
       try {
         const res = await fetch("https://proshieldcybersecurity.onrender.com/api/getpops");
         const data = await res.json();
+        console.log(data)
         setPosition({
           left: data?.position?.position?.left ?? 50,
           top: data?.position?.position?.top ?? 50,

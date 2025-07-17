@@ -77,6 +77,7 @@ const UpdateComponent = ({setUpdateShow}) => {
             onChange={(e) => setLeft(Number(e.target.value))}
             className="w-full py-3 px-5 rounded-xl outline-none border border-white bg-gray-400"
           >
+              <option value={0}>0</option>
             <option value={22}>22</option>
             <option value={35}>35</option>
             <option value={70}>70</option>
