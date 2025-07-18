@@ -57,7 +57,6 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // ✅ All routes defined once
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -113,7 +112,7 @@ const App = () => {
             }
           />
 
-          {/* Public routes */}
+
           <Route path="about" element={<AboutUsPage />} />
           <Route path="services" element={<Services />} />
           <Route path="blog" element={<BlogsPage />} />

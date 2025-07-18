@@ -17,7 +17,6 @@ const Sidebar = ({ open, setOpen }) => {
 
   return (
     <>
-      {/* Desktop Sidebar */}
       <aside className="w-64 h-screen bg-gray-900 p-6 space-y-4 hidden lg:block">
         <img src={logo} alt="Proshield" />
         <nav className="space-y-3 flex flex-col items-start text-white gap-3 mt-10">
@@ -33,12 +32,9 @@ const Sidebar = ({ open, setOpen }) => {
           <button onClick={handleLogout} className="text-red-400 sidebar">🚪 Logout</button>
         </nav>
       </aside>
-
-      {/* Mobile Sidebar with Animation */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
               className="fixed inset-0 bg-black bg-opacity-50 z-40"
               initial={{ opacity: 0 }}
@@ -46,8 +42,6 @@ const Sidebar = ({ open, setOpen }) => {
               exit={{ opacity: 0 }}
               onClick={handleClose}
             />
-
-            {/* Sidebar Panel */}
             <motion.aside
               className="w-64 h-screen bg-gray-900 p-6 space-y-4 lg:hidden fixed top-0 left-0 z-50"
               initial={{ x: "-100%" }}

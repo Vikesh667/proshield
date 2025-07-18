@@ -57,8 +57,6 @@ const AddMarquee = () => {
             accept="image/*"
             className="hidden"
           />
-
-          {/* Custom Upload Button */}
           <label
             htmlFor="file-upload"
             className="cursor-pointer bg-blue-500 text-white py-2 px-4 rounded-lg text-center hover:bg-blue-600 transition"

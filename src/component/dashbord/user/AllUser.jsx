@@ -22,12 +22,11 @@ const AllUser = () => {
       const response = await fetch(`http://localhost:4000/api/users/${id}`, {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${token}`, // <- Make sure this is correct
+          Authorization: `Bearer ${token}`, 
           "Content-Type": "application/json",
         },
       });
       const data = response.json();
-      // setMessage(data)
       getAllUsers();
     } catch (error) {
       setError(error);

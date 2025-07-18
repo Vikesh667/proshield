@@ -11,7 +11,6 @@ const Protected = ({ children, allowedRoles }) => {
     const decoded = jwtDecode(token);
     const userRole = decoded?.role;
 
-    // If allowedRoles is passed, check it
     if (allowedRoles && !allowedRoles.includes(userRole)) {
       return <Navigate to="/unauthorized" replace />;
     }

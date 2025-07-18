@@ -163,7 +163,6 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* ↔️ Direction Control */}
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col gap-5 items-center p-5">
         <h1 className="font-semibold text-lg">Direction Control</h1>
         <div className="flex gap-5">
@@ -195,29 +194,6 @@ const Settings = () => {
           </button>
         </div>
       </div>
-      {/* <div className="w-72 h-56 lg:h-32 bg-white rounded-2xl shadow-lg flex flex-col gap-5 items-center p-5">
-        <h1 className="font-semibold text-lg">Pop-up Model Control</h1>
-        <div className="flex gap-5 flex-wrap lg:flex-nowrap">
-          <button
-            onClick={leftPosition}
-            className={`py-2 px-5 rounded-2xl shadow-lg cursor-pointer transition bg-green-400`}
-          >
-            Left
-          </button>
-          <button
-            onClick={rightPosition}
-            className={`py-2 px-5 rounded-2xl shadow-lg cursor-pointer transition bg-blue-400`}
-          >
-            Right
-          </button>
-          <button
-            onClick={centerPosition}
-            className={`py-2 px-5 rounded-2xl shadow-lg cursor-pointer transition bg-yellow-400`}
-          >
-            Center
-          </button>
-        </div>
-      </div> */}
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col  lg:flex-row gap-5 items-center justify-center p-5">
         <button
           onClick={() => setUpdateShow(true)}

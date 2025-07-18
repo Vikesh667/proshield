@@ -24,14 +24,10 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok && data.token) {
-        // ✅ Store token
         localStorage.setItem("token", data.token);
-
-        // ✅ Decode token to extract role
         const decoded = jwtDecode(data.token);
         const role = decoded.role;
-
-        // ✅ Redirect to dashboard based on role
+         console.log(role)
         if (role === "admin") {
           navigate("/admin/dashboard");
         } else if (role === "user") {
