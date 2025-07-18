@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 const PopComponent = ({ setComponent }) => {
   const [viewSize, setViewSize] = useState({ width: 70, height: 40 });
-  const [position, setPosition] = useState({ left: 50, top: 50 }); // default center
+  const [position, setPosition] = useState({ left: null, top: null }); // default center
   const [isCenterMode, setIsCenterMode] = useState(false);
   const  [text,setText]=useState(null)
+  
   useEffect(() => {
     const checkDeviceSize = () => {
       const width = window.innerWidth;
@@ -17,17 +18,15 @@ const PopComponent = ({ setComponent }) => {
       try {
         const res = await fetch("https://proshieldcybersecurity.onrender.com/api/getpops");
         const data = await res.json();
-        console.log(data)
         setPosition({
-          left: data?.position?.position?.left ?? 50,
-          top: data?.position?.position?.top ?? 50,
+          left: data?.position?.position?.left ?? 0,
+          top: data?.position?.position?.top ?? 0,
         });
         setText(data.position.position.text)
       } catch (error) {
         console.error("Position fetch error:", error);
       }
     };
-
     getPosition();
     checkDeviceSize();
     window.addEventListener("resize", checkDeviceSize);
