@@ -32,9 +32,9 @@ const Login = () => {
         const role = decoded.role;
 
         // ✅ Redirect to dashboard based on role
-        if (role === "Admin") {
+        if (role === "admin") {
           navigate("/admin/dashboard");
-        } else if (role === "User") {
+        } else if (role === "user") {
           navigate("/");
         } else {
           alert("Unknown role. Cannot redirect.");

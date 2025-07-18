@@ -19,6 +19,8 @@ import DashboardHome from "./component/dashbord/DashbordHome";
 import Settings from "./component/dashbord/setting/Setting";
 import Register from "./component/auth/Register";
 import AllMarquee from "./component/dashbord/AllMarquee";
+import AllUser from "./component/dashbord/user/AllUser";
+import EditUuser from "./component/dashbord/user/EditUser";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -65,7 +67,7 @@ const App = () => {
         <Route
           path="/admin/dashboard"
           element={
-            <Protected allowedRoles={["Admin"]}>
+            <Protected allowedRoles={["admin"]}>
               <Dashbord />
             </Protected>
           }
@@ -73,6 +75,8 @@ const App = () => {
           <Route index element={<DashboardHome />} />
           <Route path="settings" element={<Settings />} />
           <Route path="marquee" element={<AllMarquee/>}/>
+          <Route path="users" element={<AllUser/>}/>
+          <Route path="edit/:id" element={<EditUuser/>}/>
         </Route>
 
         <Route path="/" element={<Layout />}>

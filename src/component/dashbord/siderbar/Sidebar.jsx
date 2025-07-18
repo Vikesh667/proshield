@@ -25,7 +25,7 @@ const Sidebar = ({ open, setOpen }) => {
           <Link to="/admin/monitoring" className="sidebar">🖥️ System Monitoring</Link>
           <Link to="/admin/threats" className="sidebar">🚨 Threat Logs</Link>
           <Link to="/admin/scans" className="sidebar">🔍 Vulnerability Scans</Link>
-          <Link to="/admin/users" className="sidebar">👤 User Management</Link>
+          <Link to="/admin/dashboard/users" className="sidebar">👤 User Management</Link>
           <Link to="/admin/incidents" className="sidebar">📝 Incidents</Link>
           <Link to="/admin/tools" className="sidebar">🛠️ Tools & Utilities</Link>
           <Link to="/admin/dashboard/settings" className="sidebar">⚙️ Settings</Link>

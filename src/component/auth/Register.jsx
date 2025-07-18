@@ -34,7 +34,7 @@ const Register = () => {
       password: trimmedPassword,
       role,
     };
-
+    console.log(user)
     try {
       const response = await fetch(
         "https://proshieldcybersecurity.onrender.com/api/register",
@@ -47,7 +47,7 @@ const Register = () => {
         }
       );
       const data = await response.json();
-
+    console.log(data)
       if (response.ok) {
         setSuccess(data.message);
         navigate("/login");
@@ -92,8 +92,8 @@ const Register = () => {
           onChange={(e) => setRole(e.target.value)}
           className="px-4 py-2 rounded-md border border-white bg-white/20 text-white outline-none w-full"
         >
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
+          <option value="user">user</option>
+          <option value="admin">admin</option>
         </select>
 
         <input
