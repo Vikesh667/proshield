@@ -22,7 +22,7 @@ const Contact = () => {
        alert("please fill the all field")
    }
    try {
-     const respone=await fetch("http://localhost:4000/api/message",{
+     const respone=await fetch("https://proshieldcybersecurity.onrender.com/api/message",{
       method:"POST",
       headers:{
         "content-type":"application/json"

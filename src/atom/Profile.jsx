@@ -6,11 +6,10 @@ const Profile = ({logout}) => {
   useEffect(() => {
     const user = localStorage.getItem("token");
     const decode = jwtDecode(user);
-    console.log(decode);
     setUser(decode);
   }, []);
   return (
-    <div className="relative">
+    <div className="relative ">
       <h1
         className="capitalize text-lg font-bold cursor-pointer w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center"
         onClick={() => setShowProfiles(!showProfile)}
