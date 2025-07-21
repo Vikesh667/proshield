@@ -33,7 +33,7 @@ const navigate=useNavigate()
     }
   };
   return (
-    <div className="w-full h-screen bg-gray-900/80 flex items-center justify-center">
+    <div className="w-full h-full bg-gray-900/80 flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
         className="w-72 h-84 border-[1px] border-white flex flex-col gap-5 p-5"

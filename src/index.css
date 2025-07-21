@@ -104,5 +104,20 @@
   .formInput {
     @apply w-full py-2 px-3 bg-transparent text-white outline-none border-[1px] border-white rounded-xl
   }
+  /* Scrollbar Customization */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* gray-700 */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
   
 }

@@ -137,7 +137,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row gap-10 items-center justify-start ">
+   <div className="w-full h-full flex flex-col items-center lg:flex-row gap-10 lg:items-start bg-gray-300 p-5">
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col gap-5 items-center p-5">
         <h1 className="font-semibold text-lg">Notification Settings</h1>
         <div className="flex gap-5">
@@ -194,7 +194,7 @@ const Settings = () => {
           </button>
         </div>
       </div>
-      <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col  lg:flex-row gap-5 items-center justify-center p-5">
+      <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex gap-5 items-center justify-center p-5">
         <button
           onClick={() => setUpdateShow(true)}
           className="py-3 px-5 bg-green-400 rounded-lg hover:scale-95 transition-all duration-300 text-white shadow-lg"
