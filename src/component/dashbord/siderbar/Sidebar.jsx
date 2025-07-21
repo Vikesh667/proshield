@@ -3,6 +3,7 @@ import logo from "../../../assets/company-logo.svg";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUsers } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
 
 const Sidebar = ({ open, setOpen }) => {
   const navigate = useNavigate();
@@ -47,8 +48,8 @@ const Sidebar = ({ open, setOpen }) => {
             className="sidebar flex items-center gap-2"
             onClick={handleClose}
           >
-            <FaUsers />
-            Client
+           <GrProjects />
+            Project
           </Link>
           <Link to="/admin/dashboard/settings" className="sidebar">
             ⚙️ Settings

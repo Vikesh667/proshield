@@ -1,10 +1,17 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./siderbar/Sidebar";
 import { FiMenu } from "react-icons/fi";
+import { FaBell } from "react-icons/fa";
+import Profile from "../../atom/Profile";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const navigate=useNavigate()
+  const logout=()=>{
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
   return (
     <div className="w-full h-screen flex overflow-hidden">
       <Sidebar open={open} setOpen={setOpen} />
@@ -13,7 +20,22 @@ const Dashboard = () => {
           <h1 className="text-2xl text-white font-semibold font-sans">
             Admin Dashboard
           </h1>
-          <button className="text-2xl text-white shadow lg:hidden" onClick={()=>setOpen(true)}><FiMenu/></button>
+
+          <div className="h-full flex gap-15 text-2xl text-white items-center relative">
+            <div className="flex items-center justify-center  relative">
+            <Link to="/admin/dashboard/message"><FaBell className="text-3xl" /></Link>  
+              <span className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-sm absolute top-1 -right-1">
+                2
+              </span>
+            </div>
+           <Profile logout={logout}/>
+          </div>
+          <button
+            className="text-2xl text-white shadow lg:hidden"
+            onClick={() => setOpen(true)}
+          >
+            <FiMenu />
+          </button>
         </div>
         <main className="w-full flex-1 scrollbar overflow-y-scroll">
           <Outlet />
@@ -23,4 +45,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard
+export default Dashboard;

@@ -14,8 +14,8 @@ const DashboardHome = () => {
           <p className="text-2xl">158</p>
         </div>
         <div className="bg-gray-300 p-4 rounded shadow">
-          <h3 className="text-lg font-semibold">📄 Reports</h3>
-          <p className="text-2xl">12</p>
+          <h3 className="text-lg font-semibold">Projects Done</h3>
+          <p className="text-2xl">6</p>
         </div>
          <div className="bg-gray-300 p-4 rounded shadow">
           <h3 className="text-lg font-semibold">Client</h3>

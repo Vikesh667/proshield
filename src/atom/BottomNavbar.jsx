@@ -8,7 +8,7 @@ import { useAnimation, motion, AnimatePresence } from "framer-motion";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { socket } from "./Socket";
-
+import Profile from "./Profile";
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
@@ -17,73 +17,72 @@ const BottomNavbar = () => {
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const handleMenu = () => {
     setMenu(!menu);
     setTranslate(100);
   };
-  const logout=()=>{
-    localStorage.removeItem("token")
-    navigate("/login")
-  }
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
   const toggleSubmenu = (index) => {
     setOpenSubmenuIndex(openSubmenuIndex === index ? null : index);
   };
 
- useEffect(() => {
-  const fetchStatus = async () => {
-    try {
-      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/status");
-      const data = await response.json();
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        const response = await fetch(
+          "https://proshieldcybersecurity.onrender.com/api/status"
+        );
+        const data = await response.json();
 
-      setRunning(data.data.isNotification);
-      setDirection(data.data.direction || "left"); 
-    } catch (error) {
-      console.error("Error fetching status:", error);
+        setRunning(data.data.isNotification);
+        setDirection(data.data.direction || "left");
+      } catch (error) {
+        console.error("Error fetching status:", error);
+      }
+    };
+
+    fetchStatus();
+
+    if (!socket.connected) {
+      socket.connect();
     }
-  };
 
-  fetchStatus();
+    socket.on("notification", (data) => {
+      console.log("Real-time update:", data);
+      setRunning(data.isNotification);
+      setDirection(data.direction);
+    });
 
-  if (!socket.connected) {
-    socket.connect();
-  }
-
-  socket.on("notification", (data) => {
-    console.log("Real-time update:", data);
-    setRunning(data.isNotification);
-    setDirection(data.direction);
-  });
-
-
-  return () => {
-    socket.off("notification");
-  };
-}, []);
+    return () => {
+      socket.off("notification");
+    };
+  }, []);
 
   return (
     <div className="flex flex-col justify-center">
-   { isRunning === true && (
-  <AnimatePresence>
-    <motion.div
-      className="w-full flex justify-center overflow-hidden"
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: "4rem", opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-    >
-      <Marquee
-        direction={direction}
-        setDirection={setDirection}
-        isRunning={isRunning}
-        setRunning={setRunning}
-        controls={controls}
-      />
-    </motion.div>
-  </AnimatePresence>
-)}
-
-
+      {isRunning === true && (
+        <AnimatePresence>
+          <motion.div
+            className="w-full flex justify-center overflow-hidden"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "4rem", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            <Marquee
+              direction={direction}
+              setDirection={setDirection}
+              isRunning={isRunning}
+              setRunning={setRunning}
+              controls={controls}
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       <nav className="w-full h-16 lg:h-24 flex justify-between items-center bg-white shadow-md px-8 relative z-50">
         <div className="lg:ml-20">
@@ -134,7 +133,11 @@ const BottomNavbar = () => {
 
                     {item.submenu && (
                       <span className="text-black ml-2">
-                        {openSubmenuIndex === index ? <FaAngleUp /> : <FaAngleDown />}
+                        {openSubmenuIndex === index ? (
+                          <FaAngleUp />
+                        ) : (
+                          <FaAngleDown />
+                        )}
                       </span>
                     )}
                   </div>
@@ -154,22 +157,22 @@ const BottomNavbar = () => {
                   )}
                 </li>
               ))}
-               <button
-           onClick={logout}
-          className="bg-red-500 py-3 px-5 rounded-lg text-md font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer">Log out</button>
+              <button
+                onClick={logout}
+                className="bg-red-500 py-3 px-5 rounded-lg text-md font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer"
+              >
+                Log out
+              </button>
             </ul>
           </div>
         )}
 
-        <div className="mr-20 hidden lg:flex gap-5">
+        <div className=" hidden lg:flex items-center justify-between  gap-5">
           <Link to="/contact">
             <Button text="Get Started" />
           </Link>
-          <button
-           onClick={logout}
-          className="bg-red-500 py-3 px-5 rounded-lg text-md font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer">Log out</button>
+          <Profile logout={logout} />
         </div>
-
         <button
           onClick={handleMenu}
           className="block lg:hidden p-1 bg-gradient-to-r from-blue-700 to-blue-300 text-2xl text-white rounded-lg"
