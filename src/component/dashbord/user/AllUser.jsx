@@ -9,7 +9,7 @@ const AllUser = () => {
 
   const getAllUsers = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/users");
+      const response = await fetch("https://proshieldcybersecurity.onrender.com/api/users");
       const data = await response.json();
       setUsers(data.user);
     } catch (error) {
@@ -19,7 +19,7 @@ const AllUser = () => {
   const deleteUser = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:4000/api/users/${id}`, {
+      const response = await fetch(`https://proshieldcybersecurity.onrender.com/api/users/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`, 
@@ -37,7 +37,7 @@ const AllUser = () => {
   }, []);
   return (
     <div className="w-full h-screen p-10">
-      <h1 className="text-white text-2xl text-center font-sans font-semibold mb-10">
+      <h1 className="text-[#010535] text-2xl text-center font-sans font-semibold mb-10">
         All Users
       </h1>
       {message && <p className="text-green-400 text-lg font-sans capitalize">{message}</p>}

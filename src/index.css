@@ -104,4 +104,5 @@
   .formInput {
     @apply w-full py-2 px-3 bg-transparent text-white outline-none border-[1px] border-white rounded-xl
   }
+  
 }

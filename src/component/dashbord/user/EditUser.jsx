@@ -8,7 +8,7 @@ const EditUuser = () => {
   const { id } = useParams();
 const navigate=useNavigate()
   const fetchUserById = async () => {
-    const response = await fetch(`http://localhost:4000/api/users/${id}`);
+    const response = await fetch(`https://proshieldcybersecurity.onrender.com/api/users/${id}`);
     const data = await response.json();
     setName(data.name);
     setEmail(data.email);
@@ -20,7 +20,7 @@ const navigate=useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:4000/api/users/update/${id}`, {
+    const response = await fetch(`https://proshieldcybersecurity.onrender.com/api/users/update/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

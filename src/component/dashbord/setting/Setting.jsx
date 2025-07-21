@@ -137,7 +137,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row gap-10 items-center ">
+    <div className="w-full h-full flex flex-col lg:flex-row gap-10 items-center justify-start ">
       <div className="w-64 h-32 bg-white rounded-2xl shadow-lg flex flex-col gap-5 items-center p-5">
         <h1 className="font-semibold text-lg">Notification Settings</h1>
         <div className="flex gap-5">

@@ -21,6 +21,7 @@ import Register from "./component/auth/Register";
 import AllMarquee from "./component/dashbord/AllMarquee";
 import AllUser from "./component/dashbord/user/AllUser";
 import EditUuser from "./component/dashbord/user/EditUser";
+import Client from "./component/dashbord/client/Client";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -76,6 +77,7 @@ const App = () => {
           <Route path="marquee" element={<AllMarquee/>}/>
           <Route path="users" element={<AllUser/>}/>
           <Route path="edit/:id" element={<EditUuser/>}/>
+          <Route path="client" element={<Client/>}/>
         </Route>
 
         <Route path="/" element={<Layout />}>

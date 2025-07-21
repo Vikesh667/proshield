@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/company-logo.svg";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaUsers } from "react-icons/fa";
 
 const Sidebar = ({ open, setOpen }) => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Sidebar = ({ open, setOpen }) => {
 
   return (
     <>
-      <aside className="w-64 h-screen bg-gray-900 p-6 space-y-4 hidden lg:block">
+      <aside className="w-84 h-full bg-gray-900 p-6 space-y-4 hidden lg:block overflow-x-hidden overflow-y-scroll">
         <img src={logo} alt="Proshield" />
         <nav className="space-y-3 flex flex-col items-start text-white gap-3 mt-10">
           <Link to="/admin/dashboard" className="sidebar">📊 Dashboard</Link>
@@ -27,6 +28,7 @@ const Sidebar = ({ open, setOpen }) => {
           <Link to="/admin/dashboard/users" className="sidebar">👤 User Management</Link>
           <Link to="/admin/incidents" className="sidebar">📝 Incidents</Link>
           <Link to="/admin/tools" className="sidebar">🛠️ Tools & Utilities</Link>
+           <Link to="/admin/dashboard/client" className="sidebar flex items-center gap-2" onClick={handleClose}><FaUsers />Client</Link>
           <Link to="/admin/dashboard/settings" className="sidebar">⚙️ Settings</Link>
           <Link to="/admin/profile" className="sidebar">👨‍💼 Profile</Link>
           <button onClick={handleLogout} className="text-red-400 sidebar">🚪 Logout</button>
@@ -62,6 +64,7 @@ const Sidebar = ({ open, setOpen }) => {
                 <Link to="/admin/incidents" className="sidebar" onClick={handleClose}>📝 Incidents</Link>
                 <Link to="/admin/tools" className="sidebar" onClick={handleClose}>🛠️ Tools & Utilities</Link>
                 <Link to="/admin/dashboard/settings" className="sidebar" onClick={handleClose}>⚙️ Settings</Link>
+                 <Link to="/admin/dashboard/client" className="sidebar" onClick={handleClose}><FaUsers />Client</Link>
                 <Link to="/admin/profile" className="sidebar" onClick={handleClose}>👨‍💼 Profile</Link>
                 <button onClick={() => { handleLogout(); handleClose(); }} className="text-red-400 sidebar">🚪 Logout</button>
               </nav>
