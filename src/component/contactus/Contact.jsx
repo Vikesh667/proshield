@@ -3,12 +3,40 @@ import TopSection from "../../atom/TopSection";
 import { contacts } from "../../constant/data";
 import contactbg from "../../assets/contact-box-bg.jpg";
 import Button from "../../atom/Button";
+import { useState } from "react";
 
 const Contact = () => {
   const content = {
     heading: "Contact us",
     text: "Contact us",
   };
+
+  const [firstName,setFirstName]=useState("")
+  const [lastName,setLastName]=useState("")
+  const [email,setEmail]=useState("")
+  const [phone,setPhone]=useState("")
+  const [message,setMassege]=useState("")
+  const submitMessage=async(e)=>{
+   e.preventDefault()
+   if(firstName=="" || lastName=="" || email=="" || phone=="" || message=="" ){
+       alert("please fill the all field")
+   }
+   try {
+     const respone=await fetch("http://localhost:4000/api/message",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify({firstName,lastName,email,phone,message})
+     })
+     if(respone.ok){
+      alert("Your message is submited we will tuch with very soon")
+     }
+
+   } catch (error) {
+     alert("something is wrong please try again")
+   }
+  }
   return (
     <div className="w-full min-h-screen overflow-hidden">
       <TopSection content={content} />
@@ -73,28 +101,38 @@ const Contact = () => {
                 }}
               />
               <div className="w-full h-full absolute top-50 lg:top-0 flex items-center justify-center">
-                <form className="w-full max-w-6xl mx-auto  bg-opacity-90 p-10 rounded-2xl shadow-lg z-10">
+                <form 
+                 onSubmit={submitMessage}
+                className="w-full max-w-6xl mx-auto  bg-opacity-90 p-10 rounded-2xl shadow-lg z-10">
                   <h1 className="text-3xl font-semibold text-center text-white mb-8">
                     Get in touch with us
                   </h1>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input
+                    value={firstName}
+                    onChange={(e)=>setFirstName(e.target.value)}
                       type="text"
                       placeholder="First Name"
                       className="p-4 rounded-md border bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <input
+                    value={lastName}
+                    onChange={(e)=>setLastName(e.target.value)}
                       type="text"
                       placeholder="Last Name"
                       className="p-4 rounded-md border bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <input
+                    value={phone}
+                    onChange={(e)=>setPhone(e.target.value)}
                       type="text"
                       placeholder="Enter Your Phone No"
                       className="p-4 rounded-md border bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <input
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
                       type="email"
                       placeholder="Enter Your E-mail"
                       className="p-4 rounded-md border bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -103,6 +141,8 @@ const Contact = () => {
 
                   <div className="mt-6">
                     <textarea
+                    value={message}
+                    onChange={(e)=>setMassege(e.target.value)}
                       rows="5"
                       placeholder="Your Message"
                       className="w-full p-5 bg-white rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
@@ -110,7 +150,7 @@ const Contact = () => {
                   </div>
 
                   <div className="mt-10 text-center">
-                    <Button text="Submit Message" />
+                    <Button type="submit" text="Submit Message"/>
                   </div>
                 </form>
               </div>

@@ -7,11 +7,16 @@ import Profile from "../../atom/Profile";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-  const navigate=useNavigate()
-  const logout=()=>{
-    localStorage.removeItem("token")
-    navigate("/login")
-  }
+  const [notification, setNotification] = useState(null);
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+  useEffect(() => {
+    const lengths = localStorage.getItem("length");
+    setNotification(JSON.parse(lengths));
+  }, []);
   return (
     <div className="w-full h-screen flex overflow-hidden">
       <Sidebar open={open} setOpen={setOpen} />
@@ -23,12 +28,16 @@ const Dashboard = () => {
 
           <div className="h-full flex gap-15 text-2xl text-white items-center relative">
             <div className="flex items-center justify-center  relative">
-            <Link to="/admin/dashboard/message"><FaBell className="text-3xl" /></Link>  
-              <span className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-sm absolute top-1 -right-1">
-                2
-              </span>
+              <Link to="/admin/dashboard/message">
+                <FaBell className="text-3xl" />
+              </Link>
+              {notification && (
+                <span className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-sm absolute top-1 -right-1">
+                  {notification}
+                </span>
+              )}
             </div>
-           <Profile logout={logout}/>
+            <Profile logout={logout} />
           </div>
           <button
             className="text-2xl text-white shadow lg:hidden"

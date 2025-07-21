@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimationFrame } from "framer-motion";
-import { gallerys, securityTexts } from "../constant/data";
-
+import {  useAnimationFrame } from "framer-motion";
 const Marquee = ({ speed = 50, direction = "left" }) => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
