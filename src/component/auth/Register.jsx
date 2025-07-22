@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -34,7 +35,6 @@ const Register = () => {
       password: trimmedPassword,
       role,
     };
-    console.log(user)
     try {
       const response = await fetch(
         "https://proshieldcybersecurity.onrender.com/api/register",
@@ -47,14 +47,16 @@ const Register = () => {
         }
       );
       const data = await response.json();
-    console.log(data)
       if (response.ok) {
+        toast.success(data.message)
         setSuccess(data.message);
         navigate("/login");
       } else {
+        toast.error(data.message)
         setError(data.message || "Registration failed");
       }
     } catch (error) {
+     toast.error(error)
       setError(error);
     }
   };
