@@ -31,7 +31,7 @@ const DashboardHome = () => {
           <p className="text-2xl">25k+</p>
         </div>
         <div className="bg-gray-300 p-4 rounded shadow">
-          <h3 className="text-lg font-semibold"><Link to="/admin/dashboard/users">Messages</Link></h3>
+          <h3 className="text-lg font-semibold"><Link to="/admin/dashboard/message">Messages</Link></h3>
           <p className="text-2xl">{messages.length}</p>
         </div>
       </div>
