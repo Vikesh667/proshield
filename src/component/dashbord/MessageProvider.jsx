@@ -8,12 +8,10 @@ export const MessageProvider = ({ children }) => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    // 🔌 Connect the socket when component mounts
     if (!socket.connected) {
       socket.connect();
     }
 
-    // 📨 Fetch initial messages
     const getMessages = async () => {
       try {
         const res = await fetch("https://proshieldcybersecurity.onrender.com/api/get-message");
@@ -35,10 +33,9 @@ export const MessageProvider = ({ children }) => {
       }
     });
 
-    // 🧹 Clean up listener and disconnect on unmount
     return () => {
       socket.off("message");
-      socket.disconnect(); // optional: if you want to fully disconnect
+      socket.disconnect(); 
     };
   }, []);
 

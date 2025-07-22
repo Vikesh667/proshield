@@ -78,7 +78,7 @@ const App = () => {
           <Route path="marquee" element={<AllMarquee/>}/>
           <Route path="users" element={<AllUser/>}/>
           <Route path="edit/:id" element={<EditUuser/>}/>
-          <Route path="client" element={<Project/>}/>
+          <Route path="project" element={<Project/>}/>
           <Route path="message" element={<Message/>}/>
         </Route>
 

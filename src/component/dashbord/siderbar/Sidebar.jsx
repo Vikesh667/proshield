@@ -44,7 +44,7 @@ const Sidebar = ({ open, setOpen }) => {
             🛠️ Tools & Utilities
           </Link>
           <Link
-            to="/admin/dashboard/client"
+            to="/admin/dashboard/project"
             className="sidebar flex items-center gap-2"
             onClick={handleClose}
           >
