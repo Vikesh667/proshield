@@ -4,13 +4,16 @@ import { contacts } from "../../constant/data";
 import contactbg from "../../assets/contact-box-bg.jpg";
 import Button from "../../atom/Button";
 import { useState } from "react";
-
+import { toast } from "react-toastify";
 const Contact = () => {
   const content = {
     heading: "Contact us",
     text: "Contact us",
   };
-
+const playSound=()=>{
+ const audio = new Audio("/sounds/notification.mp3");
+ audio.play()
+}
   const [firstName,setFirstName]=useState("")
   const [lastName,setLastName]=useState("")
   const [email,setEmail]=useState("")
@@ -30,7 +33,7 @@ const Contact = () => {
       body:JSON.stringify({firstName,lastName,email,phone,message})
      })
      if(respone.ok){
-      alert("Your message is submited we will tuch with very soon")
+      toast.success("Your message is submited we will tuch with very soon")
      }
 
    } catch (error) {

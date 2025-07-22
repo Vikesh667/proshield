@@ -8,7 +8,6 @@ import { useMessages } from "./MessageProvider";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
-  const [notification, setNotification] = useState(null);
   const navigate = useNavigate();
   const {messages}=useMessages()
   const logout = () => {

@@ -1,6 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,23 +28,23 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         const decoded = jwtDecode(data.token);
         const role = decoded.role;
-         console.log(role)
         if (role === "admin") {
+          toast.success(data.message);
           navigate("/admin/dashboard");
         } else if (role === "user") {
+          toast.success(data.message);
           navigate("/");
         } else {
-          alert("Unknown role. Cannot redirect.");
+          toast.error("Unknown role. Cannot redirect.");
         }
       } else {
-        alert(data.message || "Login failed");
+        toast.error(data.message || "Login failed");
       }
     } catch (err) {
-      console.error("Login error:", err);
-      alert("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     }
   };
- return (
+  return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 via-blue-400 to-sky-400 px-4">
       <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl border border-white/30 shadow-2xl p-8 sm:p-10 md:p-12">
         <form onSubmit={loginHandle} className="flex flex-col gap-6">
@@ -83,6 +84,5 @@ const Login = () => {
       </div>
     </div>
   );
-
 };
 export default Login;
