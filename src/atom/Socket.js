@@ -1,7 +1,7 @@
-// socket.js
+// socket.js (frontend)
 import { io } from "socket.io-client";
 
-// ✅ Create a reusable, single socket instance
-export const socket = io("wss://proshieldcybersecurity.onrender.com", {
+export const socket = io("https://proshieldcybersecurity.onrender.com", {
+  transports: ["polling"], // 👈 force polling fallback
   autoConnect: false,
 });
