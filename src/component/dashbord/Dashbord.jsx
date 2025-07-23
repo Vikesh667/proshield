@@ -18,13 +18,19 @@ const Dashboard = () => {
     <div className="w-full h-screen flex overflow-hidden">
       <Sidebar open={open} setOpen={setOpen} />
       <div className="w-full flex flex-col">
-        <div className="w-full h-20 bg-gray-800 flex items-center justify-between px-10">
+        <div className="w-full h-20 bg-gray-800 flex items-center justify-between px-5">
+           <button
+            className="text-2xl text-white shadow lg:hidden"
+            onClick={() => setOpen(true)}
+          >
+            <FiMenu />
+          </button>
           <h1 className="text-lg lg:text-2xl text-white font-semibold font-sans">
             Admin Dashboard
           </h1>
 
           <div className="h-full flex gap-15 text-2xl text-white items-center relative">
-            <div className="flex items-center justify-center  relative cursor-pointer">
+            <div className=" items-center justify-center  relative cursor-pointer hidden lg:block">
               <Link to="/admin/dashboard/message">
                 <FaBell className="text-3xl" />
               </Link>
@@ -36,12 +42,6 @@ const Dashboard = () => {
             </div>
             <Profile logout={logout} />
           </div>
-          <button
-            className="text-2xl text-white shadow lg:hidden"
-            onClick={() => setOpen(true)}
-          >
-            <FiMenu />
-          </button>
         </div>
         <main className="w-full flex-1 scrollbar overflow-y-scroll">
           <Outlet />

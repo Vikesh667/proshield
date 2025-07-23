@@ -2,12 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/company-logo.svg";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUsers } from "react-icons/fa";
+import { FaBell, FaUsers } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
+import { useMessages } from "../MessageProvider";
 
 const Sidebar = ({ open, setOpen }) => {
   const navigate = useNavigate();
-
+  const { messages } = useMessages();
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -48,7 +49,7 @@ const Sidebar = ({ open, setOpen }) => {
             className="sidebar flex items-center gap-2"
             onClick={handleClose}
           >
-           <GrProjects />
+            <GrProjects />
             Project
           </Link>
           <Link to="/admin/dashboard/settings" className="sidebar">
@@ -86,6 +87,16 @@ const Sidebar = ({ open, setOpen }) => {
                 </button>
               </div>
               <nav className="space-y-3 flex flex-col items-start text-white gap-3 mt-10">
+                <div className="flex items-center justify-center  relative cursor-pointer">
+                  <Link to="/admin/dashboard/message">
+                    <FaBell className="text-3xl" />
+                  </Link>
+                  {messages.length > 0 && (
+                    <span className="w-5 h-5 z-20 rounded-full bg-red-500 flex items-center justify-center text-sm absolute top-1 -right-1">
+                      {messages.length}
+                    </span>
+                  )}
+                </div>
                 <Link
                   to="/admin/dashboard"
                   className="sidebar"
