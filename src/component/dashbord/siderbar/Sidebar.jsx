@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/company-logo.svg";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBell, FaUsers } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
-import { useMessages } from "../MessageProvider";
+import { jwtDecode } from "jwt-decode";
+import { useEffect, useState } from "react";
 
 const Sidebar = ({ open, setOpen }) => {
   const navigate = useNavigate();
-  const { messages } = useMessages();
+  const [user, setUser] = useState(null);
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -17,7 +17,11 @@ const Sidebar = ({ open, setOpen }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  useEffect(() => {
+    const user = localStorage.getItem("token");
+    const decode = jwtDecode(user);
+    setUser(decode);
+  }, []);
   return (
     <>
       <aside className="w-84 h-full bg-gray-900 p-6 space-y-4 hidden lg:block scrollbar overflow-y-scroll">
@@ -87,15 +91,17 @@ const Sidebar = ({ open, setOpen }) => {
                 </button>
               </div>
               <nav className="space-y-3 flex flex-col items-start text-white gap-3 mt-10">
-                <div className="flex items-center justify-center  relative cursor-pointer">
-                  <Link to="/admin/dashboard/message">
-                    <FaBell className="text-3xl" />
-                  </Link>
-                  {messages.length > 0 && (
-                    <span className="w-5 h-5 z-20 rounded-full bg-red-500 flex items-center justify-center text-sm absolute top-1 -right-1">
-                      {messages.length}
-                    </span>
-                  )}
+                <div className="w-full h-auto flex flex-col items-center gap-3 ">
+                  <img
+                    className="w-16 h-16 object-cover bg-center rounded-full"
+                    src={user.image}
+                    alt={user.name}
+                  />
+                  <Link
+                    to={`/admin/dashboard/edit/${user.userId}`}
+                    onClick={handleClose}
+                    className="text-sm mt-2 capitalize text-white opacity-80 "
+                  >Profile</Link>
                 </div>
                 <Link
                   to="/admin/dashboard"

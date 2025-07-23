@@ -9,6 +9,7 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { socket } from "./Socket";
 import Profile from "./Profile";
+import { jwtDecode } from "jwt-decode";
 
 const BottomNavbar = () => {
   const [direction, setDirection] = useState("left");
@@ -17,11 +18,18 @@ const BottomNavbar = () => {
   const [menu, setMenu] = useState(false);
   const [translate, setTranslate] = useState(0);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+  const [user, setUser] = useState([]);
   const navigate = useNavigate();
   const handleMenu = () => {
     setMenu(!menu);
     setTranslate(100);
   };
+  
+    useEffect(() => {
+      const user = localStorage.getItem("token");
+      const decode = jwtDecode(user);
+      setUser(decode);
+    }, []);
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -118,6 +126,18 @@ const BottomNavbar = () => {
         {menu && (
           <div className="lg:hidden bg-gradient-to-r from-indigo-700 via-blue-400 to-sky-400 w-full absolute left-0 top-15 p-10 transition duration-500">
             <ul className="flex flex-col gap-3 relative">
+               <div className="w-full h-auto flex flex-col items-center gap-3 ">
+                  <img
+                    className="w-16 h-16 object-cover bg-center rounded-full"
+                    src={user.image}
+                    alt={user.name}
+                  />
+                  <Link
+                    to={`edit/${user.userId}`}
+                    onClick={handleMenu}
+                    className="text-sm mt-2 capitalize text-white opacity-80 "
+                  >Profile</Link>
+                </div>
               {navItem.map((item, index) => (
                 <li key={item.text} className="relative">
                   <div

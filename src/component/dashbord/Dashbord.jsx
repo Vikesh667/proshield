@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./siderbar/Sidebar";
 import { FiMenu } from "react-icons/fi";
@@ -30,7 +30,7 @@ const Dashboard = () => {
           </h1>
 
           <div className="h-full flex gap-15 text-2xl text-white items-center relative">
-            <div className=" items-center justify-center  relative cursor-pointer hidden lg:block">
+            <div className="flex items-center justify-center  relative cursor-pointer">
               <Link to="/admin/dashboard/message">
                 <FaBell className="text-3xl" />
               </Link>
@@ -40,7 +40,7 @@ const Dashboard = () => {
                 </span>
               )}
             </div>
-            <Profile logout={logout} />
+           <div className="hidden lg:block">  <Profile logout={logout} setOpen={setOpen}/></div>
           </div>
         </div>
         <main className="w-full flex-1 scrollbar overflow-y-scroll">

@@ -1,7 +1,8 @@
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const Profile = ({ logout }) => {
+const Profile = ({ logout, setOpen }) => {
   const [user, setUser] = useState([]);
   const [showProfile, setShowProfiles] = useState(false);
 
@@ -10,8 +11,11 @@ const Profile = ({ logout }) => {
     const decode = jwtDecode(user);
     setUser(decode);
   }, []);
+  const handleClose = () => {
+    setShowProfiles(false);
+  };
   return (
-    <div className="relative ">
+    <div className="relative">
       {user.image ? (
         <img
           onClick={() => setShowProfiles(!showProfile)}
@@ -27,7 +31,18 @@ const Profile = ({ logout }) => {
         </h1>
       )}
       {showProfile && (
-        <div className="w-56 h-52 flex flex-col bg-gray-800 absolute top-10 -right-10 rounded-lg py-5 px-5">
+        <div className="w-56 h-52 flex flex-col bg-gray-800 absolute top-10 -right-23 lg:-right-10 rounded-lg py-5 px-5">
+          <Link
+            to={
+              user.role === "admin"
+                ? `/admin/dashboard/edit/${user.userId}`
+                : `/edit/${user.userId}`
+            }
+            onClick={handleClose}
+            className="text-sm mt-2 capitalize text-white opacity-80"
+          >
+            Profile
+          </Link>
           <span className="text-sm mt-2 capitalize text-white opacity-80">
             {user.role}
           </span>
@@ -39,7 +54,7 @@ const Profile = ({ logout }) => {
           </span>
           <button
             onClick={logout}
-            className="w-20 flex items-center justify-center bg-red-500 py-2 px-3 mt-10 rounded-lg text-sm font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer"
+            className="w-20 flex items-center justify-center bg-red-500 py-2 px-3 mt-6 rounded-lg text-sm font-sans font-semibold text-white shadow-lg hover:scale-90 transition duration-300 cursor-pointer"
           >
             Log out
           </button>

@@ -23,6 +23,7 @@ import AllUser from "./component/dashbord/user/AllUser";
 import EditUuser from "./component/dashbord/user/EditUser";
 import Project from "./component/dashbord/projects/Project";
 import Message from "./component/dashbord/Message";
+import UserProfiles from "./component/profiles/UserProfiles";
 
 // Lazy-loaded pages
 const HomePages = React.lazy(() => import("./pages/HomePages"));
@@ -115,7 +116,8 @@ const App = () => {
               </Protected>
             }
           />
-
+           <Route 
+            path="edit/:id" element={<UserProfiles/>}/>
 
           <Route path="about" element={<AboutUsPage />} />
           <Route path="services" element={<Services />} />

@@ -8,7 +8,7 @@ const DashboardHome = () => {
   const {users}=useContext(GetUser)
   return (
     <div className="space-y-6 px-5">
-      <h2 className="text-2xl font-bold text-gray-800">
+      <h2 className="text-xl mt-2 lg:text-2xl font-bold text-gray-800">
         Welcome to ProShield Admin
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
