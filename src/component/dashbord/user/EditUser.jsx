@@ -1,97 +1,146 @@
-import { image } from "framer-motion/client";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditUuser = () => {
+const EditUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [file,setFile]=useState(null)
-  const [image,setImage]=useState(null)
-  const { id } = useParams();
+  const [file, setFile] = useState(null);
+  const [image, setImage] = useState(null);
   const navigate = useNavigate();
-  const fetchUserById = async () => {
-    const response = await fetch(
-      `https://proshieldcybersecurity.onrender.com/api/users/${id}`
-    );
-    const data = await response.json();
-    setName(data.name);
-    setEmail(data.email);
-    setRole(data.role);
-    setImage(data.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTML0gExaohZHdZW3609F12nUmVc14WXYNx_w&s")
-  };
+  const { id } = useParams();
+
+  const cameraInputRef = useRef(null);
+  const galleryInputRef = useRef(null);
+
   useEffect(() => {
+    const fetchUserById = async () => {
+      const response = await fetch(
+        `https://proshieldcybersecurity.onrender.com/api/users/${id}`
+      );
+      const data = await response.json();
+      setName(data.name);
+      setEmail(data.email);
+      setRole(data.role);
+      setImage(
+        data.image ||
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTML0gExaohZHdZW3609F12nUmVc14WXYNx_w&s"
+      );
+    };
     fetchUserById();
-  }, []);
+  }, [id]);
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleCameraClick = () => {
+    cameraInputRef.current.click(); // opens camera (mobile only)
+  };
 
-  const formData = new FormData();
-  formData.append("name", name);
-  formData.append("email", email);
-  formData.append("role", role);
-  if (file) {
-    formData.append("image", file); 
-  }
+  const handleGalleryClick = () => {
+    galleryInputRef.current.click(); // opens file picker
+  };
 
- const response = await fetch(`https://proshieldcybersecurity.onrender.com/api/users/update/${id}`, {
-  method: "PATCH",
-  body: formData,
-});
+  const handleFileChange = (e) => {
+    const selected = e.target.files[0];
+    if (selected) {
+      setFile(selected);
+    }
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (response.ok) {
-    alert("User is updated successfully");
-    navigate("/admin/dashboard/users");
-  } else {
-    const error = await response.json();
-    alert("Error: " + error.message);
-  }
-};
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("role", role);
+    if (file) {
+      formData.append("image", file);
+    }
 
-  const fileInputRef = useRef(null);
-  const handleImageClick = () => {
-    fileInputRef.current.click();
+    const response = await fetch(
+      `https://proshieldcybersecurity.onrender.com/api/users/update/${id}`,
+      {
+        method: "PATCH",
+        body: formData,
+      }
+    );
+
+    if (response.ok) {
+      alert("User updated successfully!");
+      navigate("/admin/dashboard/users");
+    } else {
+      const error = await response.json();
+      alert("Error: " + error.message);
+    }
   };
 
   return (
     <div className="w-full h-full bg-gray-900/80 flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="w-72 h-auto border-[1px] border-white flex flex-col gap-5 p-5"
+        className="w-80 h-auto border border-white flex flex-col gap-5 p-5 bg-white/5 rounded-lg"
       >
         <h1 className="text-white text-center font-sans font-semibold">
           Edit User
         </h1>
-        <div className="w-full flex items-center justify-center">
-      {file ? <img  className="w-16 h-16 rounded-full object-cover cursor-pointer hover:opacity-80 transition" src={URL.createObjectURL(file)}/> :<img
-        src={image}
-        alt="Upload"
-        className="w-16 h-16 rounded-full object-cover cursor-pointer hover:opacity-80 transition"
-        onClick={handleImageClick}
-      />
-}
-    <input
-        type="file"
-        accept="image/*"
-        ref={fileInputRef}
-        className="hidden"
-        onChange={(e)=>setFile(e.target.files[0])}
-      />
-    </div>
+
+        {/* Image preview and buttons */}
+        <div className="flex flex-col items-center gap-2">
+          <img
+            src={file ? URL.createObjectURL(file) : image}
+            alt="Preview"
+            className="w-20 h-20 rounded-full object-cover border"
+          />
+
+          <div className="flex gap-2">
+            <button
+              type="button"
+              className="bg-green-500 text-white px-3 py-1 rounded text-sm"
+              onClick={handleCameraClick}
+            >
+              📷 Camera
+            </button>
+
+            <button
+              type="button"
+              className="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+              onClick={handleGalleryClick}
+            >
+              🖼️ Gallery
+            </button>
+          </div>
+
+          {/* Hidden inputs for camera and gallery */}
+          <input
+            type="file"
+            accept="image/*"
+            capture="environment"
+            ref={cameraInputRef}
+            style={{ display: "none" }}
+            onChange={handleFileChange}
+          />
+
+          <input
+            type="file"
+            accept="image/*"
+            ref={galleryInputRef}
+            style={{ display: "none" }}
+            onChange={handleFileChange}
+          />
+        </div>
 
         <input
           className="formInput"
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          type="text"
+          placeholder="Name"
         />
         <input
           className="formInput"
+          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          type="email"
+          placeholder="Email"
         />
         <select
           className="formInput"
@@ -101,9 +150,10 @@ const EditUuser = () => {
           <option value="user">user</option>
           <option value="admin">admin</option>
         </select>
+
         <button
           type="submit"
-          className="bg-blue-400 text-lg  text-white py-3 px-5 rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
+          className="bg-blue-400 text-lg text-white py-2 px-5 rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
         >
           Update
         </button>
@@ -111,4 +161,5 @@ const EditUuser = () => {
     </div>
   );
 };
-export default EditUuser;
+
+export default EditUser;
